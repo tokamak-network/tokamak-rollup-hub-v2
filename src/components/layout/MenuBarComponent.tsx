@@ -46,30 +46,53 @@ export default function MenuBarComponent({
         position={"relative"}
       >
         {MENUBAR_ITEMS.map((item) => (
-          <Text
-            display={"flex"}
+          <Flex
+            key={item.label}
             alignItems={"center"}
             justifyContent={"center"}
-            key={item.label}
-            color={"#2E2E3A"}
-            fontSize={isMenuOpen ? "30px" : "15px"}
-            fontWeight={600}
-            lineHeight={"normal"}
-            textAlign={"center"}
-            cursor={"pointer"}
-            onClick={() => {
-              if (item.href.includes("http")) {
-                window.open(item.href, "_blank");
-              } else {
-                router.push(item.href);
-              }
-              setIsMenuOpen(false);
-            }}
-            _hover={{ color: "#0070ED" }}
-            zIndex={3000}
+            position={"relative"}
+            gap={isMenuOpen ? "12px" : "8px"}
           >
-            {item.label}
-          </Text>
+            {item.isNew && (
+              <Text
+                fontSize={isMenuOpen ? "16px" : "11px"}
+                fontWeight={700}
+                color={"#FFFFFF"}
+                bg={"#FF0000"}
+                px={isMenuOpen ? "12px" : "8px"}
+                py={isMenuOpen ? "5px" : "3px"}
+                borderRadius={"16px"}
+                textTransform={"uppercase"}
+                letterSpacing={"0.5px"}
+                lineHeight={"normal"}
+              >
+                NEW
+              </Text>
+            )}
+            <Text
+              display={"flex"}
+              alignItems={"center"}
+              justifyContent={"center"}
+              color={"#2E2E3A"}
+              fontSize={isMenuOpen ? "30px" : "15px"}
+              fontWeight={600}
+              lineHeight={"normal"}
+              textAlign={"center"}
+              cursor={"pointer"}
+              onClick={() => {
+                if (item.href.includes("http")) {
+                  window.open(item.href, "_blank");
+                } else {
+                  router.push(item.href);
+                }
+                setIsMenuOpen(false);
+              }}
+              _hover={{ color: "#0070ED" }}
+              zIndex={3000}
+            >
+              {item.label}
+            </Text>            
+          </Flex>
         ))}
       </Flex>
     </>

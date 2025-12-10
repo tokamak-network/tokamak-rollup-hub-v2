@@ -4,6 +4,7 @@ export const GET_HELP_URL =
 export const TRH_V1_URL = "https://tokamak-rollup-hub.vercel.app";
 export const USER_GUIDE_URL =
   "https://docs.tokamak.network/home/service-guide/rollup-hub";
+export const PLATFORM_GUIDE_URL = "https://docs.tokamak.network/home/~/changes/151/service-guide/rollup-hub/rollup-hub-platform";
 export const THANOS_STACK_DEPLOYMENT_GUIDE_URL =
   "https://docs.tokamak.network/home/service-guide/rollup-hub/rollup-hub-sdkv1/introduction";
 export const THANOS_BRIDGE_USER_GUIDE_URL =

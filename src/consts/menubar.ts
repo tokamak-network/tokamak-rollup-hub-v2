@@ -1,6 +1,11 @@
-import { GET_HELP_URL, USER_GUIDE_URL } from "./urls";
+import { GET_HELP_URL, USER_GUIDE_URL, PLATFORM_GUIDE_URL } from "./urls";
 
 export const MENUBAR_ITEMS = [
+  {
+    label: "Try Out Platform",
+    href: PLATFORM_GUIDE_URL,
+    isNew: true,
+  },
   {
     label: "Discover",
     href: "/discover",
