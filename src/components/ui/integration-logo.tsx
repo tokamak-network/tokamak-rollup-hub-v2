@@ -12,6 +12,9 @@ const INTEGRATION_LOGO_MAP = {
   "thanos-bridge": DefaultLogo,
   "thanos-explorer": DefaultLogo,
   "thanos-stack": DefaultLogo,
+  "monitoring-tool": DefaultLogo,
+  "dao-candidate": DefaultLogo,
+  "uptime-kuma": DefaultLogo,
 };
 
 export const IntegrationLogo: React.FC<IntegrationLogoProps> = ({

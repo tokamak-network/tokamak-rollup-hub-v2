@@ -6,6 +6,7 @@ import CardComponent from "./CardComponent";
 import "react-multi-carousel/lib/styles.css";
 import { useRef } from "react";
 import Link from "next/link";
+
 const responsive = {
   superLargeDesktop: {
     breakpoint: { max: 4000, min: 1920 },
@@ -150,6 +151,39 @@ const RandomNumberGenerationComponent = () => {
   );
 };
 
+const MonitoringToolComponent = () => {
+  return (
+    <CardComponent
+      title={"Monitoring Tool"}
+      description={
+        <>
+          Comprehensive monitoring and analytics for your rollup. Track system performance, set up alerts, and gain insights into your network&apos;s health.
+        </>
+      }
+      featured={true}
+      link={"/discover/monitoring-tool"}
+    />
+  );
+};
+
+const UptimeKumaComponent = () => {
+  return (
+    <CardComponent
+      title={"Uptime Kuma"}
+      description={
+        <>
+          <Text as={"span"} fontWeight={700}>
+            System Pulse
+          </Text>{" "}
+          provides real-time visibility into platform health and service availability. Monitor uptime and get instant notifications.
+        </>
+      }
+      featured={true}
+      link={"/discover/uptime-kuma"}
+    />
+  );
+};
+
 export default function ComponentCarouselComponent() {
   const carouselRef = useRef<Carousel>(null);
   return (
@@ -202,6 +236,8 @@ export default function ComponentCarouselComponent() {
       >
         <ThanosBridgeComponent />
         <BlockExplorerComponent />
+        <MonitoringToolComponent />
+        <UptimeKumaComponent />
         <EarnTONComponent />
         <CrossTradeComponent />
         <RandomNumberGenerationComponent />

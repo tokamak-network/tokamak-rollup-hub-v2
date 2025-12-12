@@ -1,0 +1,59 @@
+/* Announcement Banner Styles */
+
+/* Banner Text Container */
+.banner-text {
+  text-align: center;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: -0.3px;
+  line-height: 1.4;
+}
+
+/* Regular Text (non-gradient) */
+.banner-regular-text {
+  color: rgba(255, 255, 255, 1);
+  font-weight: 600;
+}
+
+/* Animated Gradient Text - Only on important words */
+.animated-gradient-text {
+  background: linear-gradient(
+    90deg,
+    #4ade80 0%,
+    #06b6d4 50%,
+    #4ade80 100%
+  );
+  background-size: 200% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient-shift 12s linear infinite;
+  font-weight: 700;
+}
+
+/* Gradient Animation - Slower */
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 200% 0%;
+  }
+}
+
+/* Responsive adjustments */
+@media (min-width: 768px) {
+  .banner-text {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 640px) {
+  .banner-text {
+    font-size: 13px;
+  }
+
+  .banner-regular-text {
+    display: none;
+  }
+}

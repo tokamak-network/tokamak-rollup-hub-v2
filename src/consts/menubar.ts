@@ -2,6 +2,10 @@ import { GET_HELP_URL, USER_GUIDE_URL } from "./urls";
 
 export const MENUBAR_ITEMS = [
   {
+    label: "About",
+    href: "/about",
+  },
+  {
     label: "Discover",
     href: "/discover",
   },

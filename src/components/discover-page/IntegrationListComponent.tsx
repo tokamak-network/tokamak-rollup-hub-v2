@@ -6,7 +6,7 @@ export const IntegrationListComponent: React.FC<{
   integrations: SubProductDetailType[];
 }> = ({ integrations }) => {
   return (
-    <Flex flexDir={"column"} gap={"39px"} zIndex={100}>
+    <Flex flexDir={"column"} gap={"39px"} zIndex={100} id="integration">
       <Flex flexDir={"column"} gap={"10px"}>
         <Text
           fontSize={"30px"}
