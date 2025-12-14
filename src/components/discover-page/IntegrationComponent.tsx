@@ -26,7 +26,7 @@ export const IntegrationComponent: React.FC<SubProductDetailType> = ({
       minHeight={"320px"}
     >
       <Flex flexDirection={"column"} gap={"15px"} alignItems={"center"}>
-        <IntegrationLogo name={id} />
+        <IntegrationLogo name={id} width={80} height={80} />
         <Flex flexDirection={"column"} alignItems={"center"}>
           <Text
             fontSize={"16px"}

@@ -1,11 +1,12 @@
 "use client";
-import { Box, Flex, List, Text } from "@chakra-ui/react";
+import { Box, Flex, Link, List, Text } from "@chakra-ui/react";
 import { useRouter } from "next/navigation";
 import backIcon from "@/assets/icon/back.svg";
 import Image from "next/image";
 import { SocialButton } from "@/components/ui/social-button";
 import { IntegrationLogo } from "@/components/ui/integration-logo";
 import { useState } from "react";
+import { MONITORING_TOOL_GUIDE_URL, USER_GUIDE_URL } from "@/consts/urls";
 
 const BackButton = () => {
   const router = useRouter();
@@ -108,8 +109,8 @@ export default function MonitoringToolPage() {
                 <Flex alignItems={"center"} gap={"15px"}>
                   <IntegrationLogo
                     name={"monitoring-tool"}
-                    width={45}
-                    height={45}
+                    width={60}
+                    height={60}
                   />
                   <Flex
                     gap={{ base: "6px", md: "12px" }}
@@ -159,8 +160,18 @@ export default function MonitoringToolPage() {
                     <Flex gap={"12px"} flexWrap={"wrap"}>
                       <SocialButton
                         icon={"github"}
-                        label={"Grafana"}
-                        link={"https://grafana.com/oss/grafana/"}
+                        label={"TRH SDK"}
+                        link={"https://github.com/tokamak-network/trh-backend"}
+                      />
+                      <SocialButton
+                        icon={"notion"}
+                        label={"Guide"}
+                        link={MONITORING_TOOL_GUIDE_URL}
+                      />
+                      <SocialButton
+                        icon={"document"}
+                        label={"Docs"}
+                        link={USER_GUIDE_URL}
                       />
                     </Flex>
                   </Flex>
@@ -177,19 +188,60 @@ export default function MonitoringToolPage() {
                   Overview
                 </Text>
                 <Text fontSize={"15px"} fontWeight={400} lineHeight={"18px"}>
-                  The Monitoring Tool provides comprehensive monitoring and analytics for your rollup infrastructure. Built on Grafana, Prometheus, and AlertManager, it offers real-time visibility into system performance, resource utilization, and network health. The integration is deployed automatically via the Thanos SDK and includes auto-generated credentials for immediate access.
+                  The Monitoring Tool keeps your rollup running smoothly by
+                  watching over your system 24/7. It provides real-time
+                  dashboards to visualize your network&apos;s health and sends
+                  instant alerts via Email or Telegram when issues need
+                  attention.
                   <br />
                   <br />
-                  With the Monitoring Tool, operators can:
-                  <br />- Visualize metrics in real-time using Grafana dashboards
-                  <br />- Collect and store performance data with Prometheus
-                  <br />- Configure email alerts via SMTP with customizable receivers
-                  <br />- Set up Telegram notifications using bot tokens for critical alerts
-                  <br />- Track deployment logs and integration status in real-time
-                  <br />- Monitor rollup performance including transaction throughput and block production
+                  Key features:
+                  <br />- Grafana dashboards for real-time metrics visualization
+                  <br />- Email alerts via Gmail SMTP
+                  <br />- Telegram notifications for critical events
+                  <br />- Monitors all Thanos Stack components
+                </Text>
+              </Flex>
+              <Box
+                px={"30px"}
+                bg={
+                  "url(/images/monitoringtool.png) no-repeat center center"
+                }
+                bgSize={"cover"}
+                width={"100%"}
+                borderRadius={"15px"}
+                border={"1px solid #E1E8ED"}
+                backgroundColor={"#0f0f0f"}
+                aspectRatio={"3.3/1"}
+              />
+              <Flex flexDir={"column"} gap={"6px"}>
+                <Text
+                  fontSize={"18px"}
+                  fontWeight={700}
+                  letterSpacing={"-0.54px"}
+                >
+                  What&apos;s Monitored
+                </Text>
+                <Text fontSize={"15px"} fontWeight={400} lineHeight={"18px"}>
+                  The monitoring tool tracks all core components of your Thanos
+                  Stack:
                   <br />
-                  <br />
-                  The Monitoring Tool is deployed asynchronously in the background, with credentials and configuration stored securely in your stack metadata. Alert channels can be configured or disabled at any time through the platform interface.
+                  <br />- <Text as={"span"} fontWeight={700}>op-node</Text> - L2
+                  node synchronization
+                  <br />- <Text as={"span"} fontWeight={700}>op-geth</Text> - EVM
+                  execution client
+                  <br />- <Text as={"span"} fontWeight={700}>op-batcher</Text> -
+                  Batch submission to L1
+                  <br />- <Text as={"span"} fontWeight={700}>op-proposer</Text> -
+                  Block proposal generation
+                  <br />- <Text as={"span"} fontWeight={700}>
+                    Block Explorer & Bridge
+                  </Text>{" "}
+                  - If deployed
+                  <br />- <Text as={"span"} fontWeight={700}>
+                    L1 RPC connectivity
+                  </Text>{" "}
+                  - Connection to Ethereum
                 </Text>
               </Flex>
               <Flex flexDir={"column"} gap={"6px"}>
@@ -201,7 +253,19 @@ export default function MonitoringToolPage() {
                   Deployment Guide
                 </Text>
                 <Text fontSize={"15px"} fontWeight={400} lineHeight={"18px"}>
-                  The Monitoring Tool is deployed via the Thanos SDK as an integration to your deployed stack. During installation, the system automatically sets up Grafana, Prometheus, and AlertManager, generates secure credentials, and stores the Grafana URL in your stack metadata. Operators can configure alert channels (Email/Telegram) either during initial deployment or afterward through the integration settings. The deployment process runs asynchronously in the background with real-time log tracking for monitoring progress.
+                  Install the Monitoring Tool from the Integrations tab after
+                  deploying your Thanos Stack. Configure your Grafana password
+                  and alert channels (Email/Telegram) during setup. For detailed
+                  instructions, see the{" "}
+                  <Link
+                    _hover={{ textDecoration: "underline" }}
+                    color={"#0070ED"}
+                    href={MONITORING_TOOL_GUIDE_URL}
+                    target="_blank"
+                  >
+                    complete guide
+                  </Link>
+                  .
                 </Text>
               </Flex>
             </Flex>
@@ -229,14 +293,15 @@ export default function MonitoringToolPage() {
                   fontWeight={700}
                   lineHeight={"17px"}
                 >
-                  Real-time Metrics
+                  Real-time Dashboards
                   <Text
                     as={"span"}
                     fontSize={"13px"}
                     fontWeight={400}
                     lineHeight={"17px"}
                   >
-                    - Monitor rollup performance with Grafana dashboards
+                    {" "}
+                    - Grafana visualization of system health and metrics
                   </Text>
                 </List.Item>
                 <List.Item
@@ -244,14 +309,15 @@ export default function MonitoringToolPage() {
                   fontWeight={700}
                   lineHeight={"17px"}
                 >
-                  Multi-channel Alerts
+                  Email Alerts
                   <Text
                     as={"span"}
                     fontSize={"13px"}
                     fontWeight={400}
                     lineHeight={"17px"}
                   >
-                    - Email and Telegram notifications for critical events
+                    {" "}
+                    - Gmail SMTP notifications for critical events
                   </Text>
                 </List.Item>
                 <List.Item
@@ -259,14 +325,15 @@ export default function MonitoringToolPage() {
                   fontWeight={700}
                   lineHeight={"17px"}
                 >
-                  Easy Configuration
+                  Telegram Alerts
                   <Text
                     as={"span"}
                     fontSize={"13px"}
                     fontWeight={400}
                     lineHeight={"17px"}
                   >
-                    - Simple SMTP and bot token setup
+                    {" "}
+                    - Instant bot messages when issues arise
                   </Text>
                 </List.Item>
                 <List.Item
@@ -274,14 +341,15 @@ export default function MonitoringToolPage() {
                   fontWeight={700}
                   lineHeight={"17px"}
                 >
-                  No Contract Costs
+                  Easy Setup
                   <Text
                     as={"span"}
                     fontSize={"13px"}
                     fontWeight={400}
                     lineHeight={"17px"}
                   >
-                    - Only operational infrastructure costs
+                    {" "}
+                    - Configure from the platform UI in minutes
                   </Text>
                 </List.Item>
               </List.Root>
@@ -296,8 +364,51 @@ export default function MonitoringToolPage() {
                 Deployment Cost
               </Text>
               <Text fontSize={"14px"} fontWeight={400} lineHeight={"17px"}>
-                The deployment cost of the Monitoring Tool is minimal as it doesn&apos;t require any contract deployment. Operators only need to cover the operational costs for running the monitoring infrastructure on their cloud provider or on-premise servers.
+                No smart contract costs. Only cloud infrastructure costs for
+                running the monitoring stack on your provider.
               </Text>
+            </Flex>
+            <Box height={"1px"} alignSelf={"stretch"} bgColor={"#E1E8ED"} />
+            <Flex flexDir={"column"} gap={"9px"}>
+              <Text
+                fontSize={"15px"}
+                fontWeight={700}
+                letterSpacing={"-0.45px"}
+              >
+                Monitoring Stack
+              </Text>
+              <List.Root ml={"15px"}>
+                <List.Item
+                  fontSize={"13px"}
+                  fontWeight={400}
+                  lineHeight={"17px"}
+                >
+                  <Text as={"span"} fontWeight={700}>
+                    Prometheus
+                  </Text>{" "}
+                  - Metrics collection
+                </List.Item>
+                <List.Item
+                  fontSize={"13px"}
+                  fontWeight={400}
+                  lineHeight={"17px"}
+                >
+                  <Text as={"span"} fontWeight={700}>
+                    Grafana
+                  </Text>{" "}
+                  - Visualization dashboards
+                </List.Item>
+                <List.Item
+                  fontSize={"13px"}
+                  fontWeight={400}
+                  lineHeight={"17px"}
+                >
+                  <Text as={"span"} fontWeight={700}>
+                    AlertManager
+                  </Text>{" "}
+                  - Alert routing
+                </List.Item>
+              </List.Root>
             </Flex>
           </Flex>
         </Flex>

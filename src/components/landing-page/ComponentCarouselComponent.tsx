@@ -48,6 +48,7 @@ const ThanosBridgeComponent = () => {
       }
       featured={true}
       link={"/discover/thanos-bridge"}
+      iconId={"thanos-bridge"}
     />
   );
 };
@@ -59,11 +60,12 @@ const BlockExplorerComponent = () => {
       description={
         <>
           Easily deploy an explorer for your chain with our SDK and make it
-          accessible to your network’s users.
+          accessible to your network's users.
         </>
       }
       featured={true}
       link={"/discover/thanos-explorer"}
+      iconId={"thanos-explorer"}
     />
   );
 };
@@ -162,6 +164,7 @@ const MonitoringToolComponent = () => {
       }
       featured={true}
       link={"/discover/monitoring-tool"}
+      iconId={"monitoring-tool"}
     />
   );
 };
@@ -169,17 +172,18 @@ const MonitoringToolComponent = () => {
 const UptimeKumaComponent = () => {
   return (
     <CardComponent
-      title={"Uptime Kuma"}
+      title={"System Pulse"}
       description={
         <>
           <Text as={"span"} fontWeight={700}>
             System Pulse
           </Text>{" "}
-          provides real-time visibility into platform health and service availability. Monitor uptime and get instant notifications.
+          (powered by Uptime Kuma) provides real-time visibility into platform health and service availability. Monitor uptime and get instant notifications.
         </>
       }
       featured={true}
       link={"/discover/uptime-kuma"}
+      iconId={"uptime-kuma"}
     />
   );
 };

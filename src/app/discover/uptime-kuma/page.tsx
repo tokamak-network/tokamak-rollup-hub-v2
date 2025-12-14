@@ -1,11 +1,14 @@
 "use client";
-import { Box, Flex, List, Text } from "@chakra-ui/react";
+import { Box, Flex, Link, List, Text } from "@chakra-ui/react";
 import { useRouter } from "next/navigation";
 import backIcon from "@/assets/icon/back.svg";
 import Image from "next/image";
 import { SocialButton } from "@/components/ui/social-button";
 import { IntegrationLogo } from "@/components/ui/integration-logo";
 import { useState } from "react";
+import { USER_GUIDE_URL } from "@/consts/urls";
+
+const UPTIME_KUMA_URL = "https://github.com/louislam/uptime-kuma";
 
 const BackButton = () => {
   const router = useRouter();
@@ -59,7 +62,7 @@ const RouteComponent = () => {
         Integrations
       </Text>
       <Text opacity={0.25}>/</Text>
-      <Text color={"#0070ED"}>Uptime Kuma</Text>
+      <Text color={"#0070ED"}>System Pulse</Text>
     </Flex>
   );
 };
@@ -108,8 +111,8 @@ export default function UptimeKumaPage() {
                 <Flex alignItems={"center"} gap={"15px"}>
                   <IntegrationLogo
                     name={"uptime-kuma"}
-                    width={45}
-                    height={45}
+                    width={60}
+                    height={60}
                   />
                   <Flex
                     gap={{ base: "6px", md: "12px" }}
@@ -121,14 +124,14 @@ export default function UptimeKumaPage() {
                       fontWeight={700}
                       letterSpacing={"-1.08px"}
                     >
-                      Uptime Kuma
+                      System Pulse
                     </Text>
                     <Text
                       fontSize={{ base: "13px", md: "14px" }}
                       fontWeight={400}
                       lineHeight={"normal"}
                     >
-                      Monitoring
+                      Powered by Uptime Kuma
                     </Text>
                   </Flex>
                 </Flex>
@@ -159,8 +162,13 @@ export default function UptimeKumaPage() {
                     <Flex gap={"12px"} flexWrap={"wrap"}>
                       <SocialButton
                         icon={"github"}
-                        label={"Github"}
-                        link={"https://github.com/louislam/uptime-kuma"}
+                        label={"GitHub"}
+                        link={UPTIME_KUMA_URL}
+                      />
+                      <SocialButton
+                        icon={"document"}
+                        label={"Docs"}
+                        link={USER_GUIDE_URL}
                       />
                     </Flex>
                   </Flex>
@@ -177,19 +185,56 @@ export default function UptimeKumaPage() {
                   Overview
                 </Text>
                 <Text fontSize={"15px"} fontWeight={400} lineHeight={"18px"}>
-                  System Pulse provides real-time visibility into platform health and service availability across your rollup infrastructure. Built on Uptime Kuma, this self-hosted monitoring solution tracks uptime and performance with instant notifications for downtime or degraded performance. The integration is deployed independently via the Thanos SDK after your stack deployment.
+                  System Pulse (powered by Uptime Kuma) is a self-hosted uptime
+                  monitoring tool that keeps track of your services 24/7. It
+                  provides a simple dashboard to see if your rollup components
+                  are online and alerts you when something goes down.
                   <br />
                   <br />
-                  With System Pulse, operators can:
-                  <br />- Track service availability and platform health in real-time
-                  <br />- Monitor all rollup components including RPC nodes, explorers, and bridges
-                  <br />- Receive instant alerts when services go down
-                  <br />- View historical uptime statistics and identify patterns
-                  <br />- Access the Uptime Kuma dashboard via the stored service URL
-                  <br />- Create status pages to share uptime metrics with your community
+                  Key features:
+                  <br />- Monitor your services with a clean, easy-to-use
+                  dashboard
+                  <br />- Get notified instantly when services go offline
+                  <br />- Create public status pages to share with your
+                  community
+                  <br />- 90+ notification options (Telegram, Discord, Email,
+                  Slack, and more)
+                </Text>
+              </Flex>
+              <Box
+                bg={"url(/images/systempulse.png) no-repeat center center"}
+                bgSize={"cover"}
+                width={"100%"}
+                borderRadius={"15px"}
+                border={"1px solid #E1E8ED"}
+                backgroundColor={"#1a1a2e"}
+                aspectRatio={"3.3/1"}
+              />
+              <Flex flexDir={"column"} gap={"6px"}>
+                <Text
+                  fontSize={"18px"}
+                  fontWeight={700}
+                  letterSpacing={"-0.54px"}
+                >
+                  What You Can Monitor
+                </Text>
+                <Text fontSize={"15px"} fontWeight={400} lineHeight={"18px"}>
+                  Uptime Kuma supports multiple monitoring types:
                   <br />
-                  <br />
-                  System Pulse is deployed asynchronously with the service URL stored in your stack metadata. Deployment logs are tracked in real-time, and the integration can be uninstalled at any time through the platform interface.
+                  <br />- <Text as={"span"} fontWeight={700}>
+                    HTTP/HTTPS
+                  </Text>{" "}
+                  - Check if websites and APIs are responding
+                  <br />- <Text as={"span"} fontWeight={700}>TCP Port</Text> -
+                  Monitor if specific ports are open
+                  <br />- <Text as={"span"} fontWeight={700}>Ping</Text> - Check
+                  if servers are reachable
+                  <br />- <Text as={"span"} fontWeight={700}>DNS</Text> - Verify
+                  DNS records are resolving correctly
+                  <br />- <Text as={"span"} fontWeight={700}>
+                    And more
+                  </Text>{" "}
+                  - Docker containers, databases, game servers, etc.
                 </Text>
               </Flex>
               <Flex flexDir={"column"} gap={"6px"}>
@@ -198,33 +243,23 @@ export default function UptimeKumaPage() {
                   fontWeight={700}
                   letterSpacing={"-0.54px"}
                 >
-                  Deployment Guide
+                  How to Install
                 </Text>
                 <Text fontSize={"15px"} fontWeight={400} lineHeight={"18px"}>
-                  System Pulse is deployed via the Thanos SDK as an integration to your deployed Thanos Stack. The deployment process runs asynchronously in the background, with real-time log tracking for monitoring progress. Once deployed, the service URL is stored in your stack metadata and can be accessed through the platform interface. The integration requires a deployed Thanos Stack and runs independently to monitor all critical rollup components.
-                </Text>
-              </Flex>
-              <Flex flexDir={"column"} gap={"6px"}>
-                <Text
-                  fontSize={"18px"}
-                  fontWeight={700}
-                  letterSpacing={"-0.54px"}
-                >
-                  Features
-                </Text>
-                <Text fontSize={"15px"} fontWeight={400} lineHeight={"18px"}>
-                  Uptime Kuma offers a comprehensive set of features including:
-                  <br />- Multi-protocol monitoring (HTTP, TCP, Ping, DNS, and more)
-                  <br />- 90+ notification integrations
-                  <br />- Beautiful and customizable status pages
-                  <br />- Certificate expiry monitoring
-                  <br />- Proxy support
-                  <br />- 2FA authentication
-                  <br />- Multi-language support
-                  <br />- Mobile-responsive design
-                  <br />
-                  <br />
-                  The tool is actively maintained with regular updates and has a large community of users contributing features and improvements.
+                  Install System Pulse from the Integrations tab after deploying
+                  your Thanos Stack. Once installed, you&apos;ll receive a URL
+                  to access your monitoring dashboard. From there, you can add
+                  monitors for your services and configure notifications
+                  directly in Uptime Kuma. Learn more in the{" "}
+                  <Link
+                    _hover={{ textDecoration: "underline" }}
+                    color={"#0070ED"}
+                    href={UPTIME_KUMA_URL}
+                    target="_blank"
+                  >
+                    official Uptime Kuma documentation
+                  </Link>
+                  .
                 </Text>
               </Flex>
             </Flex>
@@ -252,14 +287,15 @@ export default function UptimeKumaPage() {
                   fontWeight={700}
                   lineHeight={"17px"}
                 >
-                  Real-time Monitoring
+                  Easy Dashboard
                   <Text
                     as={"span"}
                     fontSize={"13px"}
                     fontWeight={400}
                     lineHeight={"17px"}
                   >
-                    - Track service availability and platform health 24/7
+                    {" "}
+                    - Clean interface to monitor all your services
                   </Text>
                 </List.Item>
                 <List.Item
@@ -267,14 +303,31 @@ export default function UptimeKumaPage() {
                   fontWeight={700}
                   lineHeight={"17px"}
                 >
-                  Instant Alerts
+                  90+ Notifications
                   <Text
                     as={"span"}
                     fontSize={"13px"}
                     fontWeight={400}
                     lineHeight={"17px"}
                   >
-                    - Get notified immediately when services go down
+                    {" "}
+                    - Telegram, Discord, Email, Slack, and more
+                  </Text>
+                </List.Item>
+                <List.Item
+                  fontSize={"14px"}
+                  fontWeight={700}
+                  lineHeight={"17px"}
+                >
+                  Status Pages
+                  <Text
+                    as={"span"}
+                    fontSize={"13px"}
+                    fontWeight={400}
+                    lineHeight={"17px"}
+                  >
+                    {" "}
+                    - Create public pages to share uptime with users
                   </Text>
                 </List.Item>
                 <List.Item
@@ -289,22 +342,8 @@ export default function UptimeKumaPage() {
                     fontWeight={400}
                     lineHeight={"17px"}
                   >
-                    - Complete control over your monitoring data
-                  </Text>
-                </List.Item>
-                <List.Item
-                  fontSize={"14px"}
-                  fontWeight={700}
-                  lineHeight={"17px"}
-                >
-                  Simple Setup
-                  <Text
-                    as={"span"}
-                    fontSize={"13px"}
-                    fontWeight={400}
-                    lineHeight={"17px"}
-                  >
-                    - Quick deployment via SDK with minimal configuration
+                    {" "}
+                    - Your data stays on your infrastructure
                   </Text>
                 </List.Item>
               </List.Root>
@@ -319,8 +358,28 @@ export default function UptimeKumaPage() {
                 Deployment Cost
               </Text>
               <Text fontSize={"14px"} fontWeight={400} lineHeight={"17px"}>
-                Uptime Kuma is completely free and open source. The only costs are the minimal operational expenses for hosting the monitoring service on your cloud provider or on-premise server. No contract deployments or licensing fees are required.
+                Free and open source. Only pay for cloud hosting costs to run
+                the service.
               </Text>
+            </Flex>
+            <Box height={"1px"} alignSelf={"stretch"} bgColor={"#E1E8ED"} />
+            <Flex flexDir={"column"} gap={"9px"}>
+              <Text
+                fontSize={"15px"}
+                fontWeight={700}
+                letterSpacing={"-0.45px"}
+              >
+                Requirements
+              </Text>
+              <List.Root ml={"15px"}>
+                <List.Item
+                  fontSize={"13px"}
+                  fontWeight={400}
+                  lineHeight={"17px"}
+                >
+                  Deployed Thanos Stack
+                </List.Item>
+              </List.Root>
             </Flex>
           </Flex>
         </Flex>

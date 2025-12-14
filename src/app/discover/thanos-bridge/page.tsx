@@ -111,8 +111,8 @@ export default function ThanosBridgePage() {
                 <Flex alignItems={"center"} gap={"15px"}>
                   <IntegrationLogo
                     name={"thanos-bridge"}
-                    width={45}
-                    height={45}
+                    width={60}
+                    height={60}
                   />
                   <Flex
                     gap={{ base: "6px", md: "12px" }}

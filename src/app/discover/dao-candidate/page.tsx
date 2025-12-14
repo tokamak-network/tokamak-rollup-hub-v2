@@ -6,6 +6,10 @@ import Image from "next/image";
 import { SocialButton } from "@/components/ui/social-button";
 import { IntegrationLogo } from "@/components/ui/integration-logo";
 import { useState } from "react";
+import { USER_GUIDE_URL } from "@/consts/urls";
+
+const DAO_CANDIDATE_GUIDE_URL =
+  "https://github.com/tokamak-network/papers/blob/master/cryptoeconomics/tokamak-cryptoeconomics-en.md#222-ton-staking-v2";
 
 const BackButton = () => {
   const router = useRouter();
@@ -108,8 +112,8 @@ export default function DaoCandidatePage() {
                 <Flex alignItems={"center"} gap={"15px"}>
                   <IntegrationLogo
                     name={"dao-candidate"}
-                    width={45}
-                    height={45}
+                    width={60}
+                    height={60}
                   />
                   <Flex
                     gap={{ base: "6px", md: "12px" }}
@@ -160,13 +164,18 @@ export default function DaoCandidatePage() {
                     <Flex gap={"12px"} flexWrap={"wrap"}>
                       <SocialButton
                         icon={"github"}
-                        label={"Github"}
+                        label={"GitHub"}
                         link={"https://github.com/tokamak-network/papers"}
                       />
                       <SocialButton
                         icon={"document"}
-                        label={"Document"}
-                        link={"https://github.com/tokamak-network/papers/blob/master/cryptoeconomics/tokamak-cryptoeconomics-en.md#222-ton-staking-v2"}
+                        label={"Guide"}
+                        link={DAO_CANDIDATE_GUIDE_URL}
+                      />
+                      <SocialButton
+                        icon={"document"}
+                        label={"Docs"}
+                        link={USER_GUIDE_URL}
                       />
                     </Flex>
                   </Flex>
@@ -183,17 +192,57 @@ export default function DaoCandidatePage() {
                   Overview
                 </Text>
                 <Text fontSize={"15px"} fontWeight={400} lineHeight={"18px"}>
-                  Register your rollup as a DAO candidate in the Tokamak Network ecosystem to participate in governance and earn seigniorage rewards. The registration requires a minimum stake of 1000.1 TON tokens and automatically provisions a Safe Wallet for multi-signature governance. Rewards are distributed proportionally based on your L2&apos;s transaction volume, total value locked (TVL), and overall contribution to ecosystem growth.
+                  Register your rollup as a DAO candidate in the Tokamak Network
+                  ecosystem. By staking TON tokens, your rollup becomes an
+                  official participant in the network&apos;s governance and
+                  reward system.
                   <br />
                   <br />
-                  By becoming a DAO candidate, operators can:
-                  <br />- Earn TON token rewards proportional to L2 growth and performance metrics
-                  <br />- Vote on Tokamak Network governance proposals via Safe Wallet
-                  <br />- Access ecosystem resources and cross-chain opportunities
-                  <br />- Increase legitimacy and visibility within the Tokamak community
+                  Key benefits:
+                  <br />- Become part of the Tokamak Network ecosystem
+                  <br />- Participate in governance decisions
+                  <br />- Access to ecosystem resources and community
+                  <br />- Increased visibility within the Tokamak community
+                </Text>
+              </Flex>
+              <Box
+                bg={
+                  "url(/images/dao.png) no-repeat center center"
+                }
+                bgSize={"cover"}
+                width={"100%"}
+                borderRadius={"15px"}
+                border={"1px solid #E1E8ED"}
+                backgroundColor={"#f8fafc"}
+                aspectRatio={"3.37/1"}
+              />
+              <Flex flexDir={"column"} gap={"6px"}>
+                <Text
+                  fontSize={"18px"}
+                  fontWeight={700}
+                  letterSpacing={"-0.54px"}
+                >
+                  What You Get
+                </Text>
+                <Text fontSize={"15px"} fontWeight={400} lineHeight={"18px"}>
+                  After registration, you&apos;ll receive:
                   <br />
-                  <br />
-                  The registration process is handled asynchronously via the Thanos SDK. Operators submit their stake amount, memo, and optional name information. The system then verifies the registration, creates a Safe Wallet with configurable signature threshold, and tracks the registration status through the integration lifecycle.
+                  <br />- <Text as={"span"} fontWeight={700}>
+                    Safe Wallet
+                  </Text>{" "}
+                  - A multi-signature wallet for secure governance participation
+                  <br />- <Text as={"span"} fontWeight={700}>
+                    Registration Record
+                  </Text>{" "}
+                  - Your candidate name, staking amount, and registration time
+                  <br />- <Text as={"span"} fontWeight={700}>
+                    Config Address
+                  </Text>{" "}
+                  - Your rollup&apos;s unique configuration address on-chain
+                  <br />- <Text as={"span"} fontWeight={700}>
+                    Wallet Owners
+                  </Text>{" "}
+                  - List of authorized signers for your Safe Wallet
                 </Text>
               </Flex>
               <Flex flexDir={"column"} gap={"6px"}>
@@ -202,38 +251,33 @@ export default function DaoCandidatePage() {
                   fontWeight={700}
                   letterSpacing={"-0.54px"}
                 >
-                  Registration Guide
+                  How to Register
                 </Text>
                 <Text fontSize={"15px"} fontWeight={400} lineHeight={"18px"}>
-                  To register your chain as a DAO candidate, stake a minimum of 1000.1 TON tokens through the platform interface. Provide a memo for reference and optionally a candidate name. The system will automatically verify your registration via the Thanos SDK, provision a Safe Wallet for governance, and store registration details including staking amount, timestamp, and rollup configuration address. Detailed information on the cryptoeconomics model and reward distribution is available in{" "}
+                  Register from the Integrations tab after deploying your Thanos
+                  Stack. You&apos;ll need to provide:
+                  <br />
+                  <br />- <Text as={"span"} fontWeight={700}>
+                    Staking Amount
+                  </Text>{" "}
+                  - Minimum 1000.1 TON tokens
+                  <br />- <Text as={"span"} fontWeight={700}>
+                    Candidate Name
+                  </Text>{" "}
+                  - A name for your rollup in the registry
+                  <br />- <Text as={"span"} fontWeight={700}>Memo</Text> -
+                  Additional information or purpose
+                  <br />
+                  <br />
+                  For detailed information about the cryptoeconomics model, see
+                  the{" "}
                   <Link
                     _hover={{ textDecoration: "underline" }}
                     color={"#0070ED"}
-                    href={"https://github.com/tokamak-network/papers/blob/master/cryptoeconomics/tokamak-cryptoeconomics-en.md#222-ton-staking-v2"}
+                    href={DAO_CANDIDATE_GUIDE_URL}
                     target="_blank"
                   >
-                    the official documentation
-                  </Link>
-                  .
-                </Text>
-              </Flex>
-              <Flex flexDir={"column"} gap={"6px"}>
-                <Text
-                  fontSize={"18px"}
-                  fontWeight={700}
-                  letterSpacing={"-0.54px"}
-                >
-                  Cryptoeconomics Model
-                </Text>
-                <Text fontSize={"15px"} fontWeight={400} lineHeight={"18px"}>
-                  The Tokamak Network uses a sophisticated cryptoeconomics model to distribute seigniorage rewards to DAO candidates. Rewards are calculated based on multiple factors including transaction volume, total value locked, and overall contribution to the ecosystem. This model incentivizes high-quality rollups and sustainable growth. Learn more about the economic model in the{" "}
-                  <Link
-                    _hover={{ textDecoration: "underline" }}
-                    color={"#0070ED"}
-                    href={"https://github.com/tokamak-network/papers/blob/master/cryptoeconomics/tokamak-cryptoeconomics-en.md"}
-                    target="_blank"
-                  >
-                    Tokamak Cryptoeconomics paper
+                    official documentation
                   </Link>
                   .
                 </Text>
@@ -263,14 +307,15 @@ export default function DaoCandidatePage() {
                   fontWeight={700}
                   lineHeight={"17px"}
                 >
-                  Earn TON Rewards
+                  Join Tokamak Ecosystem
                   <Text
                     as={"span"}
                     fontSize={"13px"}
                     fontWeight={400}
                     lineHeight={"17px"}
                   >
-                    - Receive seigniorage rewards proportional to your L2&apos;s growth and performance
+                    {" "}
+                    - Become an official participant in the network
                   </Text>
                 </List.Item>
                 <List.Item
@@ -278,14 +323,15 @@ export default function DaoCandidatePage() {
                   fontWeight={700}
                   lineHeight={"17px"}
                 >
-                  Governance Participation
+                  Safe Wallet
                   <Text
                     as={"span"}
                     fontSize={"13px"}
                     fontWeight={400}
                     lineHeight={"17px"}
                   >
-                    - Vote on Tokamak Network proposals via Safe Wallet
+                    {" "}
+                    - Multi-sig wallet for secure governance
                   </Text>
                 </List.Item>
                 <List.Item
@@ -293,14 +339,15 @@ export default function DaoCandidatePage() {
                   fontWeight={700}
                   lineHeight={"17px"}
                 >
-                  Low Barrier
+                  Simple Registration
                   <Text
                     as={"span"}
                     fontSize={"13px"}
                     fontWeight={400}
                     lineHeight={"17px"}
                   >
-                    - Minimum 1000.1 TON stake to get started
+                    {" "}
+                    - Stake TON, provide name and memo
                   </Text>
                 </List.Item>
                 <List.Item
@@ -308,14 +355,15 @@ export default function DaoCandidatePage() {
                   fontWeight={700}
                   lineHeight={"17px"}
                 >
-                  Growth Incentives
+                  On-chain Record
                   <Text
                     as={"span"}
                     fontSize={"13px"}
                     fontWeight={400}
                     lineHeight={"17px"}
                   >
-                    - Rewards scale with transaction volume and ecosystem contribution
+                    {" "}
+                    - Your registration is recorded on blockchain
                   </Text>
                 </List.Item>
               </List.Root>
@@ -330,8 +378,42 @@ export default function DaoCandidatePage() {
                 Registration Cost
               </Text>
               <Text fontSize={"14px"} fontWeight={400} lineHeight={"17px"}>
-                DAO candidate registration requires a minimum stake of 1000.1 TON tokens. There are no contract deployment fees, but operators should account for the initial TON stake and ongoing operational costs of maintaining governance participation.
+                Minimum stake of 1000.1 TON tokens required. No additional
+                contract deployment fees.
               </Text>
+            </Flex>
+            <Box height={"1px"} alignSelf={"stretch"} bgColor={"#E1E8ED"} />
+            <Flex flexDir={"column"} gap={"9px"}>
+              <Text
+                fontSize={"15px"}
+                fontWeight={700}
+                letterSpacing={"-0.45px"}
+              >
+                Requirements
+              </Text>
+              <List.Root ml={"15px"}>
+                <List.Item
+                  fontSize={"13px"}
+                  fontWeight={400}
+                  lineHeight={"17px"}
+                >
+                  Deployed Thanos Stack
+                </List.Item>
+                <List.Item
+                  fontSize={"13px"}
+                  fontWeight={400}
+                  lineHeight={"17px"}
+                >
+                  1000.1+ TON tokens
+                </List.Item>
+                <List.Item
+                  fontSize={"13px"}
+                  fontWeight={400}
+                  lineHeight={"17px"}
+                >
+                  Candidate name & memo
+                </List.Item>
+              </List.Root>
             </Flex>
           </Flex>
         </Flex>

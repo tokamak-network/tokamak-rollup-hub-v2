@@ -30,14 +30,14 @@ export default function AboutPage() {
       />
       <Flex
         flexDir={"column"}
-        gap={"60px"}
+        gap={"40px"}
         maxWidth={"1000px"}
         mx={"auto"}
         zIndex={100}
         position={"relative"}
       >
-        {/* Hero Section */}
-        <Flex flexDir={"column"} gap={"18px"} alignItems={"center"}>
+        {/* Hero Section with Image */}
+        <Flex flexDir={"column"} alignItems={"center"}>
           <Flex alignItems={"center"} gap={{ base: "10px", md: "15px" }} flexWrap={"wrap"} justifyContent={"center"}>
             <Text
               fontSize={{ base: "36px", md: "48px", lg: "54px" }}
@@ -82,6 +82,15 @@ export default function AboutPage() {
           >
             A comprehensive platform for deploying and managing Optimistic Rollup chains on the Thanos stack
           </Text>
+
+          {/* Hero Image */}
+          <Image
+            src="/images/about-hero.png"
+            alt="TRH Platform - One-click deploy connecting to all integrations"
+            width={3328}
+            height={1398}
+            style={{ maxWidth: "700px", width: "100%", height: "auto", marginTop: "10px", marginBottom: "-40px" }}
+          />
         </Flex>
 
         {/* Platform Overview Section */}
