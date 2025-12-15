@@ -226,7 +226,9 @@ export default function AnnouncementBanner() {
               <Flex justify="center">
                 <Box
                   as="a"
-                  href="/discover"
+                  href="https://docs.tokamak.network/home/~/changes/151/service-guide/tokamak-rollup-hub"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="typewriter-link"
                   color="#333"
                   fontSize="17px"
