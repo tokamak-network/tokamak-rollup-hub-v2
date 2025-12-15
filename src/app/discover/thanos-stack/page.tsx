@@ -144,15 +144,15 @@ export default function ThanosStackPage() {
                           Created by
                         </Text>
                         <Text fontSize={"13px"} fontWeight={700}>
-                          TRH
+                          Tokamak Rollup Hub Team
                         </Text>
                       </Flex>
                       <Flex flexDir={"column"} gap={"3px"}>
                         <Text fontSize={"12px"} fontWeight={400}>
-                          Released on
+                          Launching on
                         </Text>
                         <Text fontSize={"13px"} fontWeight={700}>
-                          6 February 2025
+                          17 December 2026
                         </Text>
                       </Flex>
                     </Flex>
@@ -161,7 +161,7 @@ export default function ThanosStackPage() {
                         icon={"github"}
                         label={"Github"}
                         link={
-                          "https://github.com/tokamak-network/tokamak-thanos-stack"
+                          "https://github.com/tokamak-network/tokamak-thanos"
                         }
                       />
                       <SocialButton
@@ -236,7 +236,7 @@ export default function ThanosStackPage() {
                     href={THANOS_STACK_DEPLOYMENT_GUIDE_URL}
                     target="_blank"
                   >
-                    this guide
+                    This Guide
                   </Link>
                   . For the infrastructure of the testnet and mainnet
                   deployment, we currently offer support for AWS in our
@@ -263,7 +263,7 @@ export default function ThanosStackPage() {
                     href={"https://github.com/tokamak-network/tokamak-thanos"}
                     target="_blank"
                   >
-                    Github
+                    GitHub
                   </Link>
                   .
                 </Text>
@@ -416,16 +416,16 @@ export default function ThanosStackPage() {
                   fontWeight={700}
                   lineHeight={"17px"}
                 >
-                  Earn TON as rewards (Coming Soon)
+                  Staking / DAO Candidate Registration
                   <Text
                     as={"span"}
                     fontSize={"13px"}
                     fontWeight={400}
                     lineHeight={"17px"}
                   >
-                    - Register your chain as a DAO candidate in the Tokamak
-                    Network ecosystem to earn seigniorage rewards proportional
-                    to the L2 growth.
+                    - Register your chain as a staking and DAO candidate in
+                    Tokamak Staking v2 to receive a share of the distributed
+                    seigniorage rewards.
                   </Text>
                 </List.Item>
               </List.Root>

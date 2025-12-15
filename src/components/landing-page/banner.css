@@ -9,13 +9,28 @@
   line-height: 1.4;
 }
 
+.banner-cta-text {
+  color: #4ade80;
+  font-weight: 600;
+  margin-left: 8px;
+  padding: 2px 10px;
+  background: rgba(74, 222, 128, 0.1);
+  border-radius: 12px;
+  font-size: 12px;
+  transition: all 0.2s ease;
+}
+
+.banner-cta-text:hover {
+  background: rgba(74, 222, 128, 0.2);
+}
+
 /* Regular Text (non-gradient) */
 .banner-regular-text {
   color: rgba(255, 255, 255, 1);
   font-weight: 600;
 }
 
-/* Animated Gradient Text - Only on important words */
+/* Animated Gradient Text */
 .animated-gradient-text {
   background: linear-gradient(
     90deg,
@@ -31,13 +46,98 @@
   font-weight: 700;
 }
 
-/* Gradient Animation - Slower */
+/* Gradient Animation */
 @keyframes gradient-shift {
   0% {
     background-position: 0% 0%;
   }
   100% {
     background-position: 200% 0%;
+  }
+}
+
+/* Modal Backdrop */
+.modal-backdrop {
+  animation: backdrop-fade 0.15s ease-out;
+}
+
+@keyframes backdrop-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Announcement Modal Styles */
+.announcement-modal {
+  animation: modal-appear 0.25s ease-out;
+}
+
+@keyframes modal-appear {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Typewriter Animation for Get Started Link */
+.typewriter-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.typewriter-wrapper {
+  display: inline-block;
+  max-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  vertical-align: middle;
+  animation: typewriter 2.5s linear forwards;
+  animation-delay: 0.3s;
+}
+
+@keyframes typewriter {
+  0% {
+    max-width: 0;
+  }
+  100% {
+    max-width: 310px;
+  }
+}
+
+.typewriter-arrow {
+  opacity: 0;
+  display: inline-flex;
+  vertical-align: middle;
+  animation: fadeInArrow 0.15s ease-out forwards;
+  animation-delay: 2.8s;
+}
+
+@keyframes fadeInArrow {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Pulse animation for live dot */
+.pulse-dot {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+    box-shadow: 0 0 0 0 rgba(0, 212, 170, 0.4);
+  }
+  50% {
+    opacity: 0.8;
+    box-shadow: 0 0 0 8px rgba(0, 212, 170, 0);
   }
 }
 
@@ -55,5 +155,11 @@
 
   .banner-regular-text {
     display: none;
+  }
+
+  .banner-cta-text {
+    margin-left: 6px;
+    padding: 2px 8px;
+    font-size: 11px;
   }
 }

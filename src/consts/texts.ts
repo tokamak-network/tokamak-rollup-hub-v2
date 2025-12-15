@@ -54,9 +54,9 @@ export const COMPONENT_LIST = [
       "Easily deploy an explorer for your chain with our SDK and make it accessible to your network’s users",
   },
   {
-    title: "Earn TON as Reward (Coming Soon)",
-    featured: false,
+    title: "Staking / DAO Candidate Registration",
+    featured: true,
     description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      "Register your chain as a DAO candidate in the Tokamak Network ecosystem to earn seigniorage rewards proportional to the L2 growth.",
   },
 ];

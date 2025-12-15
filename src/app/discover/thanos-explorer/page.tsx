@@ -144,24 +144,17 @@ export default function ThanosExplorerPage() {
                           Created by
                         </Text>
                         <Text fontSize={"13px"} fontWeight={700}>
-                          TRH
+                          Tokamak Rollup Hub Team
                         </Text>
                       </Flex>
                       <Flex flexDir={"column"} gap={"3px"}>
                         <Text fontSize={"12px"} fontWeight={400}>
-                          Released on
+                          Launching on
                         </Text>
                         <Text fontSize={"13px"} fontWeight={700}>
-                          22 January 2025
+                          17 December 2026
                         </Text>
                       </Flex>
-                    </Flex>
-                    <Flex gap={"12px"} flexWrap={"wrap"}>
-                      <SocialButton
-                        icon={"github"}
-                        label={"Github"}
-                        link={"https://github.com/blockscout/blockscout"}
-                      />
                     </Flex>
                   </Flex>
                 </Flex>
@@ -232,7 +225,7 @@ export default function ThanosExplorerPage() {
                     href={THANOS_EXPLORER_DEPLOYMENT_GUIDE_URL}
                     target="_blank"
                   >
-                    this guide
+                    This Guide
                   </Link>
                   . It&apos;s important to note that it is only deployable after
                   the deployment of the Thanos Stack.

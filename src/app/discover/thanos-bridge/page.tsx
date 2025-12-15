@@ -148,15 +148,15 @@ export default function ThanosBridgePage() {
                           Created by
                         </Text>
                         <Text fontSize={"13px"} fontWeight={700}>
-                          TRH
+                          Tokamak Rollup Hub Team
                         </Text>
                       </Flex>
                       <Flex flexDir={"column"} gap={"3px"}>
                         <Text fontSize={"12px"} fontWeight={400}>
-                          Released on
+                          Launching on
                         </Text>
                         <Text fontSize={"13px"} fontWeight={700}>
-                          22 January 2025
+                          17 December 2026
                         </Text>
                       </Flex>
                     </Flex>
@@ -229,7 +229,7 @@ export default function ThanosBridgePage() {
                     href={THANOS_BRIDGE_DEPLOYMENT_GUIDE_URL}
                     target="_blank"
                   >
-                    this guide
+                    This Guide
                   </Link>
                   .
                 </Text>

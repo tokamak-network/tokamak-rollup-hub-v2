@@ -13,4 +13,6 @@ export const THANOS_BRIDGE_DEPLOYMENT_GUIDE_URL =
 export const THANOS_EXPLORER_DEPLOYMENT_GUIDE_URL =
   "https://docs.tokamak.network/home/service-guide/rollup-hub/rollup-hub-sdkv1/rollup-stack/thanos-stack/integrations/block-explorer";
 export const MONITORING_TOOL_GUIDE_URL =
-  "https://tokamak.notion.site/Monitoring-plugin-Guide-22bd96a400a380469c14d639a8fc5f9f";
+  "https://tokamak.notion.site/Tokamak-Rollup-Hub-Platform-Monitoring-plugin-Guide-2cad96a400a3803ea1e4c4225d49af43";
+export const REWARD_BOUNTY_URL =
+  "https://www.notion.so/tokamak/Tokamak-Rollup-Hub-Platform-Reward-and-Bug-Bounty-Program-2c6d96a400a3803786a4cfd74ae44a89";

@@ -11,6 +11,21 @@ import { USER_GUIDE_URL } from "@/consts/urls";
 const DAO_CANDIDATE_GUIDE_URL =
   "https://github.com/tokamak-network/papers/blob/master/cryptoeconomics/tokamak-cryptoeconomics-en.md#222-ton-staking-v2";
 
+const SEIGNIORAGE_URL =
+  "https://github.com/tokamak-network/papers/blob/master/cryptoeconomics/tokamak-cryptoeconomics-en.md#seigniorage-distribution";
+
+const STAKING_DASHBOARD_URL = "https://sepolia.staking.tokamak.network/staking";
+
+const METADATA_GUIDE_URL = "https://docs.tokamak.network";
+
+const METADATA_REPO_URL = "https://github.com/tokamak-network/tokamak-rollup-metadata-repository";
+
+const AUDIT_REPORTS = {
+  hacken: "https://drive.google.com/file/d/16C6S41ofv6AZQGMga7xPNBHj-FYCyTYt/view",
+  nethermind: "https://drive.google.com/file/d/15CZFQXpL6vgQOo7j_MYZo2qQg5-cP3rE/view",
+  independent: "https://drive.google.com/file/d/1LXojKxWYb3vaVcewxcnGzNOZ9rPEQS_O/view",
+};
+
 const BackButton = () => {
   const router = useRouter();
   const [isHover, setIsHover] = useState(false);
@@ -149,24 +164,19 @@ export default function DaoCandidatePage() {
                           Created by
                         </Text>
                         <Text fontSize={"13px"} fontWeight={700}>
-                          Tokamak Network
+                          Tokamak Rollup Hub Team
                         </Text>
                       </Flex>
                       <Flex flexDir={"column"} gap={"3px"}>
                         <Text fontSize={"12px"} fontWeight={400}>
-                          Released on
+                          Launching on
                         </Text>
                         <Text fontSize={"13px"} fontWeight={700}>
-                          22 January 2025
+                          17 December 2026
                         </Text>
                       </Flex>
                     </Flex>
                     <Flex gap={"12px"} flexWrap={"wrap"}>
-                      <SocialButton
-                        icon={"github"}
-                        label={"GitHub"}
-                        link={"https://github.com/tokamak-network/papers"}
-                      />
                       <SocialButton
                         icon={"document"}
                         label={"Guide"}
@@ -202,20 +212,46 @@ export default function DaoCandidatePage() {
                   <br />- Become part of the Tokamak Network ecosystem
                   <br />- Participate in governance decisions
                   <br />- Access to ecosystem resources and community
-                  <br />- Increased visibility within the Tokamak community
+                  <br />- Authorized to receive distribution of TON seigniorage according to activation of rollup (See{" "}
+                  <Link
+                    color={"#0070ED"}
+                    href={SEIGNIORAGE_URL}
+                    target="_blank"
+                    _hover={{ textDecoration: "underline" }}
+                  >
+                    distribution criteria
+                  </Link>
+                  )
                 </Text>
               </Flex>
-              <Box
-                bg={
-                  "url(/images/dao.png) no-repeat center center"
-                }
-                bgSize={"cover"}
-                width={"100%"}
-                borderRadius={"15px"}
-                border={"1px solid #E1E8ED"}
-                backgroundColor={"#f8fafc"}
-                aspectRatio={"3.37/1"}
-              />
+              <Flex gap={"15px"} flexDir={"column"} alignItems={"center"}>
+                <Box
+                  borderRadius={"15px"}
+                  border={"1px solid #E1E8ED"}
+                  backgroundColor={"#f8fafc"}
+                  overflow={"hidden"}
+                  w={"80%"}
+                >
+                  <img
+                    src="/images/dao1.png"
+                    alt="DAO Registration"
+                    style={{ width: "100%", height: "auto", display: "block" }}
+                  />
+                </Box>
+                <Box
+                  borderRadius={"15px"}
+                  border={"1px solid #E1E8ED"}
+                  backgroundColor={"#f8fafc"}
+                  overflow={"hidden"}
+                  w={"80%"}
+                >
+                  <img
+                    src="/images/dao2.jpg"
+                    alt="DAO Staking"
+                    style={{ width: "100%", height: "auto", display: "block" }}
+                  />
+                </Box>
+              </Flex>
               <Flex flexDir={"column"} gap={"6px"}>
                 <Text
                   fontSize={"18px"}
@@ -234,15 +270,19 @@ export default function DaoCandidatePage() {
                   <br />- <Text as={"span"} fontWeight={700}>
                     Registration Record
                   </Text>{" "}
-                  - Your candidate name, staking amount, and registration time
+                  - Information for governance participation and seigniorage distribution is available on the{" "}
+                  <Link
+                    color={"#0070ED"}
+                    href={STAKING_DASHBOARD_URL}
+                    target="_blank"
+                    _hover={{ textDecoration: "underline" }}
+                  >
+                    Staking Dashboard
+                  </Link>
                   <br />- <Text as={"span"} fontWeight={700}>
-                    Config Address
+                    Seigniorage Distribution
                   </Text>{" "}
-                  - Your rollup&apos;s unique configuration address on-chain
-                  <br />- <Text as={"span"} fontWeight={700}>
-                    Wallet Owners
-                  </Text>{" "}
-                  - List of authorized signers for your Safe Wallet
+                  - Automatically receives TON seigniorage according to distribution logic
                 </Text>
               </Flex>
               <Flex flexDir={"column"} gap={"6px"}>
@@ -251,33 +291,89 @@ export default function DaoCandidatePage() {
                   fontWeight={700}
                   letterSpacing={"-0.54px"}
                 >
-                  How to Register
+                  What You Need
                 </Text>
                 <Text fontSize={"15px"} fontWeight={400} lineHeight={"18px"}>
-                  Register from the Integrations tab after deploying your Thanos
-                  Stack. You&apos;ll need to provide:
+                  To register your rollup as a DAO candidate, you&apos;ll need:
                   <br />
                   <br />- <Text as={"span"} fontWeight={700}>
                     Staking Amount
                   </Text>{" "}
-                  - Minimum 1000.1 TON tokens
+                  - Minimum 1000.1 TON (required)
                   <br />- <Text as={"span"} fontWeight={700}>
-                    Candidate Name
+                    Memo
                   </Text>{" "}
-                  - A name for your rollup in the registry
-                  <br />- <Text as={"span"} fontWeight={700}>Memo</Text> -
-                  Additional information or purpose
-                  <br />
-                  <br />
-                  For detailed information about the cryptoeconomics model, see
-                  the{" "}
+                  - A memo for your rollup (required)
+                  <br />- <Text as={"span"} fontWeight={700}>
+                    Name
+                  </Text>{" "}
+                  - A name for your rollup (optional)
+                </Text>
+              </Flex>
+              <Flex flexDir={"column"} gap={"6px"}>
+                <Text
+                  fontSize={"18px"}
+                  fontWeight={700}
+                  letterSpacing={"-0.54px"}
+                >
+                  L1 Verification Contract
+                </Text>
+                <Text fontSize={"15px"} fontWeight={400} lineHeight={"18px"}>
+                  The TRH platform includes an L1 verification contract that validates the chain stack and registers operators. This contract has been audited by Nethermind, Hacken and an independent auditor (Carl). View the audit reports in the sidebar.
+                </Text>
+              </Flex>
+              <Flex flexDir={"column"} gap={"6px"}>
+                <Text
+                  fontSize={"18px"}
+                  fontWeight={700}
+                  letterSpacing={"-0.54px"}
+                >
+                  Additional Steps to Build Community Trust
+                </Text>
+                <Text fontSize={"15px"} fontWeight={400} lineHeight={"18px"} mt={"6px"}>
+                  <Text as={"span"} fontWeight={700}>
+                    Operator Metadata Registration
+                  </Text>{" "}
+                  (
                   <Link
-                    _hover={{ textDecoration: "underline" }}
                     color={"#0070ED"}
-                    href={DAO_CANDIDATE_GUIDE_URL}
+                    href={METADATA_GUIDE_URL}
                     target="_blank"
+                    _hover={{ textDecoration: "underline" }}
                   >
-                    official documentation
+                    Guide
+                  </Link>
+                  )
+                  <br />
+                  Operators can register metadata to provide additional transparency, including:
+                  <br />- Official website information
+                  <br />- Support and contact URLs
+                  <br />- Documentation links
+                  <br />- Community and social links
+                </Text>
+                <Text fontSize={"15px"} fontWeight={400} lineHeight={"18px"} mt={"15px"}>
+                  <Text as={"span"} fontWeight={700}>
+                    Metadata Verification via Tokamak Network
+                  </Text>
+                  <br />
+                  Tokamak Network provides a metadata checker dApp that:
+                  <br />- Verifies chain stack information
+                  <br />- Allows verified metadata to be shared with users
+                  <br />- Helps improve transparency and trust within the community
+                </Text>
+                <Text fontSize={"15px"} fontWeight={400} lineHeight={"18px"} mt={"15px"}>
+                  <Text as={"span"} fontWeight={700}>
+                    Prerequisite:
+                  </Text>
+                  <br />
+                  Operators must provide a GitHub Personal Access Token (PAT) to push metadata to the{" "}
+                  <Link
+                    color={"#0070ED"}
+                    href={METADATA_REPO_URL}
+                    target="_blank"
+                    _hover={{ textDecoration: "underline" }}
+                  >
+                    Tokamak Rollup Metadata Repository
                   </Link>
                   .
                 </Text>
@@ -299,74 +395,34 @@ export default function DaoCandidatePage() {
                 fontWeight={700}
                 letterSpacing={"-0.45px"}
               >
-                Highlights
+                Quick Info
               </Text>
-              <List.Root ml={"15px"}>
-                <List.Item
-                  fontSize={"14px"}
-                  fontWeight={700}
-                  lineHeight={"17px"}
-                >
-                  Join Tokamak Ecosystem
-                  <Text
-                    as={"span"}
-                    fontSize={"13px"}
-                    fontWeight={400}
-                    lineHeight={"17px"}
-                  >
-                    {" "}
-                    - Become an official participant in the network
+              <Flex flexDir={"column"} gap={"12px"}>
+                <Flex justifyContent={"space-between"} alignItems={"center"}>
+                  <Text fontSize={"13px"} fontWeight={400} color={"#666"}>
+                    Min. Stake
                   </Text>
-                </List.Item>
-                <List.Item
-                  fontSize={"14px"}
-                  fontWeight={700}
-                  lineHeight={"17px"}
-                >
-                  Safe Wallet
-                  <Text
-                    as={"span"}
-                    fontSize={"13px"}
-                    fontWeight={400}
-                    lineHeight={"17px"}
-                  >
-                    {" "}
-                    - Multi-sig wallet for secure governance
+                  <Text fontSize={"13px"} fontWeight={600}>
+                    1000.1 TON
                   </Text>
-                </List.Item>
-                <List.Item
-                  fontSize={"14px"}
-                  fontWeight={700}
-                  lineHeight={"17px"}
-                >
-                  Simple Registration
-                  <Text
-                    as={"span"}
-                    fontSize={"13px"}
-                    fontWeight={400}
-                    lineHeight={"17px"}
-                  >
-                    {" "}
-                    - Stake TON, provide name and memo
+                </Flex>
+                <Flex justifyContent={"space-between"} alignItems={"center"}>
+                  <Text fontSize={"13px"} fontWeight={400} color={"#666"}>
+                    Contract Fee
                   </Text>
-                </List.Item>
-                <List.Item
-                  fontSize={"14px"}
-                  fontWeight={700}
-                  lineHeight={"17px"}
-                >
-                  On-chain Record
-                  <Text
-                    as={"span"}
-                    fontSize={"13px"}
-                    fontWeight={400}
-                    lineHeight={"17px"}
-                  >
-                    {" "}
-                    - Your registration is recorded on blockchain
+                  <Text fontSize={"13px"} fontWeight={600}>
+                    None
                   </Text>
-                </List.Item>
-              </List.Root>
+                </Flex>
+                <Flex justifyContent={"space-between"} alignItems={"center"}>
+                  <Text fontSize={"13px"} fontWeight={400} color={"#666"}>
+                    Prerequisite
+                  </Text>
+                  <Text fontSize={"13px"} fontWeight={600}>
+                    Thanos Stack
+                  </Text>
+                </Flex>
+              </Flex>
             </Flex>
             <Box height={"1px"} alignSelf={"stretch"} bgColor={"#E1E8ED"} />
             <Flex flexDir={"column"} gap={"9px"}>
@@ -375,12 +431,30 @@ export default function DaoCandidatePage() {
                 fontWeight={700}
                 letterSpacing={"-0.45px"}
               >
-                Registration Cost
+                Security Audits
               </Text>
-              <Text fontSize={"14px"} fontWeight={400} lineHeight={"17px"}>
-                Minimum stake of 1000.1 TON tokens required. No additional
-                contract deployment fees.
+              <Text fontSize={"12px"} fontWeight={400} color={"#666"} lineHeight={"16px"}>
+                L1 Verification Contract audited by:
               </Text>
+              <Flex flexDir={"column"} gap={"8px"} mt={"4px"}>
+                <AuditCard
+                  name="Hacken"
+                  subtitle="Security Audit Firm"
+                  logo="/icon/hacken.png"
+                  link={AUDIT_REPORTS.hacken}
+                />
+                <AuditCard
+                  name="Nethermind Security"
+                  subtitle="Security Audit Firm"
+                  logo="/icon/nethermindsecurity.png"
+                  link={AUDIT_REPORTS.nethermind}
+                />
+                <AuditCard
+                  name="Carl Farterson"
+                  subtitle="Independent Auditor"
+                  link={AUDIT_REPORTS.independent}
+                />
+              </Flex>
             </Flex>
             <Box height={"1px"} alignSelf={"stretch"} bgColor={"#E1E8ED"} />
             <Flex flexDir={"column"} gap={"9px"}>
@@ -389,35 +463,103 @@ export default function DaoCandidatePage() {
                 fontWeight={700}
                 letterSpacing={"-0.45px"}
               >
-                Requirements
+                Resources
               </Text>
-              <List.Root ml={"15px"}>
-                <List.Item
+              <Flex flexDir={"column"} gap={"6px"}>
+                <Link
+                  href={STAKING_DASHBOARD_URL}
+                  target="_blank"
                   fontSize={"13px"}
-                  fontWeight={400}
-                  lineHeight={"17px"}
+                  color={"#0070ED"}
+                  _hover={{ textDecoration: "underline" }}
                 >
-                  Deployed Thanos Stack
-                </List.Item>
-                <List.Item
+                  Staking Dashboard
+                </Link>
+                <Link
+                  href={SEIGNIORAGE_URL}
+                  target="_blank"
                   fontSize={"13px"}
-                  fontWeight={400}
-                  lineHeight={"17px"}
+                  color={"#0070ED"}
+                  _hover={{ textDecoration: "underline" }}
                 >
-                  1000.1+ TON tokens
-                </List.Item>
-                <List.Item
+                  Seigniorage Distribution
+                </Link>
+                <Link
+                  href={METADATA_REPO_URL}
+                  target="_blank"
                   fontSize={"13px"}
-                  fontWeight={400}
-                  lineHeight={"17px"}
+                  color={"#0070ED"}
+                  _hover={{ textDecoration: "underline" }}
                 >
-                  Candidate name & memo
-                </List.Item>
-              </List.Root>
+                  Metadata Repository
+                </Link>
+              </Flex>
             </Flex>
           </Flex>
         </Flex>
       </Flex>
+    </Box>
+  );
+}
+
+function AuditCard({ name, subtitle, logo, link }: { name: string; subtitle?: string; logo?: string; link: string }) {
+  return (
+    <Box
+      as="a"
+      href={link}
+      target="_blank"
+      bg="#FFF"
+      border="1px solid #E1E8ED"
+      borderRadius="12px"
+      px={4}
+      py={4}
+      cursor="pointer"
+      _hover={{ borderColor: "#0070ED", bg: "#F8FAFF" }}
+      transition="all 0.2s"
+      display="flex"
+      alignItems="center"
+      w="100%"
+      gap={3}
+    >
+      <Box
+        w="40px"
+        h="40px"
+        minW="40px"
+        borderRadius="10px"
+        border="1px solid #E1E8ED"
+        bg="#FFF"
+        overflow="hidden"
+        flexShrink={0}
+        display="flex"
+        alignItems="center"
+        justifyContent="center"
+      >
+        {logo ? (
+          <img
+            src={logo}
+            alt={name}
+            style={{ width: "40px", height: "40px", objectFit: "cover" }}
+          />
+        ) : (
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#333" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+            <circle cx="12" cy="8" r="4"/>
+            <path d="M4 21v-2a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v2"/>
+          </svg>
+        )}
+      </Box>
+      <Flex flexDir="column" flex={1} overflow="hidden">
+        <Text fontSize="13px" fontWeight={600} color="#111" isTruncated>
+          {name}
+        </Text>
+        {subtitle && (
+          <Text fontSize="11px" color="#888" isTruncated>
+            {subtitle}
+          </Text>
+        )}
+      </Flex>
+      <Text fontSize="11px" color="#0070ED" fontWeight={600} flexShrink={0}>
+        View
+      </Text>
     </Box>
   );
 }

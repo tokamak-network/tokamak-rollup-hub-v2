@@ -145,24 +145,19 @@ export default function MonitoringToolPage() {
                           Created by
                         </Text>
                         <Text fontSize={"13px"} fontWeight={700}>
-                          TRH Team
+                          Tokamak Rollup Hub Team
                         </Text>
                       </Flex>
                       <Flex flexDir={"column"} gap={"3px"}>
                         <Text fontSize={"12px"} fontWeight={400}>
-                          Released on
+                          Launching on
                         </Text>
                         <Text fontSize={"13px"} fontWeight={700}>
-                          22 January 2025
+                          17 December 2026
                         </Text>
                       </Flex>
                     </Flex>
                     <Flex gap={"12px"} flexWrap={"wrap"}>
-                      <SocialButton
-                        icon={"github"}
-                        label={"TRH SDK"}
-                        link={"https://github.com/tokamak-network/trh-backend"}
-                      />
                       <SocialButton
                         icon={"notion"}
                         label={"Guide"}
@@ -188,32 +183,69 @@ export default function MonitoringToolPage() {
                   Overview
                 </Text>
                 <Text fontSize={"15px"} fontWeight={400} lineHeight={"18px"}>
-                  The Monitoring Tool keeps your rollup running smoothly by
-                  watching over your system 24/7. It provides real-time
-                  dashboards to visualize your network&apos;s health and sends
-                  instant alerts via Email or Telegram when issues need
-                  attention.
+                  <Text as={"span"} fontWeight={700}>24/7 System Watch</Text> - Monitors the health of the Thanos Stack around the clock.
                   <br />
+                  <Text as={"span"} fontWeight={700}>Visualization & Alerts</Text> - Provides real-time dashboards and instant notifications for critical issues.
                   <br />
-                  Key features:
-                  <br />- Grafana dashboards for real-time metrics visualization
-                  <br />- Email alerts via Gmail SMTP
-                  <br />- Telegram notifications for critical events
-                  <br />- Monitors all Thanos Stack components
+                  <Text as={"span"} fontWeight={700}>Log Management</Text> - Centralized log collection for efficient troubleshooting.
                 </Text>
               </Flex>
-              <Box
-                px={"30px"}
-                bg={
-                  "url(/images/monitoringtool.png) no-repeat center center"
-                }
-                bgSize={"cover"}
-                width={"100%"}
-                borderRadius={"15px"}
-                border={"1px solid #E1E8ED"}
-                backgroundColor={"#0f0f0f"}
-                aspectRatio={"3.3/1"}
-              />
+              <Flex flexDir={"column"} gap={"6px"}>
+                <Text
+                  fontSize={"18px"}
+                  fontWeight={700}
+                  letterSpacing={"-0.54px"}
+                >
+                  Key Features
+                </Text>
+                <Text fontSize={"15px"} fontWeight={400} lineHeight={"18px"}>
+                  - <Text as={"span"} fontWeight={700}>Grafana Dashboards</Text> - Visualize real-time metrics for network health
+                  <br />- <Text as={"span"} fontWeight={700}>Multi-channel Alerts</Text> - Instant notifications via Email (Gmail SMTP) and Telegram
+                  <br />- <Text as={"span"} fontWeight={700}>Log Collection</Text> - Aggregates logs from all components for easy analysis
+                  <br />- <Text as={"span"} fontWeight={700}>Customizable Monitoring</Text> - Tracks all Thanos Stack components and system resources
+                </Text>
+              </Flex>
+              <Flex gap={"15px"} flexDir={"column"} alignItems={"center"}>
+                <Box
+                  borderRadius={"6px"}
+                  border={"1px solid #E1E8ED"}
+                  backgroundColor={"#0f0f0f"}
+                  overflow={"hidden"}
+                  w={"100%"}
+                >
+                  <img
+                    src="/images/mt1.png"
+                    alt="Monitoring Dashboard 1"
+                    style={{ width: "100%", height: "auto", display: "block" }}
+                  />
+                </Box>
+                <Box
+                  borderRadius={"6px"}
+                  border={"1px solid #E1E8ED"}
+                  backgroundColor={"#0f0f0f"}
+                  overflow={"hidden"}
+                  w={"100%"}
+                >
+                  <img
+                    src="/images/mt2.png"
+                    alt="Monitoring Dashboard 2"
+                    style={{ width: "100%", height: "auto", display: "block" }}
+                  />
+                </Box>
+                <Box
+                  borderRadius={"6px"}
+                  border={"1px solid #E1E8ED"}
+                  backgroundColor={"#0f0f0f"}
+                  overflow={"hidden"}
+                  w={"100%"}
+                >
+                  <img
+                    src="/images/mt3.png"
+                    alt="Monitoring Dashboard 3"
+                    style={{ width: "100%", height: "auto", display: "block" }}
+                  />
+                </Box>
+              </Flex>
               <Flex flexDir={"column"} gap={"6px"}>
                 <Text
                   fontSize={"18px"}
@@ -223,49 +255,12 @@ export default function MonitoringToolPage() {
                   What&apos;s Monitored
                 </Text>
                 <Text fontSize={"15px"} fontWeight={400} lineHeight={"18px"}>
-                  The monitoring tool tracks all core components of your Thanos
-                  Stack:
-                  <br />
-                  <br />- <Text as={"span"} fontWeight={700}>op-node</Text> - L2
-                  node synchronization
-                  <br />- <Text as={"span"} fontWeight={700}>op-geth</Text> - EVM
-                  execution client
-                  <br />- <Text as={"span"} fontWeight={700}>op-batcher</Text> -
-                  Batch submission to L1
-                  <br />- <Text as={"span"} fontWeight={700}>op-proposer</Text> -
-                  Block proposal generation
-                  <br />- <Text as={"span"} fontWeight={700}>
-                    Block Explorer & Bridge
-                  </Text>{" "}
-                  - If deployed
-                  <br />- <Text as={"span"} fontWeight={700}>
-                    L1 RPC connectivity
-                  </Text>{" "}
-                  - Connection to Ethereum
-                </Text>
-              </Flex>
-              <Flex flexDir={"column"} gap={"6px"}>
-                <Text
-                  fontSize={"18px"}
-                  fontWeight={700}
-                  letterSpacing={"-0.54px"}
-                >
-                  Deployment Guide
-                </Text>
-                <Text fontSize={"15px"} fontWeight={400} lineHeight={"18px"}>
-                  Install the Monitoring Tool from the Integrations tab after
-                  deploying your Thanos Stack. Configure your Grafana password
-                  and alert channels (Email/Telegram) during setup. For detailed
-                  instructions, see the{" "}
-                  <Link
-                    _hover={{ textDecoration: "underline" }}
-                    color={"#0070ED"}
-                    href={MONITORING_TOOL_GUIDE_URL}
-                    target="_blank"
-                  >
-                    complete guide
-                  </Link>
-                  .
+                  - <Text as={"span"} fontWeight={700}>op-node</Text> - L2 node synchronization and derivation
+                  <br />- <Text as={"span"} fontWeight={700}>op-geth</Text> - EVM execution client status
+                  <br />- <Text as={"span"} fontWeight={700}>op-batcher</Text> - Batch transaction submission to L1
+                  <br />- <Text as={"span"} fontWeight={700}>op-proposer</Text> - State root proposal generation
+                  <br />- <Text as={"span"} fontWeight={700}>External Infrastructure</Text> - L1 RPC connectivity
+                  <br />- <Text as={"span"} fontWeight={700}>System Resources</Text> - CPU, Memory, and Storage usage
                 </Text>
               </Flex>
             </Flex>
@@ -386,7 +381,7 @@ export default function MonitoringToolPage() {
                   <Text as={"span"} fontWeight={700}>
                     Prometheus
                   </Text>{" "}
-                  - Metrics collection
+                  - Metrics collection and storage
                 </List.Item>
                 <List.Item
                   fontSize={"13px"}
@@ -396,7 +391,7 @@ export default function MonitoringToolPage() {
                   <Text as={"span"} fontWeight={700}>
                     Grafana
                   </Text>{" "}
-                  - Visualization dashboards
+                  - Visualization dashboards with custom panels
                 </List.Item>
                 <List.Item
                   fontSize={"13px"}
@@ -406,7 +401,27 @@ export default function MonitoringToolPage() {
                   <Text as={"span"} fontWeight={700}>
                     AlertManager
                   </Text>{" "}
-                  - Alert routing
+                  - Alert routing and notification
+                </List.Item>
+                <List.Item
+                  fontSize={"13px"}
+                  fontWeight={400}
+                  lineHeight={"17px"}
+                >
+                  <Text as={"span"} fontWeight={700}>
+                    Blackbox Exporter
+                  </Text>{" "}
+                  - External endpoint monitoring
+                </List.Item>
+                <List.Item
+                  fontSize={"13px"}
+                  fontWeight={400}
+                  lineHeight={"17px"}
+                >
+                  <Text as={"span"} fontWeight={700}>
+                    CloudWatch Logs
+                  </Text>{" "}
+                  - Centralized log storage and retention management
                 </List.Item>
               </List.Root>
             </Flex>

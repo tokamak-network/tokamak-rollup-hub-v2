@@ -98,10 +98,10 @@ const CrossTradeComponent = () => {
   );
 };
 
-const EarnTONComponent = () => {
+const StakingDAOComponent = () => {
   return (
     <CardComponent
-      title={"Earn TON as Reward (Coming Soon)"}
+      title={"Staking / DAO Candidate Registration"}
       description={
         <>
           Register your chain as a{" "}
@@ -109,20 +109,12 @@ const EarnTONComponent = () => {
             DAO candidate
           </Text>{" "}
           in the Tokamak Network ecosystem to earn seigniorage rewards
-          proportional to the L2 growth. Learn more{" "}
-          <Link
-            href={
-              "https://github.com/tokamak-network/papers/blob/master/cryptoeconomics/tokamak-cryptoeconomics-en.md#222-ton-staking-v2"
-            }
-            target="_blank"
-          >
-            <Text as={"span"} fontWeight={500} textDecoration={"underline"}>
-              here
-            </Text>
-          </Link>
+          proportional to the L2 growth.
         </>
       }
-      featured={false}
+      featured={true}
+      link={"/discover/dao-candidate"}
+      iconId={"dao-candidate"}
     />
   );
 };
@@ -242,7 +234,7 @@ export default function ComponentCarouselComponent() {
         <BlockExplorerComponent />
         <MonitoringToolComponent />
         <UptimeKumaComponent />
-        <EarnTONComponent />
+        <StakingDAOComponent />
         <CrossTradeComponent />
         <RandomNumberGenerationComponent />
       </Carousel>

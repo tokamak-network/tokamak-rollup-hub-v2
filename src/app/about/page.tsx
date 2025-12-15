@@ -10,7 +10,7 @@ export default function AboutPage() {
 
   return (
     <Box
-      pt={{ base: "108px", md: "138px", lg: "198px" }}
+      pt={{ base: "88px", md: "108px", lg: "148px" }}
       px={{ base: "20px", md: "40px", lg: "60px" }}
       pb={"60px"}
       w={"100%"}
