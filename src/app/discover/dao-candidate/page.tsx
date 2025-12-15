@@ -504,8 +504,7 @@ export default function DaoCandidatePage() {
 
 function AuditCard({ name, subtitle, logo, link }: { name: string; subtitle?: string; logo?: string; link: string }) {
   return (
-    <Box
-      as="a"
+    <Link
       href={link}
       target="_blank"
       bg="#FFF"
@@ -514,7 +513,7 @@ function AuditCard({ name, subtitle, logo, link }: { name: string; subtitle?: st
       px={4}
       py={4}
       cursor="pointer"
-      _hover={{ borderColor: "#0070ED", bg: "#F8FAFF" }}
+      _hover={{ borderColor: "#0070ED", bg: "#F8FAFF", textDecoration: "none" }}
       transition="all 0.2s"
       display="flex"
       alignItems="center"
@@ -548,11 +547,11 @@ function AuditCard({ name, subtitle, logo, link }: { name: string; subtitle?: st
         )}
       </Box>
       <Flex flexDir="column" flex={1} overflow="hidden">
-        <Text fontSize="13px" fontWeight={600} color="#111" isTruncated>
+        <Text fontSize="13px" fontWeight={600} color="#111" truncate>
           {name}
         </Text>
         {subtitle && (
-          <Text fontSize="11px" color="#888" isTruncated>
+          <Text fontSize="11px" color="#888" truncate>
             {subtitle}
           </Text>
         )}
@@ -560,6 +559,6 @@ function AuditCard({ name, subtitle, logo, link }: { name: string; subtitle?: st
       <Text fontSize="11px" color="#0070ED" fontWeight={600} flexShrink={0}>
         View
       </Text>
-    </Box>
+    </Link>
   );
 }

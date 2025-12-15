@@ -1,5 +1,5 @@
 "use client";
-import { Flex, Box, Text, VStack, HStack } from "@chakra-ui/react";
+import { Flex, Box, Text, VStack, HStack, Link } from "@chakra-ui/react";
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import CloseIcon from "@/assets/icon/close.svg";
@@ -178,8 +178,7 @@ export default function AnnouncementBanner() {
               </Flex>
 
               {/* Reward */}
-              <Box
-                as="a"
+              <Link
                 href="https://tokamak.notion.site/Tokamak-Rollup-Hub-Platform-Reward-and-Bug-Bounty-Program-2c6d96a400a3803786a4cfd74ae44a89"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -191,7 +190,7 @@ export default function AnnouncementBanner() {
                 mb={8}
                 textAlign="center"
                 cursor="pointer"
-                _hover={{ bg: "#FFF3CC", borderColor: "#FFD633" }}
+                _hover={{ bg: "#FFF3CC", borderColor: "#FFD633", textDecoration: "none" }}
                 transition="all 0.2s"
               >
                 <Flex align="center" justify="center" gap={2} mb={3}>
@@ -203,7 +202,7 @@ export default function AnnouncementBanner() {
                 <Text fontSize="15px" color="#775500" lineHeight="1.8">
                   Earn rewards by deploying rollups, testing features, and providing feedback on the platform.
                 </Text>
-              </Box>
+              </Link>
 
               {/* What's Next */}
               <Box
@@ -224,8 +223,7 @@ export default function AnnouncementBanner() {
 
               {/* Get Started Link */}
               <Flex justify="center">
-                <Box
-                  as="a"
+                <Link
                   href="https://docs.tokamak.network/home/~/changes/151/service-guide/tokamak-rollup-hub"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -234,7 +232,7 @@ export default function AnnouncementBanner() {
                   fontSize="17px"
                   fontWeight="600"
                   cursor="pointer"
-                  _hover={{ color: "#0070ED" }}
+                  _hover={{ color: "#0070ED", textDecoration: "none" }}
                   transition="color 0.3s ease"
                 >
                   <span className="typewriter-wrapper">Get Started with Installation Guide</span>
@@ -244,7 +242,7 @@ export default function AnnouncementBanner() {
                       <path d="M12 5l7 7-7 7"/>
                     </svg>
                   </span>
-                </Box>
+                </Link>
               </Flex>
             </Box>
           </Box>
@@ -255,22 +253,41 @@ export default function AnnouncementBanner() {
 }
 
 function Tag({ text, href }: { text: string; href?: string }) {
+  const content = (
+    <Text color="#0070ED" fontSize="16px" fontWeight="600">
+      {text}
+    </Text>
+  );
+
+  if (href) {
+    return (
+      <Link
+        href={href}
+        bg="#EEF4FF"
+        border="1px solid #D0E3FF"
+        px={6}
+        py={3}
+        borderRadius="12px"
+        cursor="pointer"
+        _hover={{ bg: "#DCE8FF", borderColor: "#A0C4FF", textDecoration: "none" }}
+        transition="all 0.2s"
+      >
+        {content}
+      </Link>
+    );
+  }
+
   return (
     <Box
-      as={href ? "a" : "div"}
-      href={href}
       bg="#EEF4FF"
       border="1px solid #D0E3FF"
       px={6}
       py={3}
       borderRadius="12px"
-      cursor={href ? "pointer" : "default"}
-      _hover={href ? { bg: "#DCE8FF", borderColor: "#A0C4FF" } : {}}
+      cursor="default"
       transition="all 0.2s"
     >
-      <Text color="#0070ED" fontSize="16px" fontWeight="600">
-        {text}
-      </Text>
+      {content}
     </Box>
   );
 }
