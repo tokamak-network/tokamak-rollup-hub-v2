@@ -179,12 +179,20 @@ export default function AnnouncementBanner() {
 
               {/* Reward */}
               <Box
+                as="a"
+                href="https://tokamak.notion.site/Tokamak-Rollup-Hub-Platform-Reward-and-Bug-Bounty-Program-2c6d96a400a3803786a4cfd74ae44a89"
+                target="_blank"
+                rel="noopener noreferrer"
+                display="block"
                 bg="#FFF9E6"
                 border="1px solid #FFE066"
                 borderRadius="14px"
                 p={7}
                 mb={8}
                 textAlign="center"
+                cursor="pointer"
+                _hover={{ bg: "#FFF3CC", borderColor: "#FFD633" }}
+                transition="all 0.2s"
               >
                 <Flex align="center" justify="center" gap={2} mb={3}>
                   <Text fontSize="24px">🎁</Text>
