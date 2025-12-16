@@ -153,7 +153,7 @@ export default function ThanosBridgePage() {
                       </Flex>
                       <Flex flexDir={"column"} gap={"3px"}>
                         <Text fontSize={"12px"} fontWeight={400}>
-                          Launching on
+                          Launched on
                         </Text>
                         <Text fontSize={"13px"} fontWeight={700}>
                           17 December 2026
