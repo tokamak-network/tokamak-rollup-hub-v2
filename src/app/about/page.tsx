@@ -316,31 +316,19 @@ export default function AboutPage() {
           >
             Who Can Use Tokamak Rollup Hub?
           </Text>
-          <Flex flexDir={"column"} gap={"12px"}>
-            <Flex alignItems={"flex-start"} gap={"12px"}>
-              <Box w={"6px"} h={"6px"} borderRadius={"full"} bg={"#0070ED"} mt={"8px"} flexShrink={0} />
-              <Text fontSize={"15px"} fontWeight={400} lineHeight={"1.8"} color={"#444"}>
-                <Text as={"span"} fontWeight={600} color={"#222"}>Chain Operators:</Text> Deploy fast, production-ready optimistic rollups and manage them through open-source infrastructure tools
-              </Text>
-            </Flex>
-            <Flex alignItems={"flex-start"} gap={"12px"}>
-              <Box w={"6px"} h={"6px"} borderRadius={"full"} bg={"#0070ED"} mt={"8px"} flexShrink={0} />
-              <Text fontSize={"15px"} fontWeight={400} lineHeight={"1.8"} color={"#444"}>
-                <Text as={"span"} fontWeight={600} color={"#222"}>DApp Developers:</Text> Build scalable applications with lower fees and higher transaction throughput
-              </Text>
-            </Flex>
-            <Flex alignItems={"flex-start"} gap={"12px"}>
-              <Box w={"6px"} h={"6px"} borderRadius={"full"} bg={"#0070ED"} mt={"8px"} flexShrink={0} />
-              <Text fontSize={"15px"} fontWeight={400} lineHeight={"1.8"} color={"#444"}>
-                <Text as={"span"} fontWeight={600} color={"#222"}>DeFi Protocols:</Text> Significantly reduce gas costs using Layer 2 scaling
-              </Text>
-            </Flex>
-            <Flex alignItems={"flex-start"} gap={"12px"}>
-              <Box w={"6px"} h={"6px"} borderRadius={"full"} bg={"#0070ED"} mt={"8px"} flexShrink={0} />
-              <Text fontSize={"15px"} fontWeight={400} lineHeight={"1.8"} color={"#444"}>
-                <Text as={"span"} fontWeight={600} color={"#222"}>DAO Operators:</Text> Set up decentralized governance with TON staking and receive seigniorage incentives
-              </Text>
-            </Flex>
+          <Flex flexDir={"column"} gap={"10px"}>
+            <Text fontSize={"15px"} fontWeight={400} lineHeight={"1.8"} color={"#444"}>
+              • <Text as={"span"} fontWeight={600}>Chain Operators:</Text> Deploy fast, production-ready optimistic rollups and manage them through open-source infrastructure tools
+            </Text>
+            <Text fontSize={"15px"} fontWeight={400} lineHeight={"1.8"} color={"#444"}>
+              • <Text as={"span"} fontWeight={600}>DApp Developers:</Text> Build scalable applications with lower fees and higher transaction throughput
+            </Text>
+            <Text fontSize={"15px"} fontWeight={400} lineHeight={"1.8"} color={"#444"}>
+              • <Text as={"span"} fontWeight={600}>DeFi Protocols:</Text> Significantly reduce gas costs using Layer 2 scaling
+            </Text>
+            <Text fontSize={"15px"} fontWeight={400} lineHeight={"1.8"} color={"#444"}>
+              • <Text as={"span"} fontWeight={600}>DAO Operators:</Text> Set up decentralized governance with TON staking and receive seigniorage incentives
+            </Text>
           </Flex>
         </Flex>
 
@@ -362,144 +350,46 @@ export default function AboutPage() {
           >
             Getting Started
           </Text>
-          <Flex flexDir={"column"} gap={"10px"}>
-            <Flex alignItems={"flex-start"} gap={"12px"}>
-              <Flex
-                w={"24px"}
-                h={"24px"}
-                borderRadius={"full"}
-                bg={"#0070ED"}
-                color={"white"}
-                fontSize={"12px"}
-                fontWeight={600}
-                alignItems={"center"}
-                justifyContent={"center"}
-                flexShrink={0}
-                mt={"2px"}
-              >
-                1
-              </Flex>
-              <Text fontSize={"15px"} fontWeight={400} lineHeight={"1.8"} color={"#444"}>
+          <Flex flexDir={"column"} gap={"12px"}>
+            <Flex alignItems={"center"} gap={"14px"}>
+              <Text fontSize={"14px"} fontWeight={600} color={"#0070ED"} w={"20px"}>1.</Text>
+              <Text fontSize={"15px"} fontWeight={400} lineHeight={"1.7"} color={"#444"}>
                 Setup the Tokamak Rollup Hub platform
               </Text>
             </Flex>
-            <Flex alignItems={"flex-start"} gap={"12px"}>
-              <Flex
-                w={"24px"}
-                h={"24px"}
-                borderRadius={"full"}
-                bg={"#0070ED"}
-                color={"white"}
-                fontSize={"12px"}
-                fontWeight={600}
-                alignItems={"center"}
-                justifyContent={"center"}
-                flexShrink={0}
-                mt={"2px"}
-              >
-                2
-              </Flex>
-              <Text fontSize={"15px"} fontWeight={400} lineHeight={"1.8"} color={"#444"}>
+            <Flex alignItems={"center"} gap={"14px"}>
+              <Text fontSize={"14px"} fontWeight={600} color={"#0070ED"} w={"20px"}>2.</Text>
+              <Text fontSize={"15px"} fontWeight={400} lineHeight={"1.7"} color={"#444"}>
                 Configure your rollup parameters (chain ID, network settings, performance tuning)
               </Text>
             </Flex>
-            <Flex alignItems={"flex-start"} gap={"12px"}>
-              <Flex
-                w={"24px"}
-                h={"24px"}
-                borderRadius={"full"}
-                bg={"#0070ED"}
-                color={"white"}
-                fontSize={"12px"}
-                fontWeight={600}
-                alignItems={"center"}
-                justifyContent={"center"}
-                flexShrink={0}
-                mt={"2px"}
-              >
-                3
-              </Flex>
-              <Text fontSize={"15px"} fontWeight={400} lineHeight={"1.8"} color={"#444"}>
+            <Flex alignItems={"center"} gap={"14px"}>
+              <Text fontSize={"14px"} fontWeight={600} color={"#0070ED"} w={"20px"}>3.</Text>
+              <Text fontSize={"15px"} fontWeight={400} lineHeight={"1.7"} color={"#444"}>
                 Set up AWS credentials and select your deployment region
               </Text>
             </Flex>
-            <Flex alignItems={"flex-start"} gap={"12px"}>
-              <Flex
-                w={"24px"}
-                h={"24px"}
-                borderRadius={"full"}
-                bg={"#0070ED"}
-                color={"white"}
-                fontSize={"12px"}
-                fontWeight={600}
-                alignItems={"center"}
-                justifyContent={"center"}
-                flexShrink={0}
-                mt={"2px"}
-              >
-                4
-              </Flex>
-              <Text fontSize={"15px"} fontWeight={400} lineHeight={"1.8"} color={"#444"}>
+            <Flex alignItems={"center"} gap={"14px"}>
+              <Text fontSize={"14px"} fontWeight={600} color={"#0070ED"} w={"20px"}>4.</Text>
+              <Text fontSize={"15px"} fontWeight={400} lineHeight={"1.7"} color={"#444"}>
                 Deploy your Thanos Stack with one click
               </Text>
             </Flex>
-            <Flex alignItems={"flex-start"} gap={"12px"}>
-              <Flex
-                w={"24px"}
-                h={"24px"}
-                borderRadius={"full"}
-                bg={"#0070ED"}
-                color={"white"}
-                fontSize={"12px"}
-                fontWeight={600}
-                alignItems={"center"}
-                justifyContent={"center"}
-                flexShrink={0}
-                mt={"2px"}
-              >
-                5
-              </Flex>
-              <Text fontSize={"15px"} fontWeight={400} lineHeight={"1.8"} color={"#444"}>
+            <Flex alignItems={"center"} gap={"14px"}>
+              <Text fontSize={"14px"} fontWeight={600} color={"#0070ED"} w={"20px"}>5.</Text>
+              <Text fontSize={"15px"} fontWeight={400} lineHeight={"1.7"} color={"#444"}>
                 Monitor deployment progress in real-time with live logs
               </Text>
             </Flex>
-            <Flex alignItems={"flex-start"} gap={"12px"}>
-              <Flex
-                w={"24px"}
-                h={"24px"}
-                borderRadius={"full"}
-                bg={"#0070ED"}
-                color={"white"}
-                fontSize={"12px"}
-                fontWeight={600}
-                alignItems={"center"}
-                justifyContent={"center"}
-                flexShrink={0}
-                mt={"2px"}
-              >
-                6
-              </Flex>
-              <Text fontSize={"15px"} fontWeight={400} lineHeight={"1.8"} color={"#444"}>
+            <Flex alignItems={"center"} gap={"14px"}>
+              <Text fontSize={"14px"} fontWeight={600} color={"#0070ED"} w={"20px"}>6.</Text>
+              <Text fontSize={"15px"} fontWeight={400} lineHeight={"1.7"} color={"#444"}>
                 Access your rollup infrastructure via provided URLs and download configuration files
               </Text>
             </Flex>
-            <Flex alignItems={"flex-start"} gap={"12px"}>
-              <Flex
-                w={"24px"}
-                h={"24px"}
-                borderRadius={"full"}
-                bg={"#0070ED"}
-                color={"white"}
-                fontSize={"12px"}
-                fontWeight={600}
-                alignItems={"center"}
-                justifyContent={"center"}
-                flexShrink={0}
-                mt={"2px"}
-              >
-                7
-              </Flex>
-              <Text fontSize={"15px"} fontWeight={400} lineHeight={"1.8"} color={"#444"}>
+            <Flex alignItems={"center"} gap={"14px"}>
+              <Text fontSize={"14px"} fontWeight={600} color={"#0070ED"} w={"20px"}>7.</Text>
+              <Text fontSize={"15px"} fontWeight={400} lineHeight={"1.7"} color={"#444"}>
                 Try out the integrations (Bridge, Explorer, Monitoring, Uptime Kuma)
               </Text>
             </Flex>
