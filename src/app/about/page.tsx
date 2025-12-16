@@ -80,7 +80,7 @@ export default function AboutPage() {
             opacity={0.8}
             textAlign={"center"}
           >
-            A comprehensive platform for deploying and managing Layer 2 Rollup chains with essential infrastructure
+            An all-in-one platform to seamlessly deploy and manage rollup chains and participate in the Tokamak ecosystem.
           </Text>
 
           {/* Hero Image */}
@@ -110,13 +110,10 @@ export default function AboutPage() {
             Platform Overview
           </Text>
           <Text fontSize={"16px"} fontWeight={400} lineHeight={"1.75"}>
-            Tokamak Rollup Hub (TRH) is an end-to-end platform that simplifies the deployment and management of Layer 2 rollup chains. Built on the Thanos stack, TRH provides developers and organizations with the tools they need to launch custom L2 appchains quickly and efficiently, without the complexity of manual infrastructure setup.
+            Tokamak Rollup Hub (TRH) is an end-to-end platform designed to simplify the deployment and management of Layer 2 rollup chains. It enables developers and organizations to quickly launch custom L2 appchains without the overhead of manual infrastructure setup.
           </Text>
           <Text fontSize={"16px"} fontWeight={400} lineHeight={"1.75"}>
-            TRH addresses the challenge of deploying production-ready rollups by offering automated deployment workflows, pre-integrated components, and comprehensive monitoring tools. Whether you&apos;re building a gaming platform, DeFi protocol, or enterprise blockchain solution, TRH provides the foundation for scalable, secure Layer 2 infrastructure.
-          </Text>
-          <Text fontSize={"16px"} fontWeight={400} lineHeight={"1.75"}>
-            The platform leverages AWS infrastructure with PostgreSQL for reliable data management, containerized deployments for consistency, and asynchronous task processing to handle concurrent rollup deployments without blocking operations.
+            By providing automated deployment workflows, pre-integrated components, and robust monitoring tools, Tokamak Rollup Hub removes the complexity of building and operating production-ready rollups.
           </Text>
         </Flex>
 
@@ -144,7 +141,7 @@ export default function AboutPage() {
                 One-Click Rollup Deployment
               </Text>
               <Text fontSize={"15px"} fontWeight={400} lineHeight={"1.75"}>
-                Deploy complete Thanos Stack infrastructure with SDK automation through a guided 4-step wizard. Configure network parameters including chain ID, gas limits, batch submission frequency, and consensus settings. Support for both mainnet and testnet deployments with real-time deployment tracking and comprehensive logging. Fine-tune performance with customizable L2 block time (default: 2s), output root frequency (default: 240s), and challenge period settings.
+                Deploy a complete Thanos Stack using Platform and SDK automation through a guided four-step workflow. Easily configure key network parameters such as chain ID, gas limits, batch submission frequency, and consensus settings. The current release supports testnet deployments with real-time progress tracking and detailed logs. Optimize performance with configurable L2 block time (default: 2s), output root frequency (default: 240s), and challenge period parameters.
               </Text>
             </Flex>
 
@@ -154,45 +151,25 @@ export default function AboutPage() {
                 Essential Integrations
               </Text>
               <Text fontSize={"15px"} fontWeight={400} lineHeight={"1.75"}>
-                <Text as={"span"} fontWeight={600}>Thanos Bridge:</Text> Transfer assets between L1 and L2 with support for ETH, TON, USDC, and USDT with lightweight architecture
+                <Text as={"span"} fontWeight={600}>Thanos Bridge:</Text> Seamless asset transfers between L1 and L2 with support for ETH, TON, USDC, and USDT using a lightweight bridge architecture.
                 <br />
-                <Text as={"span"} fontWeight={600}>Thanos Explorer:</Text> Blockscout-powered blockchain explorer for transaction and contract visibility with real-time indexing
+                <Text as={"span"} fontWeight={600}>Thanos Explorer:</Text> A Blockscout-powered blockchain explorer offering real-time transaction and smart contract visibility.
                 <br />
-                <Text as={"span"} fontWeight={600}>Monitoring Tool:</Text> Grafana + Prometheus stack with multi-channel alerts via Email and Telegram, customizable alert receivers
+                <Text as={"span"} fontWeight={600}>Monitoring Tool:</Text> Integrated Grafana and Prometheus stack with customizable alerts delivered via Email and Telegram.
                 <br />
-                <Text as={"span"} fontWeight={600}>Uptime Kuma:</Text> Real-time platform health and service availability monitoring with instant downtime notifications
+                <Text as={"span"} fontWeight={600}>System Pulse:</Text> Real-time service health and availability monitoring with instant downtime notifications.
                 <br />
-                <Text as={"span"} fontWeight={600}>Cross Trade:</Text> Fast, decentralized withdrawals between L2-L1 and L2-L2 chains with multi-token support
+                <Text as={"span"} fontWeight={600}>Staking/DAO:</Text> Register your rollup as a staking/DAO candidate to participate in Tokamak Network governance. Earn seigniorage rewards driven by L2 growth metrics such as transaction volume and network activity. Participate in the ecosystem by staking TON tokens, with a minimum requirement of 1000.1 TON.
               </Text>
             </Flex>
 
             {/* Feature 3 */}
             <Flex flexDir={"column"} gap={"9px"}>
               <Text fontSize={"20px"} fontWeight={700} letterSpacing={"-0.6px"}>
-                Governance & Economics
-              </Text>
-              <Text fontSize={"15px"} fontWeight={400} lineHeight={"1.75"}>
-                Register as DAO candidate to participate in Tokamak Network governance with metadata DAO registration. Earn seigniorage rewards based on L2 growth metrics including transaction volume and network participation. Safe Wallet multi-signature governance for secure fund management with role-based access control. Stake TON tokens for ecosystem participation with minimum 1000.1 TON requirement.
-              </Text>
-            </Flex>
-
-            {/* Feature 4 */}
-            <Flex flexDir={"column"} gap={"9px"}>
-              <Text fontSize={"20px"} fontWeight={700} letterSpacing={"-0.6px"}>
                 Infrastructure Management
               </Text>
               <Text fontSize={"15px"} fontWeight={400} lineHeight={"1.75"}>
-                Async background deployment with status tracking and 5 concurrent workers for non-blocking operations. Real-time log ingestion with downloadable log files for troubleshooting. Integration lifecycle management with install, uninstall, retry, and cancel capabilities. Stack control operations including resume, stop, and network parameter updates post-deployment. Metadata storage for credentials, configurations, and rollup config files.
-              </Text>
-            </Flex>
-
-            {/* Feature 5 - Advanced Features */}
-            <Flex flexDir={"column"} gap={"9px"}>
-              <Text fontSize={"20px"} fontWeight={700} letterSpacing={"-0.6px"}>
-                Advanced Backup & Recovery
-              </Text>
-              <Text fontSize={"15px"} fontWeight={400} lineHeight={"1.75"}>
-                Comprehensive backup management system with checkpoint creation, snapshot management, and recovery point restoration. EFS and Kubernetes backup attachment support with configurable backup schedules. Automated retry logic for failed integrations without requiring full redeployment, minimizing downtime during issues.
+                Run deployments asynchronously with status tracking. Access real-time logs with downloadable files for effective troubleshooting. Manage the full lifecycle of integrations with install, uninstall, retry, and cancel actions. Control stack operations including resume, stop, and post-deployment network parameter updates. Securely store metadata such as credentials, configurations, and rollup files.
               </Text>
             </Flex>
           </Flex>
@@ -214,23 +191,62 @@ export default function AboutPage() {
           >
             Technical Architecture
           </Text>
-          <Flex flexDir={"column"} gap={"18px"}>
-            <Text fontSize={"16px"} fontWeight={400} lineHeight={"1.75"}>
-              TRH is built on a robust technical foundation designed for enterprise-grade reliability and performance. The backend utilizes Go with the Gin framework for high-performance API handling, PostgreSQL with connection pooling for optimized data management, and Docker containerization for consistent deployments across environments.
-            </Text>
-            <Text fontSize={"16px"} fontWeight={400} lineHeight={"1.75"}>
-              <Text as={"span"} fontWeight={600}>Security:</Text> JWT-based authentication with role-based access control (Admin/User roles), secure credential management with encrypted AWS key storage, comprehensive input validation, and graceful error handling with structured audit logging.
-            </Text>
-            <Text fontSize={"16px"} fontWeight={400} lineHeight={"1.75"}>
-              <Text as={"span"} fontWeight={600}>Performance:</Text> Asynchronous task processing with 5 concurrent workers and 20-item queue capacity, CORS optimization with 12-hour cache TTL, and request latency tracking for all API operations.
-            </Text>
-            <Text fontSize={"16px"} fontWeight={400} lineHeight={"1.75"}>
-              <Text as={"span"} fontWeight={600}>Infrastructure:</Text> AWS-based deployment with support for all AWS regions, EC2 compute resources, EFS for backup storage, and automated credential validation. Containerized architecture ensures consistency between development and production environments.
-            </Text>
+          <Text fontSize={"16px"} fontWeight={400} lineHeight={"1.75"}>
+            TRH is designed to provide a fast, secure, and scalable Layer 2 deployment platform built on a robust technical foundation designed for enterprise-grade reliability and performance. The backend utilizes Go with the Gin framework for high-performance API handling, PostgreSQL with connection pooling for optimized data management, and Docker containerization for consistent deployments across environments.
+          </Text>
+
+          <Flex flexDir={"column"} gap={"24px"}>
+            {/* Subsection 1 */}
+            <Flex flexDir={"column"} gap={"9px"}>
+              <Text fontSize={"20px"} fontWeight={700} letterSpacing={"-0.6px"}>
+                Efficient Performance & Scalability
+              </Text>
+              <Text fontSize={"15px"} fontWeight={400} lineHeight={"1.75"}>
+                <Text as={"span"} fontWeight={600}>Asynchronous Task Processing:</Text> Long-running operations such as chain deployments and integration installations are handled in the background by a dedicated worker pool. With 5 concurrent workers processing up to 20 queued tasks, users can continue their work without waiting for operations to complete.
+              </Text>
+              <Text fontSize={"15px"} fontWeight={400} lineHeight={"1.75"}>
+                <Text as={"span"} fontWeight={600}>Performance Optimization:</Text> The system implements intelligent caching with a 12-hour TTL for repeated requests, significantly reducing response times. Real-time latency tracking monitors every API request, enabling continuous performance improvements. Database queries are accelerated through strategic indexing, ensuring fast retrieval even with large datasets.
+              </Text>
+              <Text fontSize={"15px"} fontWeight={400} lineHeight={"1.75"}>
+                <Text as={"span"} fontWeight={600}>Operational Stability:</Text> Production-grade timeout configurations (15-second read/write, 60-second idle) prevent resource exhaustion, while graceful shutdown mechanisms ensure clean service termination and automatic recovery from failures.
+              </Text>
+            </Flex>
+
+            {/* Subsection 2 */}
+            <Flex flexDir={"column"} gap={"9px"}>
+              <Text fontSize={"20px"} fontWeight={700} letterSpacing={"-0.6px"}>
+                Enterprise-Grade Security
+              </Text>
+              <Text fontSize={"15px"} fontWeight={400} lineHeight={"1.75"}>
+                <Text as={"span"} fontWeight={600}>Authentication & Authorization:</Text> Token-based authentication (24-hour validity) provides secure user sessions, while role-based access control (RBAC) enforces strict separation between Administrator and User privileges.
+              </Text>
+              <Text fontSize={"15px"} fontWeight={400} lineHeight={"1.75"}>
+                <Text as={"span"} fontWeight={600}>Data Protection:</Text> Passwords are cryptographically hashed using bcrypt, making them irreversible and resistant to rainbow table attacks. All user inputs undergo strict validation, with automated format verification for emails, AWS credentials, and other sensitive data to prevent injection attacks and malformed requests.
+              </Text>
+              <Text fontSize={"15px"} fontWeight={400} lineHeight={"1.75"}>
+                <Text as={"span"} fontWeight={600}>Audit Logging:</Text> Comprehensive request logging captures who performed what action and when, including request methods, processing times, IP addresses, and response statuses. This detailed audit trail facilitates rapid troubleshooting and security incident investigation.
+              </Text>
+            </Flex>
+
+            {/* Subsection 3 */}
+            <Flex flexDir={"column"} gap={"9px"}>
+              <Text fontSize={"20px"} fontWeight={700} letterSpacing={"-0.6px"}>
+                AWS Cloud Integration
+              </Text>
+              <Text fontSize={"15px"} fontWeight={400} lineHeight={"1.75"}>
+                <Text as={"span"} fontWeight={600}>Global Deployment:</Text> TRH supports deployment across all AWS regions worldwide. Upon registering AWS credentials, the system automatically queries available regions and provisions necessary resources including EC2 compute instances and EFS storage in the selected region.
+              </Text>
+              <Text fontSize={"15px"} fontWeight={400} lineHeight={"1.75"}>
+                <Text as={"span"} fontWeight={600}>Environment Consistency:</Text> Docker containerization guarantees identical behavior between development and production environments. Code tested on a developer&apos;s local machine will execute identically in AWS cloud infrastructure, eliminating environment-specific bugs.
+              </Text>
+              <Text fontSize={"15px"} fontWeight={400} lineHeight={"1.75"}>
+                <Text as={"span"} fontWeight={600}>Automated Validation:</Text> AWS credentials undergo automatic verification before storage, preventing deployment failures caused by invalid or expired credentials. This proactive validation ensures smooth operations and reduces troubleshooting time.
+              </Text>
+            </Flex>
           </Flex>
         </Flex>
 
-        {/* Who Uses TRH Section */}
+        {/* Who Can Use Section */}
         <Flex
           flexDir={"column"}
           gap={"24px"}
@@ -244,26 +260,20 @@ export default function AboutPage() {
             fontWeight={700}
             letterSpacing={"-0.9px"}
           >
-            Who Uses TRH
+            Who Can Use Tokamak Rollup Hub?
           </Text>
           <Flex flexDir={"column"} gap={"12px"}>
             <Text fontSize={"15px"} fontWeight={400} lineHeight={"1.75"}>
-              • <Text as={"span"} fontWeight={600}>DApp Developers:</Text> Building scalable applications with reduced transaction costs and improved throughput
+              • <Text as={"span"} fontWeight={600}>Chain Operators:</Text> Deploy fast, production-ready optimistic rollups and manage them through open-source infrastructure tools
             </Text>
             <Text fontSize={"15px"} fontWeight={400} lineHeight={"1.75"}>
-              • <Text as={"span"} fontWeight={600}>Gaming Projects:</Text> Requiring high-throughput, low-latency infrastructure for gaming dApps with thousands of transactions
+              • <Text as={"span"} fontWeight={600}>DApp Developers:</Text> Build scalable applications with lower fees and higher transaction throughput
             </Text>
             <Text fontSize={"15px"} fontWeight={400} lineHeight={"1.75"}>
-              • <Text as={"span"} fontWeight={600}>DeFi Protocols:</Text> Seeking to reduce gas costs by orders of magnitude through Layer 2 scaling
+              • <Text as={"span"} fontWeight={600}>DeFi Protocols:</Text> Significantly reduce gas costs using Layer 2 scaling
             </Text>
             <Text fontSize={"15px"} fontWeight={400} lineHeight={"1.75"}>
-              • <Text as={"span"} fontWeight={600}>Enterprises:</Text> Deploying private or consortium chains with managed access control and governance
-            </Text>
-            <Text fontSize={"15px"} fontWeight={400} lineHeight={"1.75"}>
-              • <Text as={"span"} fontWeight={600}>DAO Operators:</Text> Creating decentralized governance structures with TON staking and seigniorage rewards
-            </Text>
-            <Text fontSize={"15px"} fontWeight={400} lineHeight={"1.75"}>
-              • <Text as={"span"} fontWeight={600}>Cross-Chain Builders:</Text> Developing multi-chain dApps using L2-L2 bridge capabilities
+              • <Text as={"span"} fontWeight={600}>DAO Operators:</Text> Set up decentralized governance with TON staking and receive seigniorage incentives
             </Text>
           </Flex>
         </Flex>
@@ -286,7 +296,7 @@ export default function AboutPage() {
           </Text>
           <Flex flexDir={"column"} gap={"12px"}>
             <Text fontSize={"15px"} fontWeight={400} lineHeight={"1.75"}>
-              1. Connect your wallet to the TRH platform
+              1. Setup the Tokamak Rollup Hub platform
             </Text>
             <Text fontSize={"15px"} fontWeight={400} lineHeight={"1.75"}>
               2. Configure your rollup parameters (chain ID, network settings, performance tuning)
@@ -295,16 +305,16 @@ export default function AboutPage() {
               3. Set up AWS credentials and select your deployment region
             </Text>
             <Text fontSize={"15px"} fontWeight={400} lineHeight={"1.75"}>
-              4. Select integrations (Bridge, Explorer, Monitoring, Backup Management)
+              4. Deploy your Thanos Stack with one click
             </Text>
             <Text fontSize={"15px"} fontWeight={400} lineHeight={"1.75"}>
-              5. Deploy your Thanos Stack with one click
+              5. Monitor deployment progress in real-time with live logs
             </Text>
             <Text fontSize={"15px"} fontWeight={400} lineHeight={"1.75"}>
-              6. Monitor deployment progress in real-time with live logs
+              6. Access your rollup infrastructure via provided URLs and download configuration files
             </Text>
             <Text fontSize={"15px"} fontWeight={400} lineHeight={"1.75"}>
-              7. Access your rollup infrastructure via provided URLs and download configuration files
+              7. Try out the integrations (Bridge, Explorer, Monitoring, Uptime Kuma)
             </Text>
           </Flex>
           <Flex gap={"15px"} mt={"18px"} flexWrap={"wrap"}>
