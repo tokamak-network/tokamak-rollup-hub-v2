@@ -26,7 +26,7 @@ export default function CardComponent({
       flexDir={"column"}
       gap={"15px"}
       p={"20px"}
-      border={"1px solid #E1E8ED"}
+      border={"1px solid #C8D3DC"}
       borderRadius={"15px"}
       alignItems={"flex-start"}
       alignSelf={"stretch"}
