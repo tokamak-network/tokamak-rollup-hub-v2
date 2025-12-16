@@ -226,75 +226,60 @@ export default function AboutPage() {
             TRH is designed to provide a fast, secure, and scalable Layer 2 deployment platform built on a robust technical foundation designed for enterprise-grade reliability and performance. The backend utilizes Go with the Gin framework for high-performance API handling, PostgreSQL with connection pooling for optimized data management, and Docker containerization for consistent deployments across environments.
           </Text>
 
-          <Flex flexDir={"column"} gap={"20px"}>
+          <Flex flexDir={"column"} gap={"28px"}>
             {/* Subsection 1 */}
-            <Box
-              p={{ base: "16px", md: "20px" }}
-              borderRadius={"12px"}
-              bg={"#F0F7FF"}
-              border={"1px solid #D6E8FF"}
-            >
-              <Text fontSize={"17px"} fontWeight={600} letterSpacing={"-0.3px"} color={"#0070ED"} mb={"12px"}>
+            <Flex flexDir={"column"} gap={"14px"}>
+              <Text fontSize={"17px"} fontWeight={600} letterSpacing={"-0.3px"} color={"#1a1a2e"}>
                 Efficient Performance & Scalability
               </Text>
-              <Flex flexDir={"column"} gap={"10px"}>
-                <Text fontSize={"14px"} fontWeight={400} lineHeight={"1.8"} color={"#555"}>
-                  <Text as={"span"} fontWeight={600} color={"#333"}>Asynchronous Task Processing:</Text> Long-running operations such as chain deployments and integration installations are handled in the background by a dedicated worker pool. With 5 concurrent workers processing up to 20 queued tasks, users can continue their work without waiting for operations to complete.
+              <Flex flexDir={"column"} gap={"10px"} pl={"16px"} borderLeft={"2px solid #E1E8ED"}>
+                <Text fontSize={"14px"} fontWeight={400} lineHeight={"1.8"} color={"#444"}>
+                  <Text as={"span"} fontWeight={600}>Asynchronous Task Processing:</Text> Long-running operations such as chain deployments and integration installations are handled in the background by a dedicated worker pool. With 5 concurrent workers processing up to 20 queued tasks, users can continue their work without waiting for operations to complete.
                 </Text>
-                <Text fontSize={"14px"} fontWeight={400} lineHeight={"1.8"} color={"#555"}>
-                  <Text as={"span"} fontWeight={600} color={"#333"}>Performance Optimization:</Text> The system implements intelligent caching with a 12-hour TTL for repeated requests, significantly reducing response times. Real-time latency tracking monitors every API request, enabling continuous performance improvements. Database queries are accelerated through strategic indexing, ensuring fast retrieval even with large datasets.
+                <Text fontSize={"14px"} fontWeight={400} lineHeight={"1.8"} color={"#444"}>
+                  <Text as={"span"} fontWeight={600}>Performance Optimization:</Text> The system implements intelligent caching with a 12-hour TTL for repeated requests, significantly reducing response times. Real-time latency tracking monitors every API request, enabling continuous performance improvements. Database queries are accelerated through strategic indexing, ensuring fast retrieval even with large datasets.
                 </Text>
-                <Text fontSize={"14px"} fontWeight={400} lineHeight={"1.8"} color={"#555"}>
-                  <Text as={"span"} fontWeight={600} color={"#333"}>Operational Stability:</Text> Production-grade timeout configurations (15-second read/write, 60-second idle) prevent resource exhaustion, while graceful shutdown mechanisms ensure clean service termination and automatic recovery from failures.
+                <Text fontSize={"14px"} fontWeight={400} lineHeight={"1.8"} color={"#444"}>
+                  <Text as={"span"} fontWeight={600}>Operational Stability:</Text> Production-grade timeout configurations (15-second read/write, 60-second idle) prevent resource exhaustion, while graceful shutdown mechanisms ensure clean service termination and automatic recovery from failures.
                 </Text>
               </Flex>
-            </Box>
+            </Flex>
 
             {/* Subsection 2 */}
-            <Box
-              p={{ base: "16px", md: "20px" }}
-              borderRadius={"12px"}
-              bg={"#FFF8F0"}
-              border={"1px solid #FFE4CC"}
-            >
-              <Text fontSize={"17px"} fontWeight={600} letterSpacing={"-0.3px"} color={"#D97706"} mb={"12px"}>
+            <Flex flexDir={"column"} gap={"14px"}>
+              <Text fontSize={"17px"} fontWeight={600} letterSpacing={"-0.3px"} color={"#1a1a2e"}>
                 Enterprise-Grade Security
               </Text>
-              <Flex flexDir={"column"} gap={"10px"}>
-                <Text fontSize={"14px"} fontWeight={400} lineHeight={"1.8"} color={"#555"}>
-                  <Text as={"span"} fontWeight={600} color={"#333"}>Authentication & Authorization:</Text> Token-based authentication (24-hour validity) provides secure user sessions, while role-based access control (RBAC) enforces strict separation between Administrator and User privileges.
+              <Flex flexDir={"column"} gap={"10px"} pl={"16px"} borderLeft={"2px solid #E1E8ED"}>
+                <Text fontSize={"14px"} fontWeight={400} lineHeight={"1.8"} color={"#444"}>
+                  <Text as={"span"} fontWeight={600}>Authentication & Authorization:</Text> Token-based authentication (24-hour validity) provides secure user sessions, while role-based access control (RBAC) enforces strict separation between Administrator and User privileges.
                 </Text>
-                <Text fontSize={"14px"} fontWeight={400} lineHeight={"1.8"} color={"#555"}>
-                  <Text as={"span"} fontWeight={600} color={"#333"}>Data Protection:</Text> Passwords are cryptographically hashed using bcrypt, making them irreversible and resistant to rainbow table attacks. All user inputs undergo strict validation, with automated format verification for emails, AWS credentials, and other sensitive data to prevent injection attacks and malformed requests.
+                <Text fontSize={"14px"} fontWeight={400} lineHeight={"1.8"} color={"#444"}>
+                  <Text as={"span"} fontWeight={600}>Data Protection:</Text> Passwords are cryptographically hashed using bcrypt, making them irreversible and resistant to rainbow table attacks. All user inputs undergo strict validation, with automated format verification for emails, AWS credentials, and other sensitive data to prevent injection attacks and malformed requests.
                 </Text>
-                <Text fontSize={"14px"} fontWeight={400} lineHeight={"1.8"} color={"#555"}>
-                  <Text as={"span"} fontWeight={600} color={"#333"}>Audit Logging:</Text> Comprehensive request logging captures who performed what action and when, including request methods, processing times, IP addresses, and response statuses. This detailed audit trail facilitates rapid troubleshooting and security incident investigation.
+                <Text fontSize={"14px"} fontWeight={400} lineHeight={"1.8"} color={"#444"}>
+                  <Text as={"span"} fontWeight={600}>Audit Logging:</Text> Comprehensive request logging captures who performed what action and when, including request methods, processing times, IP addresses, and response statuses. This detailed audit trail facilitates rapid troubleshooting and security incident investigation.
                 </Text>
               </Flex>
-            </Box>
+            </Flex>
 
             {/* Subsection 3 */}
-            <Box
-              p={{ base: "16px", md: "20px" }}
-              borderRadius={"12px"}
-              bg={"#F0FFF4"}
-              border={"1px solid #C6F6D5"}
-            >
-              <Text fontSize={"17px"} fontWeight={600} letterSpacing={"-0.3px"} color={"#059669"} mb={"12px"}>
+            <Flex flexDir={"column"} gap={"14px"}>
+              <Text fontSize={"17px"} fontWeight={600} letterSpacing={"-0.3px"} color={"#1a1a2e"}>
                 AWS Cloud Integration
               </Text>
-              <Flex flexDir={"column"} gap={"10px"}>
-                <Text fontSize={"14px"} fontWeight={400} lineHeight={"1.8"} color={"#555"}>
-                  <Text as={"span"} fontWeight={600} color={"#333"}>Global Deployment:</Text> TRH supports deployment across all AWS regions worldwide. Upon registering AWS credentials, the system automatically queries available regions and provisions necessary resources including EC2 compute instances and EFS storage in the selected region.
+              <Flex flexDir={"column"} gap={"10px"} pl={"16px"} borderLeft={"2px solid #E1E8ED"}>
+                <Text fontSize={"14px"} fontWeight={400} lineHeight={"1.8"} color={"#444"}>
+                  <Text as={"span"} fontWeight={600}>Global Deployment:</Text> TRH supports deployment across all AWS regions worldwide. Upon registering AWS credentials, the system automatically queries available regions and provisions necessary resources including EC2 compute instances and EFS storage in the selected region.
                 </Text>
-                <Text fontSize={"14px"} fontWeight={400} lineHeight={"1.8"} color={"#555"}>
-                  <Text as={"span"} fontWeight={600} color={"#333"}>Environment Consistency:</Text> Docker containerization guarantees identical behavior between development and production environments. Code tested on a developer&apos;s local machine will execute identically in AWS cloud infrastructure, eliminating environment-specific bugs.
+                <Text fontSize={"14px"} fontWeight={400} lineHeight={"1.8"} color={"#444"}>
+                  <Text as={"span"} fontWeight={600}>Environment Consistency:</Text> Docker containerization guarantees identical behavior between development and production environments. Code tested on a developer&apos;s local machine will execute identically in AWS cloud infrastructure, eliminating environment-specific bugs.
                 </Text>
-                <Text fontSize={"14px"} fontWeight={400} lineHeight={"1.8"} color={"#555"}>
-                  <Text as={"span"} fontWeight={600} color={"#333"}>Automated Validation:</Text> AWS credentials undergo automatic verification before storage, preventing deployment failures caused by invalid or expired credentials. This proactive validation ensures smooth operations and reduces troubleshooting time.
+                <Text fontSize={"14px"} fontWeight={400} lineHeight={"1.8"} color={"#444"}>
+                  <Text as={"span"} fontWeight={600}>Automated Validation:</Text> AWS credentials undergo automatic verification before storage, preventing deployment failures caused by invalid or expired credentials. This proactive validation ensures smooth operations and reduces troubleshooting time.
                 </Text>
               </Flex>
-            </Box>
+            </Flex>
           </Flex>
         </Flex>
 
