@@ -69,32 +69,10 @@ export default function AnnouncementBanner() {
             <span style={{ fontSize: "16px" }}>🎉</span>
             <div className="banner-text">
               <span className="animated-gradient-text">Tokamak Rollup Hub Platform is Now Live</span>
-              <span className="banner-regular-text"> — Testnet deployment available</span>
               <span className="banner-cta-text">View Details</span>
             </div>
           </Box>
         </Flex>
-        <Box
-          position="absolute"
-          right={{ base: "20px", md: "30px" }}
-          top="50%"
-          transform="translateY(-50%)"
-          cursor="pointer"
-          onClick={handleClose}
-          p="8px"
-          borderRadius="full"
-          _hover={{ bg: "rgba(255, 255, 255, 0.1)" }}
-          transition="all 0.2s"
-          zIndex={1002}
-        >
-          <Image
-            src={CloseIcon}
-            alt="close"
-            width={20}
-            height={20}
-            style={{ filter: 'invert(1)' }}
-          />
-        </Box>
       </Box>
 
       {isModalOpen && (
