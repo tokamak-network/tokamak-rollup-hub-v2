@@ -187,12 +187,12 @@ export default function UptimeKumaPage() {
                   <br />
                   <br />
                   Key features:
-                  <br />- Monitor your services with a clean, easy-to-use
+                  <br />• Monitor your services with a clean, easy-to-use
                   dashboard
-                  <br />- Get notified instantly when services go offline
-                  <br />- Create public status pages to share with your
+                  <br />• Get notified instantly when services go offline
+                  <br />• Create public status pages to share with your
                   community
-                  <br />- 90+ notification options (Telegram, Discord, Email,
+                  <br />• 90+ notification options (Telegram, Discord, Email,
                   Slack, and more)
                 </Text>
               </Flex>
@@ -216,20 +216,20 @@ export default function UptimeKumaPage() {
                 <Text fontSize={"15px"} fontWeight={400} lineHeight={"18px"}>
                   Uptime Kuma supports multiple monitoring types:
                   <br />
-                  <br />- <Text as={"span"} fontWeight={700}>
+                  <br />• <Text as={"span"} fontWeight={700}>
                     HTTP/HTTPS
                   </Text>{" "}
-                  - Check if websites and APIs are responding
-                  <br />- <Text as={"span"} fontWeight={700}>TCP Port</Text> -
+                  • Check if websites and APIs are responding
+                  <br />• <Text as={"span"} fontWeight={700}>TCP Port</Text> -
                   Monitor if specific ports are open
-                  <br />- <Text as={"span"} fontWeight={700}>Ping</Text> - Check
+                  <br />• <Text as={"span"} fontWeight={700}>Ping</Text> - Check
                   if servers are reachable
-                  <br />- <Text as={"span"} fontWeight={700}>DNS</Text> - Verify
+                  <br />• <Text as={"span"} fontWeight={700}>DNS</Text> - Verify
                   DNS records are resolving correctly
-                  <br />- <Text as={"span"} fontWeight={700}>
+                  <br />• <Text as={"span"} fontWeight={700}>
                     And more
                   </Text>{" "}
-                  - Docker containers, databases, game servers, etc.
+                  • Docker containers, databases, game servers, etc.
                 </Text>
               </Flex>
               <Flex flexDir={"column"} gap={"6px"}>
@@ -290,7 +290,7 @@ export default function UptimeKumaPage() {
                     lineHeight={"17px"}
                   >
                     {" "}
-                    - Clean interface to monitor all your services
+                    • Clean interface to monitor all your services
                   </Text>
                 </List.Item>
                 <List.Item
@@ -306,7 +306,7 @@ export default function UptimeKumaPage() {
                     lineHeight={"17px"}
                   >
                     {" "}
-                    - Telegram, Discord, Email, Slack, and more
+                    • Telegram, Discord, Email, Slack, and more
                   </Text>
                 </List.Item>
                 <List.Item
@@ -322,7 +322,7 @@ export default function UptimeKumaPage() {
                     lineHeight={"17px"}
                   >
                     {" "}
-                    - Create public pages to share uptime with users
+                    • Create public pages to share uptime with users
                   </Text>
                 </List.Item>
                 <List.Item
@@ -338,7 +338,7 @@ export default function UptimeKumaPage() {
                     lineHeight={"17px"}
                   >
                     {" "}
-                    - Your data stays on your infrastructure
+                    • Your data stays on your infrastructure
                   </Text>
                 </List.Item>
               </List.Root>

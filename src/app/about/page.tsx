@@ -375,7 +375,7 @@ export default function AboutPage() {
             <Flex alignItems={"center"} gap={"14px"}>
               <Text fontSize={"14px"} fontWeight={600} color={"#0070ED"} w={"20px"}>7.</Text>
               <Text fontSize={"15px"} fontWeight={400} lineHeight={"1.7"} color={"#444"}>
-                Try out the integrations (Bridge, Explorer, Monitoring, Uptime Kuma)
+                Try out the integrations (Bridge, Explorer, Monitoring, System Pulse)
               </Text>
             </Flex>
           </Flex>

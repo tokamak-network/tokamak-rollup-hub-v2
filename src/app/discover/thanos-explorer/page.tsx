@@ -178,13 +178,13 @@ export default function ThanosExplorerPage() {
                   mind, ensuring it is approachable for both technical and
                   non-technical users. <br />
                   <br />
-                  With the Thanos Explorer, users can: <br />- Track
+                  With the Thanos Explorer, users can: <br />• Track
                   transactions and their status in real-time including
                   deposit/withdrawal status since it is especially designed for
-                  the Thanos Stack <br />- View detailed information about
+                  the Thanos Stack <br />• View detailed information about
                   blocks, including block height, timestamp, and transactions
-                  included <br />- Explore smart contracts, including their
-                  code, transactions, and interactions <br />- Analyze network
+                  included <br />• Explore smart contracts, including their
+                  code, transactions, and interactions <br />• Analyze network
                   statistics, such as block time, gas usage, and network
                   congestion <br />
                   <br />
@@ -263,7 +263,7 @@ export default function ThanosExplorerPage() {
                     fontWeight={400}
                     lineHeight={"17px"}
                   >
-                    - The explorer is designed to be user-friendly, making it
+                    • The explorer is designed to be user-friendly, making it
                     accessible to both technical and non-technical users.
                   </Text>
                 </List.Item>
@@ -279,7 +279,7 @@ export default function ThanosExplorerPage() {
                     fontWeight={400}
                     lineHeight={"17px"}
                   >
-                    - Monitor transactions and their status, including
+                    • Monitor transactions and their status, including
                     deposit/withdrawal status, specifically tailored for the
                     Thanos Stack
                   </Text>
@@ -296,7 +296,7 @@ export default function ThanosExplorerPage() {
                     fontWeight={400}
                     lineHeight={"17px"}
                   >
-                    - View detailed information about blocks, including block
+                    • View detailed information about blocks, including block
                     height, timestamp, and transactions included
                   </Text>
                 </List.Item>
@@ -312,7 +312,7 @@ export default function ThanosExplorerPage() {
                     fontWeight={400}
                     lineHeight={"17px"}
                   >
-                    - Analyze network statistics, such as block time, gas usage,
+                    • Analyze network statistics, such as block time, gas usage,
                     and network congestion
                   </Text>
                 </List.Item>

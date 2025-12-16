@@ -199,10 +199,10 @@ export default function MonitoringToolPage() {
                   Key Features
                 </Text>
                 <Text fontSize={"15px"} fontWeight={400} lineHeight={"18px"}>
-                  - <Text as={"span"} fontWeight={700}>Grafana Dashboards</Text> - Visualize real-time metrics for network health
-                  <br />- <Text as={"span"} fontWeight={700}>Multi-channel Alerts</Text> - Instant notifications via Email (Gmail SMTP) and Telegram
-                  <br />- <Text as={"span"} fontWeight={700}>Log Collection</Text> - Aggregates logs from all components for easy analysis
-                  <br />- <Text as={"span"} fontWeight={700}>Customizable Monitoring</Text> - Tracks all Thanos Stack components and system resources
+                  • <Text as={"span"} fontWeight={700}>Grafana Dashboards</Text> - Visualize real-time metrics for network health
+                  <br />• <Text as={"span"} fontWeight={700}>Multi-channel Alerts</Text> - Instant notifications via Email (Gmail SMTP) and Telegram
+                  <br />• <Text as={"span"} fontWeight={700}>Log Collection</Text> - Aggregates logs from all components for easy analysis
+                  <br />• <Text as={"span"} fontWeight={700}>Customizable Monitoring</Text> - Tracks all Thanos Stack components and system resources
                 </Text>
               </Flex>
               <Flex gap={"15px"} flexDir={"column"} alignItems={"center"}>
@@ -255,12 +255,12 @@ export default function MonitoringToolPage() {
                   What&apos;s Monitored
                 </Text>
                 <Text fontSize={"15px"} fontWeight={400} lineHeight={"18px"}>
-                  - <Text as={"span"} fontWeight={700}>op-node</Text> - L2 node synchronization and derivation
-                  <br />- <Text as={"span"} fontWeight={700}>op-geth</Text> - EVM execution client status
-                  <br />- <Text as={"span"} fontWeight={700}>op-batcher</Text> - Batch transaction submission to L1
-                  <br />- <Text as={"span"} fontWeight={700}>op-proposer</Text> - State root proposal generation
-                  <br />- <Text as={"span"} fontWeight={700}>External Infrastructure</Text> - L1 RPC connectivity
-                  <br />- <Text as={"span"} fontWeight={700}>System Resources</Text> - CPU, Memory, and Storage usage
+                  • <Text as={"span"} fontWeight={700}>op-node</Text> - L2 node synchronization and derivation
+                  <br />• <Text as={"span"} fontWeight={700}>op-geth</Text> - EVM execution client status
+                  <br />• <Text as={"span"} fontWeight={700}>op-batcher</Text> - Batch transaction submission to L1
+                  <br />• <Text as={"span"} fontWeight={700}>op-proposer</Text> - State root proposal generation
+                  <br />• <Text as={"span"} fontWeight={700}>External Infrastructure</Text> - L1 RPC connectivity
+                  <br />• <Text as={"span"} fontWeight={700}>System Resources</Text> - CPU, Memory, and Storage usage
                 </Text>
               </Flex>
             </Flex>
@@ -296,7 +296,7 @@ export default function MonitoringToolPage() {
                     lineHeight={"17px"}
                   >
                     {" "}
-                    - Grafana visualization of system health and metrics
+                    • Grafana visualization of system health and metrics
                   </Text>
                 </List.Item>
                 <List.Item
@@ -312,7 +312,7 @@ export default function MonitoringToolPage() {
                     lineHeight={"17px"}
                   >
                     {" "}
-                    - Gmail SMTP notifications for critical events
+                    • Gmail SMTP notifications for critical events
                   </Text>
                 </List.Item>
                 <List.Item
@@ -328,7 +328,7 @@ export default function MonitoringToolPage() {
                     lineHeight={"17px"}
                   >
                     {" "}
-                    - Instant bot messages when issues arise
+                    • Instant bot messages when issues arise
                   </Text>
                 </List.Item>
                 <List.Item
@@ -344,7 +344,7 @@ export default function MonitoringToolPage() {
                     lineHeight={"17px"}
                   >
                     {" "}
-                    - Configure from the platform UI in minutes
+                    • Configure from the platform UI in minutes
                   </Text>
                 </List.Item>
               </List.Root>
@@ -381,7 +381,7 @@ export default function MonitoringToolPage() {
                   <Text as={"span"} fontWeight={700}>
                     Prometheus
                   </Text>{" "}
-                  - Metrics collection and storage
+                  • Metrics collection and storage
                 </List.Item>
                 <List.Item
                   fontSize={"13px"}
@@ -391,7 +391,7 @@ export default function MonitoringToolPage() {
                   <Text as={"span"} fontWeight={700}>
                     Grafana
                   </Text>{" "}
-                  - Visualization dashboards with custom panels
+                  • Visualization dashboards with custom panels
                 </List.Item>
                 <List.Item
                   fontSize={"13px"}
@@ -401,7 +401,7 @@ export default function MonitoringToolPage() {
                   <Text as={"span"} fontWeight={700}>
                     AlertManager
                   </Text>{" "}
-                  - Alert routing and notification
+                  • Alert routing and notification
                 </List.Item>
                 <List.Item
                   fontSize={"13px"}
@@ -411,7 +411,7 @@ export default function MonitoringToolPage() {
                   <Text as={"span"} fontWeight={700}>
                     Blackbox Exporter
                   </Text>{" "}
-                  - External endpoint monitoring
+                  • External endpoint monitoring
                 </List.Item>
                 <List.Item
                   fontSize={"13px"}
@@ -421,7 +421,7 @@ export default function MonitoringToolPage() {
                   <Text as={"span"} fontWeight={700}>
                     CloudWatch Logs
                   </Text>{" "}
-                  - Centralized log storage and retention management
+                  • Centralized log storage and retention management
                 </List.Item>
               </List.Root>
             </Flex>

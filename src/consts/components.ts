@@ -85,7 +85,7 @@ export const SUB_PRODUCT_CATEGORIES: Record<string, SubProductDetailType[]> = {
     },
     {
       id: "uptime-kuma",
-      name: "Uptime Kuma",
+      name: "System Pulse",
       description:
         "System Pulse provides real-time visibility into platform health and service availability. Monitor uptime and get instant notifications.",
       link: "/discover/uptime-kuma",

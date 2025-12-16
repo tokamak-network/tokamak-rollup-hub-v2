@@ -289,7 +289,7 @@ export default function ThanosBridgePage() {
                     fontWeight={400}
                     lineHeight={"17px"}
                   >
-                    - No reliance on any third-party backends
+                    • No reliance on any third-party backends
                   </Text>
                 </List.Item>
                 <List.Item
@@ -304,7 +304,7 @@ export default function ThanosBridgePage() {
                     fontWeight={400}
                     lineHeight={"17px"}
                   >
-                    - Open source code for operators and developers to extend
+                    • Open source code for operators and developers to extend
                     functionalities
                   </Text>
                 </List.Item>
@@ -320,7 +320,7 @@ export default function ThanosBridgePage() {
                     fontWeight={400}
                     lineHeight={"17px"}
                   >
-                    - Simple to configure and integrate into the Thanos stack
+                    • Simple to configure and integrate into the Thanos stack
                   </Text>
                 </List.Item>
               </List.Root>

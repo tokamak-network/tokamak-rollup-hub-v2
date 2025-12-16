@@ -209,10 +209,10 @@ export default function DaoCandidatePage() {
                   <br />
                   <br />
                   Key benefits:
-                  <br />- Become part of the Tokamak Network ecosystem
-                  <br />- Participate in governance decisions
-                  <br />- Access to ecosystem resources and community
-                  <br />- Authorized to receive distribution of TON seigniorage according to activation of rollup (See{" "}
+                  <br />• Become part of the Tokamak Network ecosystem
+                  <br />• Participate in governance decisions
+                  <br />• Access to ecosystem resources and community
+                  <br />• Authorized to receive distribution of TON seigniorage according to activation of rollup (See{" "}
                   <Link
                     color={"#0070ED"}
                     href={SEIGNIORAGE_URL}
@@ -263,14 +263,14 @@ export default function DaoCandidatePage() {
                 <Text fontSize={"15px"} fontWeight={400} lineHeight={"18px"}>
                   After registration, you&apos;ll receive:
                   <br />
-                  <br />- <Text as={"span"} fontWeight={700}>
+                  <br />• <Text as={"span"} fontWeight={700}>
                     Safe Wallet
                   </Text>{" "}
-                  - A multi-signature wallet for secure governance participation
-                  <br />- <Text as={"span"} fontWeight={700}>
+                  • A multi-signature wallet for secure governance participation
+                  <br />• <Text as={"span"} fontWeight={700}>
                     Registration Record
                   </Text>{" "}
-                  - Information for governance participation and seigniorage distribution is available on the{" "}
+                  • Information for governance participation and seigniorage distribution is available on the{" "}
                   <Link
                     color={"#0070ED"}
                     href={STAKING_DASHBOARD_URL}
@@ -279,10 +279,10 @@ export default function DaoCandidatePage() {
                   >
                     Staking Dashboard
                   </Link>
-                  <br />- <Text as={"span"} fontWeight={700}>
+                  <br />• <Text as={"span"} fontWeight={700}>
                     Seigniorage Distribution
                   </Text>{" "}
-                  - Automatically receives TON seigniorage according to distribution logic
+                  • Automatically receives TON seigniorage according to distribution logic
                 </Text>
               </Flex>
               <Flex flexDir={"column"} gap={"6px"}>
@@ -296,18 +296,18 @@ export default function DaoCandidatePage() {
                 <Text fontSize={"15px"} fontWeight={400} lineHeight={"18px"}>
                   To register your rollup as a DAO candidate, you&apos;ll need:
                   <br />
-                  <br />- <Text as={"span"} fontWeight={700}>
+                  <br />• <Text as={"span"} fontWeight={700}>
                     Staking Amount
                   </Text>{" "}
-                  - Minimum 1000.1 TON (required)
-                  <br />- <Text as={"span"} fontWeight={700}>
+                  • Minimum 1000.1 TON (required)
+                  <br />• <Text as={"span"} fontWeight={700}>
                     Memo
                   </Text>{" "}
-                  - A memo for your rollup (required)
-                  <br />- <Text as={"span"} fontWeight={700}>
+                  • A memo for your rollup (required)
+                  <br />• <Text as={"span"} fontWeight={700}>
                     Name
                   </Text>{" "}
-                  - A name for your rollup (optional)
+                  • A name for your rollup (optional)
                 </Text>
               </Flex>
               <Flex flexDir={"column"} gap={"6px"}>
@@ -346,10 +346,10 @@ export default function DaoCandidatePage() {
                   )
                   <br />
                   Operators can register metadata to provide additional transparency, including:
-                  <br />- Official website information
-                  <br />- Support and contact URLs
-                  <br />- Documentation links
-                  <br />- Community and social links
+                  <br />• Official website information
+                  <br />• Support and contact URLs
+                  <br />• Documentation links
+                  <br />• Community and social links
                 </Text>
                 <Text fontSize={"15px"} fontWeight={400} lineHeight={"18px"} mt={"15px"}>
                   <Text as={"span"} fontWeight={700}>
@@ -357,9 +357,9 @@ export default function DaoCandidatePage() {
                   </Text>
                   <br />
                   Tokamak Network provides a metadata checker dApp that:
-                  <br />- Verifies chain stack information
-                  <br />- Allows verified metadata to be shared with users
-                  <br />- Helps improve transparency and trust within the community
+                  <br />• Verifies chain stack information
+                  <br />• Allows verified metadata to be shared with users
+                  <br />• Helps improve transparency and trust within the community
                 </Text>
                 <Text fontSize={"15px"} fontWeight={400} lineHeight={"18px"} mt={"15px"}>
                   <Text as={"span"} fontWeight={700}>
@@ -450,7 +450,7 @@ export default function DaoCandidatePage() {
                   link={AUDIT_REPORTS.nethermind}
                 />
                 <AuditCard
-                  name="Carl Farterson"
+                  name="Carl"
                   subtitle="Independent Auditor"
                   link={AUDIT_REPORTS.independent}
                 />

@@ -186,7 +186,7 @@ export default function ThanosStackPage() {
                   Overview
                 </Text>
                 <Text fontSize={"15px"} fontWeight={400} lineHeight={"18px"}>
-                  The Thanos Stack is built on top of{" "}
+                  The Thanos Stack is built on{" "}
                   <Link
                     href={
                       "https://github.com/ethereum-optimism/optimism/releases/tag/op-node%2Fv1.12.0"
@@ -195,8 +195,10 @@ export default function ThanosStackPage() {
                     target="_blank"
                   >
                     OP Stack v1.12.0
-                  </Link>{" "}
-                  now with added support for Ethereum Pectra upgrade. <br />
+                  </Link>
+                  , which natively supports the Ethereum Pectra upgrade, and has
+                  been further upgraded to add support for the Ethereum Fusaka
+                  upgrade. <br />
                   To meet the needs of the ecosystem and the direction of the
                   market, we can utilize ERC20 tokens as native tokens at layer
                   2. The Tokamak Network aims to create a flexible ecosystem
@@ -219,7 +221,7 @@ export default function ThanosStackPage() {
                 backgroundColor={"#FFF"}
                 aspectRatio={"1.1/1"}
               />
-              <Flex flexDir={"column"} gap={"6px"}>
+              {/* <Flex flexDir={"column"} gap={"6px"}>
                 <Text
                   fontSize={"18px"}
                   fontWeight={700}
@@ -243,7 +245,7 @@ export default function ThanosStackPage() {
                   deployment SDK. Support for other cloud providers such as GCP
                   and Azure is in the pipeline.
                 </Text>
-              </Flex>
+              </Flex> */}
               <Flex flexDir={"column"} gap={"6px"}>
                 <Text
                   fontSize={"18px"}
@@ -300,7 +302,7 @@ export default function ThanosStackPage() {
                     fontWeight={400}
                     lineHeight={"17px"}
                   >
-                    - Simple to configure and deploy where you want
+                    • Simple to configure and deploy where you want
                   </Text>
                 </List.Item>
                 <List.Item
@@ -315,7 +317,7 @@ export default function ThanosStackPage() {
                     fontWeight={400}
                     lineHeight={"17px"}
                   >
-                    - Supports on-demand Layer 2 solutions that fit the needs of
+                    • Supports on-demand Layer 2 solutions that fit the needs of
                     users
                   </Text>
                 </List.Item>
@@ -331,7 +333,7 @@ export default function ThanosStackPage() {
                     fontWeight={400}
                     lineHeight={"17px"}
                   >
-                    - Delivers L2 scalability, security, and reliability while
+                    • Delivers L2 scalability, security, and reliability while
                     interacting seamlessly with L1 blockchain systems
                   </Text>
                 </List.Item>
@@ -347,7 +349,7 @@ export default function ThanosStackPage() {
                     fontWeight={400}
                     lineHeight={"17px"}
                   >
-                    - Provides a development environment that mirrors the
+                    • Provides a development environment that mirrors the
                     familiar Ethereum environment
                   </Text>
                 </List.Item>
@@ -363,7 +365,7 @@ export default function ThanosStackPage() {
                     fontWeight={400}
                     lineHeight={"17px"}
                   >
-                    - Offers faster transaction processing and lower transaction
+                    • Offers faster transaction processing and lower transaction
                     fees
                   </Text>
                 </List.Item>
@@ -391,7 +393,7 @@ export default function ThanosStackPage() {
                     fontWeight={400}
                     lineHeight={"17px"}
                   >
-                    - A tool for monitoring and analyzing the performance of the
+                    • A tool for monitoring and analyzing the performance of the
                     thanos chain
                   </Text>
                 </List.Item>
@@ -407,7 +409,7 @@ export default function ThanosStackPage() {
                     fontWeight={400}
                     lineHeight={"17px"}
                   >
-                    - A bridge for transferring ERC-20 tokens between the thanos
+                    • A bridge for transferring ERC-20 tokens between the thanos
                     chain and the L1 network
                   </Text>
                 </List.Item>
@@ -423,7 +425,7 @@ export default function ThanosStackPage() {
                     fontWeight={400}
                     lineHeight={"17px"}
                   >
-                    - Register your chain as a staking and DAO candidate in
+                    • Register your chain as a staking and DAO candidate in
                     Tokamak Staking v2 to receive a share of the distributed
                     seigniorage rewards.
                   </Text>
