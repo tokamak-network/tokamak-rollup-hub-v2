@@ -103,15 +103,15 @@ export default function AnnouncementBanner() {
             {/* Close Button */}
             <Box
               position="absolute"
-              top="16px"
-              right="16px"
+              top="12px"
+              right="12px"
               cursor="pointer"
               onClick={handleModalClose}
-              p="8px"
+              p="4px"
               _hover={{ opacity: 0.7 }}
               transition="all 0.15s"
             >
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#000" strokeWidth="2.5" strokeLinecap="round">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#000" strokeWidth="2.5" strokeLinecap="round">
                 <line x1="18" y1="6" x2="6" y2="18"></line>
                 <line x1="6" y1="6" x2="18" y2="18"></line>
               </svg>

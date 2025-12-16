@@ -4,7 +4,7 @@ import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import Carousel from "react-multi-carousel";
 import CardComponent from "./CardComponent";
 import "react-multi-carousel/lib/styles.css";
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import Link from "next/link";
 
 const responsive = {
@@ -184,8 +184,38 @@ const UptimeKumaComponent = () => {
 
 export default function ComponentCarouselComponent() {
   const carouselRef = useRef<Carousel>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+
+    let isScrolling = false;
+    const handleWheel = (e: WheelEvent) => {
+      if (Math.abs(e.deltaX) > Math.abs(e.deltaY) || e.shiftKey) {
+        e.preventDefault();
+        if (isScrolling) return;
+        isScrolling = true;
+
+        const delta = e.deltaX || e.deltaY;
+        if (delta > 0) {
+          carouselRef.current?.next(1);
+        } else {
+          carouselRef.current?.previous(1);
+        }
+
+        setTimeout(() => {
+          isScrolling = false;
+        }, 300);
+      }
+    };
+
+    container.addEventListener('wheel', handleWheel, { passive: false });
+    return () => container.removeEventListener('wheel', handleWheel);
+  }, []);
+
   return (
-    <Flex flexDir={"column"} gap={"45px"}>
+    <Flex flexDir={"column"} gap={"45px"} ref={containerRef}>
       <Flex
         gap={"24px"}
         alignItems={{ base: "flex-start", md: "center" }}
@@ -220,10 +250,10 @@ export default function ComponentCarouselComponent() {
       </Flex>
       <Carousel
         ref={carouselRef}
-        swipeable={false}
-        draggable={false}
+        swipeable={true}
+        draggable={true}
         responsive={responsive}
-        transitionDuration={500}
+        transitionDuration={300}
         itemClass="carousel-item"
         containerClass="carousel-container"
         infinite={true}
@@ -231,6 +261,7 @@ export default function ComponentCarouselComponent() {
         rtl={false}
         autoPlay={true}
         autoPlaySpeed={5000}
+        keyBoardControl={true}
       >
         <ThanosBridgeComponent />
         <BlockExplorerComponent />

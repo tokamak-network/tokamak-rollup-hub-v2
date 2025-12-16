@@ -1,12 +1,30 @@
 "use client";
 import { ProductCategoryType, SubProductDetailType } from "@/types/products";
-import { Flex, Grid, GridItem, Text } from "@chakra-ui/react";
+import { Box, Flex, Text } from "@chakra-ui/react";
 import { StackComponent } from "./StackComponent";
+import { useRef, useEffect } from "react";
 
 export const StackListComponent: React.FC<{
   category: ProductCategoryType;
   stacks: SubProductDetailType[];
 }> = ({ stacks }) => {
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const container = scrollRef.current;
+    if (!container) return;
+
+    const handleWheel = (e: WheelEvent) => {
+      if (Math.abs(e.deltaX) > 5 || (Math.abs(e.deltaY) > 5 && e.shiftKey)) {
+        e.preventDefault();
+        container.scrollLeft += e.deltaX || e.deltaY;
+      }
+    };
+
+    container.addEventListener('wheel', handleWheel, { passive: false });
+    return () => container.removeEventListener('wheel', handleWheel);
+  }, []);
+
   return (
     <Flex
       flexDir={"column"}
@@ -28,19 +46,39 @@ export const StackListComponent: React.FC<{
           Meet the L2 Stack created by various developers.
         </Text>
       </Flex>
-      <Grid
-        templateColumns={{
-          base: "repeat(1, 1fr)",
-          md: "repeat(2, 1fr)",
+      <Box
+        ref={scrollRef}
+        overflowX={"auto"}
+        overflowY={"hidden"}
+        pb={"10px"}
+        mx={"-10px"}
+        px={"10px"}
+        css={{
+          scrollBehavior: "smooth",
+          "&::-webkit-scrollbar": {
+            height: "6px",
+          },
+          "&::-webkit-scrollbar-track": {
+            background: "#f1f1f1",
+            borderRadius: "3px",
+          },
+          "&::-webkit-scrollbar-thumb": {
+            background: "#ccc",
+            borderRadius: "3px",
+          },
+          "&::-webkit-scrollbar-thumb:hover": {
+            background: "#aaa",
+          },
         }}
-        gap={"30px"}
       >
-        {stacks.map((stack) => (
-          <GridItem key={stack.id}>
-            <StackComponent {...stack} />
-          </GridItem>
-        ))}
-      </Grid>
+        <Flex gap={"20px"} minW={"max-content"}>
+          {stacks.map((stack) => (
+            <Box key={stack.id} minW={{ base: "280px", md: "350px" }} maxW={"400px"}>
+              <StackComponent {...stack} />
+            </Box>
+          ))}
+        </Flex>
+      </Box>
     </Flex>
   );
 };
