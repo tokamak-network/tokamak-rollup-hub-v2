@@ -94,6 +94,7 @@ const CrossTradeComponent = () => {
         </>
       }
       featured={false}
+      iconId={"cross-trade"}
     />
   );
 };
@@ -141,6 +142,7 @@ const RandomNumberGenerationComponent = () => {
         </>
       }
       featured={false}
+      iconId={"rng"}
     />
   );
 };

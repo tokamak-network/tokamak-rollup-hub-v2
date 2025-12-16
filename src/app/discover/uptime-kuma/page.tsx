@@ -155,7 +155,7 @@ export default function UptimeKumaPage() {
                           Launched on
                         </Text>
                         <Text fontSize={"13px"} fontWeight={700}>
-                          17 December 2026
+                          17 December 2025
                         </Text>
                       </Flex>
                     </Flex>

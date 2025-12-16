@@ -15,6 +15,8 @@ const INTEGRATION_LOGO_MAP = {
   "monitoring-tool": "/icon/monitoringtool.svg",
   "dao-candidate": "/icon/dao.svg",
   "uptime-kuma": "/icon/systempulse.svg",
+  "cross-trade": "/icon/corsstrade.png",
+  "rng": "/icon/rng.png",
 };
 
 export const IntegrationLogo: React.FC<IntegrationLogoProps> = ({

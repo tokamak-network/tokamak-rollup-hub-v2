@@ -45,7 +45,7 @@ export default function AboutPage() {
               lineHeight={"normal"}
               letterSpacing={"-1.62px"}
             >
-              About Tokamak
+              Tokamak
             </Text>
             <Box
               display={"flex"}
@@ -80,7 +80,7 @@ export default function AboutPage() {
             opacity={0.8}
             textAlign={"center"}
           >
-            A comprehensive platform for deploying and managing Optimistic Rollup chains on the Thanos stack
+            A comprehensive platform for deploying and managing Layer 2 Rollup chains with essential infrastructure
           </Text>
 
           {/* Hero Image */}

@@ -214,7 +214,7 @@ export default function AnnouncementBanner() {
                   _hover={{ color: "#0070ED", textDecoration: "none" }}
                   transition="color 0.3s ease"
                 >
-                  <span className="typewriter-wrapper">Get Started with Installation Guide</span>
+                  <span className="typewriter-wrapper">Get Started with Setup Guide</span>
                   <span className="typewriter-arrow">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                       <path d="M5 12h14"/>

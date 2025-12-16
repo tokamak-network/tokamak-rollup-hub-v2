@@ -152,7 +152,7 @@ export default function ThanosExplorerPage() {
                           Launched on
                         </Text>
                         <Text fontSize={"13px"} fontWeight={700}>
-                          17 December 2026
+                          22 January 2025
                         </Text>
                       </Flex>
                     </Flex>
