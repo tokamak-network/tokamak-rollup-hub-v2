@@ -145,11 +145,12 @@ export default function AnnouncementBanner() {
 
               {/* Features */}
               <Text fontSize="18px" fontWeight="700" color="#222" mb={6} textAlign="center">
-                Available Integrations
+                Available Stack and Integrations
               </Text>
               <Flex gap={4} mb={14} flexWrap="wrap" justify="center">
+                <Tag text="Thanos Stack" href="/discover/thanos-stack" />
                 <Tag text="Thanos Bridge" href="/discover/thanos-bridge" />
-                <Tag text="Block Explorer" href="/discover/thanos-explorer" />
+                <Tag text="Thanos Explorer" href="/discover/thanos-explorer" />
                 <Tag text="Monitoring Tools" href="/discover/monitoring-tool" />
                 <Tag text="System Pulse" href="/discover/uptime-kuma" />
                 <Tag text="DAO Staking" href="/discover/dao-candidate" />
