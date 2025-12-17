@@ -150,7 +150,7 @@ export default function AnnouncementBanner() {
                 <Tag text="Thanos Explorer" href="/discover/thanos-explorer" />
                 <Tag text="Monitoring Tools" href="/discover/monitoring-tool" />
                 <Tag text="System Pulse" href="/discover/uptime-kuma" />
-                <Tag text="DAO Staking" href="/discover/dao-candidate" />
+                <Tag text="Staking" href="/discover/dao-candidate" />
               </Flex>
 
               {/* Reward */}
