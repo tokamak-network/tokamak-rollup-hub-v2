@@ -48,23 +48,24 @@ export default function Header() {
   return (
     <>
       <Flex
-        h={isMenuOpen ? "100vh" : "78px"}
+        h={isMenuOpen ? "100vh" : "54px"}
         px={{ base: "20px", md: "30px" }}
         justifyContent={"space-between"}
         alignItems={"center"}
         position={"fixed"}
-        top={isMenuOpen ? "0" : isBannerDismissed ? "0" : { base: "40px", md: "44px" }}
+        top={isMenuOpen ? "0" : isBannerDismissed ? "0" : { base: "44px", md: "48px" }}
         width={"100%"}
         zIndex={1000}
         backgroundColor={
           isMenuOpen
             ? "#FAFBFC"
             : isScrolled
-            ? "rgba(250, 251, 252, 0.75)"
+            ? "rgba(250, 251, 252, 0.92)"
             : "transparent"
         }
+        backdropFilter={isScrolled && !isMenuOpen ? "blur(10px)" : "none"}
         pr={"20px"}
-        transition="top 0.3s ease-in-out"
+        transition="top 0.3s ease-in-out, background-color 0.3s ease-in-out"
       >
         {!isMenuOpen && <LogoComponent />}
         <MenuBarComponent

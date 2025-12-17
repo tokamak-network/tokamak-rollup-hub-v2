@@ -21,7 +21,7 @@ export const PRODUCT_CATEGORIES: ProductDetailType[] = [
 export const SUB_CATEGORY_MAP: Record<string, string[]> = {
   all: [],
   stack: [],
-  integration: ["Block Explorer", "Bridge", "Monitoring", "DAO"],
+  integration: ["Block Explorer", "Bridge", "Monitoring", "Staking"],
 };
 
 export const SUB_PRODUCT_CATEGORIES: Record<string, SubProductDetailType[]> = {
@@ -81,7 +81,7 @@ export const SUB_PRODUCT_CATEGORIES: Record<string, SubProductDetailType[]> = {
         "Register your chain as a DAO candidate in the Tokamak Network ecosystem to earn seigniorage rewards proportional to the L2 growth.",
       link: "/discover/dao-candidate",
       category: "integration",
-      subCategory: "DAO",
+      subCategory: "Staking",
     },
     {
       id: "uptime-kuma",

@@ -44,6 +44,8 @@ export default function MenuBarComponent({
         gap={isMenuOpen ? "39px" : "45px"}
         display={{ base: isMenuOpen ? "flex" : "none", md: "flex" }}
         position={"relative"}
+        flexWrap={"nowrap"}
+        flexShrink={0}
       >
         {MENUBAR_ITEMS.map((item) => (
           <Flex

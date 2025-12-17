@@ -3,6 +3,7 @@ import { Flex, Box, Text, VStack, HStack, Link } from "@chakra-ui/react";
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import CloseIcon from "@/assets/icon/close.svg";
+import { PLATFORM_GUIDE_URL } from "@/consts/urls";
 import "./banner.css";
 
 export default function AnnouncementBanner() {
@@ -41,7 +42,7 @@ export default function AnnouncementBanner() {
         width="100%"
         bg="rgba(0, 0, 0, 0.8)"
         backdropFilter="blur(12px)"
-        py={{ base: "10px", md: "12px" }}
+        py={{ base: "12px", md: "14px" }}
         px={{ base: "20px", md: "30px" }}
         zIndex={1001}
         borderBottom="1px solid rgba(255, 255, 255, 0.08)"
@@ -203,7 +204,7 @@ export default function AnnouncementBanner() {
               {/* Get Started Link */}
               <Flex justify="center">
                 <Link
-                  href="https://docs.tokamak.network/home/~/changes/151/service-guide/tokamak-rollup-hub"
+                  href={PLATFORM_GUIDE_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="typewriter-link"
