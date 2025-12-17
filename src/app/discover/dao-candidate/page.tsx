@@ -6,7 +6,7 @@ import Image from "next/image";
 import { SocialButton } from "@/components/ui/social-button";
 import { IntegrationLogo } from "@/components/ui/integration-logo";
 import { useState } from "react";
-import { USER_GUIDE_URL } from "@/consts/urls";
+const DAO_DOCS_URL = "https://docs.tokamak.network/home/service-guide/tokamak-rollup-hub/tokamak-rollup-hub-platform/integrate-your-chain-with-modular-services/staking-dao-candidate";
 
 const DAO_CANDIDATE_GUIDE_URL =
   "https://github.com/tokamak-network/papers/blob/master/cryptoeconomics/tokamak-cryptoeconomics-en.md#222-ton-staking-v2";
@@ -16,7 +16,7 @@ const SEIGNIORAGE_URL =
 
 const STAKING_DASHBOARD_URL = "https://sepolia.staking.tokamak.network/staking";
 
-const METADATA_GUIDE_URL = "https://docs.tokamak.network";
+const METADATA_GUIDE_URL = "https://docs.tokamak.network/home/service-guide/tokamak-rollup-hub/tokamak-rollup-hub-platform/register-metadata";
 
 const METADATA_REPO_URL = "https://github.com/tokamak-network/tokamak-rollup-metadata-repository";
 
@@ -179,13 +179,13 @@ export default function DaoCandidatePage() {
                     <Flex gap={"12px"} flexWrap={"wrap"}>
                       <SocialButton
                         icon={"document"}
-                        label={"Guide"}
+                        label={"Whitepaper"}
                         link={DAO_CANDIDATE_GUIDE_URL}
                       />
                       <SocialButton
                         icon={"document"}
                         label={"Docs"}
-                        link={USER_GUIDE_URL}
+                        link={DAO_DOCS_URL}
                       />
                     </Flex>
                   </Flex>
@@ -277,7 +277,7 @@ export default function DaoCandidatePage() {
                     target="_blank"
                     _hover={{ textDecoration: "underline" }}
                   >
-                    Staking Dashboard
+                    Staking Dashboard (Sepolia Testnet)
                   </Link>
                   <br />• <Text as={"span"} fontWeight={700}>
                     Seigniorage Distribution
@@ -482,7 +482,7 @@ export default function DaoCandidatePage() {
                   color={"#0070ED"}
                   _hover={{ textDecoration: "underline" }}
                 >
-                  Seigniorage Distribution
+                  Seigniorage Distribution (Whitepaper)
                 </Link>
                 <Link
                   href={METADATA_REPO_URL}

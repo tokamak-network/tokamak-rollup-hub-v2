@@ -53,7 +53,7 @@ export default function Header() {
         justifyContent={"space-between"}
         alignItems={"center"}
         position={"fixed"}
-        top={isMenuOpen ? "0" : isBannerDismissed ? "0" : { base: "48px", md: "52px" }}
+        top={isMenuOpen ? "0" : isBannerDismissed ? "0" : { base: "46px", md: "48px" }}
         width={"100%"}
         zIndex={1000}
         backgroundColor={

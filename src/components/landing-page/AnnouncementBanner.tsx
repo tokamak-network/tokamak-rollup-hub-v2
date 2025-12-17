@@ -3,6 +3,7 @@ import { Flex, Box, Text, VStack, HStack, Link } from "@chakra-ui/react";
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import CloseIcon from "@/assets/icon/close.svg";
+import Logo from "@/assets/logo/logo.svg";
 import { PLATFORM_GUIDE_URL } from "@/consts/urls";
 import "./banner.css";
 
@@ -40,40 +41,35 @@ export default function AnnouncementBanner() {
         position="fixed"
         top="0"
         width="100%"
-        bg="rgba(0, 0, 0, 0.8)"
-        backdropFilter="blur(12px)"
+        bg="#000"
         py={{ base: "12px", md: "14px" }}
-        px={{ base: "20px", md: "30px" }}
         zIndex={1001}
-        borderBottom="1px solid rgba(255, 255, 255, 0.08)"
+        overflow="hidden"
+        cursor="pointer"
+        onClick={handleBannerClick}
+        _hover={{ bg: "#0a0a0a" }}
+        transition="all 0.2s"
       >
-        <Flex
-          maxW="100%"
-          mx="auto"
-          alignItems="center"
-          justifyContent="center"
-          position="relative"
-          gap="8px"
-        >
-          <Box
-            as="button"
-            onClick={handleBannerClick}
-            display="flex"
-            alignItems="center"
-            gap="8px"
-            bg="transparent"
-            border="none"
-            cursor="pointer"
-            _hover={{ opacity: 0.9 }}
-            transition="all 0.2s"
-          >
-            <span style={{ fontSize: "20px" }}>🎉</span>
-            <div className="banner-text">
-              <span className="animated-gradient-text">Tokamak Rollup Hub Platform is Now Live</span>
-              <span className="banner-cta-text">View Details</span>
-            </div>
-          </Box>
-        </Flex>
+        <div className="marquee-track">
+          <div className="marquee-content">
+            {[...Array(4)].map((_, i) => (
+              <span key={i} className="marquee-item">
+                <Image src={Logo} alt="Tokamak" width={40} height={16} />
+                <span className="animated-gradient-text marquee-text-large">Tokamak Rollup Hub Platform is Live</span>
+                <span className="marquee-dot">•</span>
+                <svg className="marquee-gift-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FFD700" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M20 12v10H4V12"></path>
+                  <path d="M2 7h20v5H2z"></path>
+                  <path d="M12 22V7"></path>
+                  <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"></path>
+                  <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"></path>
+                </svg>
+                <span className="animated-gradient-text marquee-text-large">Rewards & Bug Bounty Program Open</span>
+                <span className="marquee-badge">Ends Jan 5</span>
+              </span>
+            ))}
+          </div>
+        </div>
       </Box>
 
       {isModalOpen && (

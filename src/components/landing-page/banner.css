@@ -1,5 +1,77 @@
 /* Announcement Banner Styles */
 
+/* Marquee Animation */
+.marquee-track {
+  width: 100%;
+  overflow: hidden;
+}
+
+.marquee-content {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  animation: marquee-scroll 20s linear infinite;
+}
+
+.marquee-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding-right: 60px;
+}
+
+.marquee-text-primary {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: -0.2px;
+}
+
+.marquee-text-secondary {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.marquee-dot {
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 14px;
+  margin: 0 30px;
+}
+
+.marquee-gift-icon {
+  flex-shrink: 0;
+}
+
+.marquee-text-large {
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.marquee-badge {
+  background: rgba(239, 68, 68, 0.15);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: #f87171;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 6px;
+  margin-left: 10px;
+}
+
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-track:hover .marquee-content {
+  animation-play-state: paused;
+}
+
 /* Banner Text Container */
 .banner-text {
   text-align: center;

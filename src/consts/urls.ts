@@ -1,6 +1,6 @@
 export const DISCORD_URL = "https://discord.gg/J5jC9gJpYb";
 export const GET_HELP_URL =
-  "https://discord.com/channels/696270789472682034/1450723927298019501";
+  "https://discord.com/channels/696270789472682034/1239385660893167616";
 export const TRH_V1_URL = "https://tokamak-rollup-hub.vercel.app";
 export const USER_GUIDE_URL =
   "https://docs.tokamak.network/home/service-guide/rollup-hub";

@@ -6,9 +6,9 @@ import Image from "next/image";
 import { SocialButton } from "@/components/ui/social-button";
 import { IntegrationLogo } from "@/components/ui/integration-logo";
 import { useState } from "react";
-import { USER_GUIDE_URL } from "@/consts/urls";
-
 const UPTIME_KUMA_URL = "https://github.com/louislam/uptime-kuma";
+
+const SYSTEM_PULSE_DOCS_URL = "https://docs.tokamak.network/home/service-guide/tokamak-rollup-hub/tokamak-rollup-hub-platform/integrate-your-chain-with-modular-services/system-pulse";
 
 const BackButton = () => {
   const router = useRouter();
@@ -163,7 +163,7 @@ export default function UptimeKumaPage() {
                       <SocialButton
                         icon={"document"}
                         label={"Docs"}
-                        link={USER_GUIDE_URL}
+                        link={SYSTEM_PULSE_DOCS_URL}
                       />
                     </Flex>
                   </Flex>
