@@ -67,7 +67,7 @@ export default function AnnouncementBanner() {
             _hover={{ opacity: 0.9 }}
             transition="all 0.2s"
           >
-            <span style={{ fontSize: "16px" }}>🎉</span>
+            <span style={{ fontSize: "20px" }}>🎉</span>
             <div className="banner-text">
               <span className="animated-gradient-text">Tokamak Rollup Hub Platform is Now Live</span>
               <span className="banner-cta-text">View Details</span>

@@ -44,7 +44,7 @@
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: gradient-shift 12s linear infinite;
+  animation: gradient-shift 2s linear infinite;
   font-weight: 700;
 }
 
