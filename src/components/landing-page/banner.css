@@ -1,0 +1,239 @@
+/* Announcement Banner Styles */
+
+/* Marquee Animation */
+.marquee-track {
+  width: 100%;
+  overflow: hidden;
+}
+
+.marquee-content {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  animation: marquee-scroll 20s linear infinite;
+}
+
+.marquee-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding-right: 60px;
+}
+
+.marquee-text-primary {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: -0.2px;
+}
+
+.marquee-text-secondary {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.marquee-dot {
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 14px;
+  margin: 0 30px;
+}
+
+.marquee-gift-icon {
+  flex-shrink: 0;
+}
+
+.marquee-text-large {
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.marquee-badge {
+  background: rgba(239, 68, 68, 0.15);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: #f87171;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 6px;
+  margin-left: 10px;
+}
+
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-track:hover .marquee-content {
+  animation-play-state: paused;
+}
+
+/* Banner Text Container */
+.banner-text {
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.3px;
+  line-height: 1.4;
+}
+
+.banner-cta-text {
+  font-weight: 600;
+  margin-left: 10px;
+  padding: 5px 14px;
+  background: linear-gradient(90deg, rgba(74, 222, 128, 0.25) 0%, rgba(6, 182, 212, 0.25) 100%);
+  border: 1px solid rgba(74, 222, 128, 0.4);
+  border-radius: 14px;
+  font-size: 13px;
+  color: #4ade80;
+  transition: all 0.2s ease;
+}
+
+.banner-cta-text:hover {
+  background: linear-gradient(90deg, rgba(74, 222, 128, 0.35) 0%, rgba(6, 182, 212, 0.35) 100%);
+  border-color: rgba(74, 222, 128, 0.6);
+}
+
+/* Regular Text (non-gradient) */
+.banner-regular-text {
+  color: rgba(255, 255, 255, 1);
+  font-weight: 600;
+}
+
+/* Animated Gradient Text */
+.animated-gradient-text {
+  background: linear-gradient(
+    90deg,
+    #4ade80 0%,
+    #06b6d4 50%,
+    #4ade80 100%
+  );
+  background-size: 200% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient-shift 2s linear infinite;
+  font-weight: 700;
+}
+
+/* Gradient Animation */
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 200% 0%;
+  }
+}
+
+/* Modal Backdrop */
+.modal-backdrop {
+  animation: backdrop-fade 0.15s ease-out;
+}
+
+@keyframes backdrop-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Announcement Modal Styles */
+.announcement-modal {
+  animation: modal-appear 0.25s ease-out;
+}
+
+@keyframes modal-appear {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Typewriter Animation for Get Started Link */
+.typewriter-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.typewriter-wrapper {
+  display: inline-block;
+  max-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  vertical-align: middle;
+  animation: typewriter 2.5s linear forwards;
+  animation-delay: 0.3s;
+}
+
+@keyframes typewriter {
+  0% {
+    max-width: 0;
+  }
+  100% {
+    max-width: 310px;
+  }
+}
+
+.typewriter-arrow {
+  opacity: 0;
+  display: inline-flex;
+  vertical-align: middle;
+  animation: fadeInArrow 0.15s ease-out forwards;
+  animation-delay: 2.8s;
+}
+
+@keyframes fadeInArrow {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Pulse animation for live dot */
+.pulse-dot {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+    box-shadow: 0 0 0 0 rgba(0, 212, 170, 0.4);
+  }
+  50% {
+    opacity: 0.8;
+    box-shadow: 0 0 0 8px rgba(0, 212, 170, 0);
+  }
+}
+
+/* Responsive adjustments */
+@media (min-width: 768px) {
+  .banner-text {
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 640px) {
+  .banner-text {
+    font-size: 14px;
+  }
+
+  .banner-regular-text {
+    display: none;
+  }
+
+  .banner-cta-text {
+    margin-left: 6px;
+    padding: 4px 10px;
+    font-size: 12px;
+  }
+}

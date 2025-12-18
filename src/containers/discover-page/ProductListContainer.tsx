@@ -26,30 +26,40 @@ export const ProductListContainer: React.FC<{
 
   const integrations = SUB_PRODUCT_CATEGORIES["integration"];
   const stacks = SUB_PRODUCT_CATEGORIES["stack"];
-  const integrationCountPerPage = isMobile ? 6 : category === "all" ? 6 : 9;
+  const integrationCountPerPage = isMobile ? 3 : 3;
   const stackCountPerPage = category === "all" ? 2 : 6;
+
+  // Calculate filtered lists
+  const filteredIntegrations = item
+    ? integrations.filter((integration) => integration.subCategory === item)
+    : integrations;
+  const filteredStacks = item
+    ? stacks.filter((stack) => stack.subCategory === item)
+    : stacks;
+
   useEffect(() => {
-    const filteredIntegrations = item
-      ? integrations.filter((integration) => integration.subCategory === item)
-      : integrations;
     setIntegrationsToShow(
       filteredIntegrations.slice(
         (currentIntegrationPage - 1) * integrationCountPerPage,
         currentIntegrationPage * integrationCountPerPage
       )
     );
-  }, [item, currentIntegrationPage]);
+  }, [item, currentIntegrationPage, integrationCountPerPage, integrations]);
+
   useEffect(() => {
-    const filteredStacks = item
-      ? stacks.filter((stack) => stack.subCategory === item)
-      : stacks;
     setStacksToShow(
       filteredStacks.slice(
         (currentStackPage - 1) * stackCountPerPage,
         currentStackPage * stackCountPerPage
       )
     );
-  }, [item, currentStackPage]);
+  }, [item, currentStackPage, stackCountPerPage, stacks]);
+
+  // Reset to page 1 when filter changes
+  useEffect(() => {
+    setCurrentIntegrationPage(1);
+    setCurrentStackPage(1);
+  }, [item]);
   return (
     <Flex
       width={"100%"}
@@ -68,9 +78,9 @@ export const ProductListContainer: React.FC<{
             <StackListComponent category={category} stacks={stacksToShow} />
             {category === "stack" && (
               <PaginationRoot
-                count={stacks.length}
+                count={filteredStacks.length}
                 pageSize={stackCountPerPage}
-                defaultPage={1}
+                page={currentStackPage}
                 onPageChange={(page) => {
                   setCurrentStackPage(page.page);
                 }}
@@ -88,9 +98,9 @@ export const ProductListContainer: React.FC<{
           <Flex flexDir={"column"} gap={"39px"} alignItems={"center"}>
             <IntegrationListComponent integrations={integrationsToShow} />
             <PaginationRoot
-              count={integrations.length}
+              count={filteredIntegrations.length}
               pageSize={integrationCountPerPage}
-              defaultPage={1}
+              page={currentIntegrationPage}
               onPageChange={(page) => {
                 setCurrentIntegrationPage(page.page);
               }}

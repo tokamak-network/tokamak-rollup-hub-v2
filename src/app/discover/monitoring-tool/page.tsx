@@ -6,7 +6,10 @@ import Image from "next/image";
 import { SocialButton } from "@/components/ui/social-button";
 import { IntegrationLogo } from "@/components/ui/integration-logo";
 import { useState } from "react";
-import { THANOS_STACK_DEPLOYMENT_GUIDE_URL } from "@/consts/urls";
+import { MONITORING_TOOL_GUIDE_URL } from "@/consts/urls";
+
+const MONITORING_DOCS_URL = "https://docs.tokamak.network/home/service-guide/tokamak-rollup-hub/tokamak-rollup-hub-platform/integrate-your-chain-with-modular-services/monitoring-plugin";
+
 const BackButton = () => {
   const router = useRouter();
   const [isHover, setIsHover] = useState(false);
@@ -16,7 +19,7 @@ const BackButton = () => {
       ml={"30px"}
       alignItems={"center"}
       cursor={"pointer"}
-      onClick={() => router.push("/discover?category=stack")}
+      onClick={() => router.push("/discover?category=integration")}
       zIndex={100}
       onMouseEnter={() => setIsHover(true)}
       onMouseLeave={() => setIsHover(false)}
@@ -54,17 +57,17 @@ const RouteComponent = () => {
       <Text opacity={0.25}>/</Text>
       <Text
         _hover={{ textDecoration: "underline" }}
-        onClick={() => router.push("/discover?category=stack")}
+        onClick={() => router.push("/discover?category=integration")}
       >
-        Stacks
+        Integrations
       </Text>
       <Text opacity={0.25}>/</Text>
-      <Text color={"#0070ED"}>Thanos Stack</Text>
+      <Text color={"#0070ED"}>Monitoring Tool</Text>
     </Flex>
   );
 };
 
-export default function ThanosStackPage() {
+export default function MonitoringToolPage() {
   return (
     <Box
       pt={{ base: "108px", md: "138px", lg: "198px" }}
@@ -107,9 +110,9 @@ export default function ThanosStackPage() {
               <Flex flexDir={"column"} gap={"18px"}>
                 <Flex alignItems={"center"} gap={"15px"}>
                   <IntegrationLogo
-                    name={"thanos-stack"}
-                    width={45}
-                    height={45}
+                    name={"monitoring-tool"}
+                    width={60}
+                    height={60}
                   />
                   <Flex
                     gap={{ base: "6px", md: "12px" }}
@@ -121,14 +124,14 @@ export default function ThanosStackPage() {
                       fontWeight={700}
                       letterSpacing={"-1.08px"}
                     >
-                      Thanos Stack
+                      Monitoring Tool
                     </Text>
                     <Text
                       fontSize={{ base: "13px", md: "14px" }}
                       fontWeight={400}
                       lineHeight={"normal"}
                     >
-                      OP
+                      Monitoring
                     </Text>
                   </Flex>
                 </Flex>
@@ -152,24 +155,20 @@ export default function ThanosStackPage() {
                           Launched on
                         </Text>
                         <Text fontSize={"13px"} fontWeight={700}>
-                          6 February 2025
+                          17 December 2025
                         </Text>
                       </Flex>
                     </Flex>
                     <Flex gap={"12px"} flexWrap={"wrap"}>
                       <SocialButton
-                        icon={"github"}
-                        label={"Github"}
-                        link={
-                          "https://github.com/tokamak-network/tokamak-thanos"
-                        }
+                        icon={"notion"}
+                        label={"Guide"}
+                        link={MONITORING_TOOL_GUIDE_URL}
                       />
                       <SocialButton
                         icon={"document"}
-                        label={"Document"}
-                        link={
-                          "https://docs.tokamak.network/home/service-guide/tokamak-l2/thanos-stack"
-                        }
+                        label={"Docs"}
+                        link={MONITORING_DOCS_URL}
                       />
                     </Flex>
                   </Flex>
@@ -186,88 +185,84 @@ export default function ThanosStackPage() {
                   Overview
                 </Text>
                 <Text fontSize={"15px"} fontWeight={400} lineHeight={"18px"}>
-                  The Thanos Stack is built on{" "}
-                  <Link
-                    href={
-                      "https://github.com/ethereum-optimism/optimism/releases/tag/op-node%2Fv1.12.0"
-                    }
-                    color={"#0070ED"}
-                    target="_blank"
-                  >
-                    OP Stack v1.12.0
-                  </Link>
-                  , which natively supports the Ethereum Pectra upgrade, and has
-                  been further upgraded to add support for the Ethereum Fusaka
-                  upgrade. <br />
-                  To meet the needs of the ecosystem and the direction of the
-                  market, we can utilize ERC20 tokens as native tokens at layer
-                  2. The Tokamak Network aims to create a flexible ecosystem
-                  that supports on-demand Layer 2 solutions tailored to the
-                  needs of users. This flexibility allows dApp developers and
-                  operators to choose and manage the Layer 2 chain that best
-                  suits the specific needs of their application. <br />
-                  The Thanos Stack is the first Layer 2 stack in Tokamak that
-                  will serve as the cornerstone for building on-demand Layer 2
-                  chains.
+                  <Text as={"span"} fontWeight={700}>24/7 System Watch</Text> - Monitors the health of the Thanos Stack around the clock.
+                  <br />
+                  <Text as={"span"} fontWeight={700}>Visualization & Alerts</Text> - Provides real-time dashboards and instant notifications for critical issues.
+                  <br />
+                  <Text as={"span"} fontWeight={700}>Log Management</Text> - Centralized log collection for efficient troubleshooting.
                 </Text>
               </Flex>
-              <Box
-                px={"30px"}
-                bg={"url(/images/thanos-stack-bg.jpg) no-repeat center center"}
-                bgSize={"cover"}
-                width={"100%"}
-                borderRadius={"15px"}
-                border={"1px solid #E1E8ED"}
-                backgroundColor={"#FFF"}
-                aspectRatio={"1.1/1"}
-              />
-              {/* <Flex flexDir={"column"} gap={"6px"}>
-                <Text
-                  fontSize={"18px"}
-                  fontWeight={700}
-                  letterSpacing={"-0.54px"}
-                >
-                  Deployment Guide
-                </Text>
-                <Text fontSize={"15px"} fontWeight={400} lineHeight={"18px"}>
-                  This stack is supported for deployment on local devnet,
-                  testnet (Sepolia), and Ethereum Mainnet by SDK following{" "}
-                  <Link
-                    _hover={{ textDecoration: "underline" }}
-                    color={"#0070ED"}
-                    href={THANOS_STACK_DEPLOYMENT_GUIDE_URL}
-                    target="_blank"
-                  >
-                    This Guide
-                  </Link>
-                  . For the infrastructure of the testnet and mainnet
-                  deployment, we currently offer support for AWS in our
-                  deployment SDK. Support for other cloud providers such as GCP
-                  and Azure is in the pipeline.
-                </Text>
-              </Flex> */}
               <Flex flexDir={"column"} gap={"6px"}>
                 <Text
                   fontSize={"18px"}
                   fontWeight={700}
                   letterSpacing={"-0.54px"}
                 >
-                  How to Contribute this Stack
+                  Key Features
                 </Text>
                 <Text fontSize={"15px"} fontWeight={400} lineHeight={"18px"}>
-                  The thanos stack is open source, and operators and developers
-                  can extend its functionalities to suit their specific needs.
-                  If you want to contribute to the thanos chain, please feel
-                  free to create a PR on{" "}
-                  <Link
-                    _hover={{ textDecoration: "underline" }}
-                    color={"#0070ED"}
-                    href={"https://github.com/tokamak-network/tokamak-thanos"}
-                    target="_blank"
-                  >
-                    GitHub
-                  </Link>
-                  .
+                  • <Text as={"span"} fontWeight={700}>Grafana Dashboards</Text> - Visualize real-time metrics for network health
+                  <br />• <Text as={"span"} fontWeight={700}>Multi-channel Alerts</Text> - Instant notifications via Email (Gmail SMTP) and Telegram
+                  <br />• <Text as={"span"} fontWeight={700}>Log Collection</Text> - Aggregates logs from all components for easy analysis
+                  <br />• <Text as={"span"} fontWeight={700}>Customizable Monitoring</Text> - Tracks all Thanos Stack components and system resources
+                </Text>
+              </Flex>
+              <Flex gap={"15px"} flexDir={"column"} alignItems={"center"}>
+                <Box
+                  borderRadius={"6px"}
+                  border={"1px solid #E1E8ED"}
+                  backgroundColor={"#0f0f0f"}
+                  overflow={"hidden"}
+                  w={"100%"}
+                >
+                  <img
+                    src="/images/mt1.png"
+                    alt="Monitoring Dashboard 1"
+                    style={{ width: "100%", height: "auto", display: "block" }}
+                  />
+                </Box>
+                <Box
+                  borderRadius={"6px"}
+                  border={"1px solid #E1E8ED"}
+                  backgroundColor={"#0f0f0f"}
+                  overflow={"hidden"}
+                  w={"100%"}
+                >
+                  <img
+                    src="/images/mt2.png"
+                    alt="Monitoring Dashboard 2"
+                    style={{ width: "100%", height: "auto", display: "block" }}
+                  />
+                </Box>
+                <Box
+                  borderRadius={"6px"}
+                  border={"1px solid #E1E8ED"}
+                  backgroundColor={"#0f0f0f"}
+                  overflow={"hidden"}
+                  w={"100%"}
+                >
+                  <img
+                    src="/images/mt3.png"
+                    alt="Monitoring Dashboard 3"
+                    style={{ width: "100%", height: "auto", display: "block" }}
+                  />
+                </Box>
+              </Flex>
+              <Flex flexDir={"column"} gap={"6px"}>
+                <Text
+                  fontSize={"18px"}
+                  fontWeight={700}
+                  letterSpacing={"-0.54px"}
+                >
+                  What&apos;s Monitored
+                </Text>
+                <Text fontSize={"15px"} fontWeight={400} lineHeight={"18px"}>
+                  • <Text as={"span"} fontWeight={700}>op-node</Text> - L2 node synchronization and derivation
+                  <br />• <Text as={"span"} fontWeight={700}>op-geth</Text> - EVM execution client status
+                  <br />• <Text as={"span"} fontWeight={700}>op-batcher</Text> - Batch transaction submission to L1
+                  <br />• <Text as={"span"} fontWeight={700}>op-proposer</Text> - State root proposal generation
+                  <br />• <Text as={"span"} fontWeight={700}>External Infrastructure</Text> - L1 RPC connectivity
+                  <br />• <Text as={"span"} fontWeight={700}>System Resources</Text> - CPU, Memory, and Storage usage
                 </Text>
               </Flex>
             </Flex>
@@ -287,7 +282,7 @@ export default function ThanosStackPage() {
                 fontWeight={700}
                 letterSpacing={"-0.45px"}
               >
-                Hightlights
+                Highlights
               </Text>
               <List.Root ml={"15px"}>
                 <List.Item
@@ -295,14 +290,15 @@ export default function ThanosStackPage() {
                   fontWeight={700}
                   lineHeight={"17px"}
                 >
-                  Ease of deployment
+                  Real-time Dashboards
                   <Text
                     as={"span"}
                     fontSize={"13px"}
                     fontWeight={400}
                     lineHeight={"17px"}
                   >
-                    • Simple to configure and deploy where you want
+                    {" "}
+                    • Grafana visualization of system health and metrics
                   </Text>
                 </List.Item>
                 <List.Item
@@ -310,15 +306,15 @@ export default function ThanosStackPage() {
                   fontWeight={700}
                   lineHeight={"17px"}
                 >
-                  Flexible Ecosystem
+                  Email Alerts
                   <Text
                     as={"span"}
                     fontSize={"13px"}
                     fontWeight={400}
                     lineHeight={"17px"}
                   >
-                    • Supports on-demand Layer 2 solutions that fit the needs of
-                    users
+                    {" "}
+                    • Gmail SMTP notifications for critical events
                   </Text>
                 </List.Item>
                 <List.Item
@@ -326,15 +322,15 @@ export default function ThanosStackPage() {
                   fontWeight={700}
                   lineHeight={"17px"}
                 >
-                  Fast and Secure
+                  Telegram Alerts
                   <Text
                     as={"span"}
                     fontSize={"13px"}
                     fontWeight={400}
                     lineHeight={"17px"}
                   >
-                    • Delivers L2 scalability, security, and reliability while
-                    interacting seamlessly with L1 blockchain systems
+                    {" "}
+                    • Instant bot messages when issues arise
                   </Text>
                 </List.Item>
                 <List.Item
@@ -342,92 +338,15 @@ export default function ThanosStackPage() {
                   fontWeight={700}
                   lineHeight={"17px"}
                 >
-                  Seamless Development
+                  Easy Setup
                   <Text
                     as={"span"}
                     fontSize={"13px"}
                     fontWeight={400}
                     lineHeight={"17px"}
                   >
-                    • Provides a development environment that mirrors the
-                    familiar Ethereum environment
-                  </Text>
-                </List.Item>
-                <List.Item
-                  fontSize={"14px"}
-                  fontWeight={700}
-                  lineHeight={"17px"}
-                >
-                  Cost-Effective
-                  <Text
-                    as={"span"}
-                    fontSize={"13px"}
-                    fontWeight={400}
-                    lineHeight={"17px"}
-                  >
-                    • Offers faster transaction processing and lower transaction
-                    fees
-                  </Text>
-                </List.Item>
-              </List.Root>
-            </Flex>
-            <Box height={"1px"} alignSelf={"stretch"} bgColor={"#E1E8ED"} />
-            <Flex flexDir={"column"} gap={"9px"}>
-              <Text
-                fontSize={"15px"}
-                fontWeight={700}
-                letterSpacing={"-0.45px"}
-              >
-                Suggested Integrations
-              </Text>
-              <List.Root ml={"15px"}>
-                <List.Item
-                  fontSize={"14px"}
-                  fontWeight={700}
-                  lineHeight={"17px"}
-                >
-                  Thanos Explorer
-                  <Text
-                    as={"span"}
-                    fontSize={"13px"}
-                    fontWeight={400}
-                    lineHeight={"17px"}
-                  >
-                    • A tool for monitoring and analyzing the performance of the
-                    thanos chain
-                  </Text>
-                </List.Item>
-                <List.Item
-                  fontSize={"14px"}
-                  fontWeight={700}
-                  lineHeight={"17px"}
-                >
-                  Thanos Bridge
-                  <Text
-                    as={"span"}
-                    fontSize={"13px"}
-                    fontWeight={400}
-                    lineHeight={"17px"}
-                  >
-                    • A bridge for transferring ERC-20 tokens between the thanos
-                    chain and the L1 network
-                  </Text>
-                </List.Item>
-                <List.Item
-                  fontSize={"14px"}
-                  fontWeight={700}
-                  lineHeight={"17px"}
-                >
-                  Staking / DAO Candidate Registration
-                  <Text
-                    as={"span"}
-                    fontSize={"13px"}
-                    fontWeight={400}
-                    lineHeight={"17px"}
-                  >
-                    • Register your chain as a staking and DAO candidate in
-                    Tokamak Staking v2 to receive a share of the distributed
-                    seigniorage rewards.
+                    {" "}
+                    • Configure from the platform UI in minutes
                   </Text>
                 </List.Item>
               </List.Root>
@@ -442,11 +361,71 @@ export default function ThanosStackPage() {
                 Deployment Cost
               </Text>
               <Text fontSize={"14px"} fontWeight={400} lineHeight={"17px"}>
-                The maximum L1 contract deployment cost on Thanos Stack is
-                estimated to be around gas price * 80,000,000 (Wei).
-                Additionally, both testnet and mainnet deployments will incur
-                AWS infrastructure costs based on usage.
+                No smart contract costs. Only cloud infrastructure costs for
+                running the monitoring stack on your provider.
               </Text>
+            </Flex>
+            <Box height={"1px"} alignSelf={"stretch"} bgColor={"#E1E8ED"} />
+            <Flex flexDir={"column"} gap={"9px"}>
+              <Text
+                fontSize={"15px"}
+                fontWeight={700}
+                letterSpacing={"-0.45px"}
+              >
+                Monitoring Stack
+              </Text>
+              <List.Root ml={"15px"}>
+                <List.Item
+                  fontSize={"13px"}
+                  fontWeight={400}
+                  lineHeight={"17px"}
+                >
+                  <Text as={"span"} fontWeight={700}>
+                    Prometheus
+                  </Text>{" "}
+                  • Metrics collection and storage
+                </List.Item>
+                <List.Item
+                  fontSize={"13px"}
+                  fontWeight={400}
+                  lineHeight={"17px"}
+                >
+                  <Text as={"span"} fontWeight={700}>
+                    Grafana
+                  </Text>{" "}
+                  • Visualization dashboards with custom panels
+                </List.Item>
+                <List.Item
+                  fontSize={"13px"}
+                  fontWeight={400}
+                  lineHeight={"17px"}
+                >
+                  <Text as={"span"} fontWeight={700}>
+                    AlertManager
+                  </Text>{" "}
+                  • Alert routing and notification
+                </List.Item>
+                <List.Item
+                  fontSize={"13px"}
+                  fontWeight={400}
+                  lineHeight={"17px"}
+                >
+                  <Text as={"span"} fontWeight={700}>
+                    Blackbox Exporter
+                  </Text>{" "}
+                  • External endpoint monitoring
+                </List.Item>
+                <List.Item
+                  fontSize={"13px"}
+                  fontWeight={400}
+                  lineHeight={"17px"}
+                >
+                  <Text as={"span"} fontWeight={700}>
+                    CloudWatch Logs
+                  </Text>{" "}
+                  • Centralized log storage and retention management
+                </List.Item>
+              </List.Root>
             </Flex>
           </Flex>
         </Flex>

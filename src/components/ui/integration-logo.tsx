@@ -9,9 +9,14 @@ interface IntegrationLogoProps {
 
 const INTEGRATION_LOGO_MAP = {
   default: DefaultLogo,
-  "thanos-bridge": DefaultLogo,
-  "thanos-explorer": DefaultLogo,
+  "thanos-bridge": "/icon/bridge.svg",
+  "thanos-explorer": "/icon/blockexplorer.svg",
   "thanos-stack": DefaultLogo,
+  "monitoring-tool": "/icon/monitoringtool.svg",
+  "dao-candidate": "/icon/dao.svg",
+  "uptime-kuma": "/icon/systempulse.svg",
+  "cross-trade": "/icon/corsstrade.png",
+  "rng": "/icon/rng.png",
 };
 
 export const IntegrationLogo: React.FC<IntegrationLogoProps> = ({

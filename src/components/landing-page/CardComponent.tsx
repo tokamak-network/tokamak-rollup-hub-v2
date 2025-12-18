@@ -4,17 +4,20 @@ import Image from "next/image";
 import ComponentIcon from "@/assets/icon/component.svg";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { IntegrationLogo } from "../ui/integration-logo";
 
 export default function CardComponent({
   title,
   description,
   featured,
   link,
+  iconId,
 }: {
   title: string;
   description: React.ReactNode;
   featured: boolean;
   link?: string;
+  iconId?: string;
 }) {
   const [isHovered, setIsHovered] = useState(false);
   const router = useRouter();
@@ -23,7 +26,7 @@ export default function CardComponent({
       flexDir={"column"}
       gap={"15px"}
       p={"20px"}
-      border={"1px solid #E1E8ED"}
+      border={"1px solid #C8D3DC"}
       borderRadius={"15px"}
       alignItems={"flex-start"}
       alignSelf={"stretch"}
@@ -37,9 +40,13 @@ export default function CardComponent({
         if (link) router.push(link);
       }}
     >
-      <Flex gap={"15px"} alignItems={"center"}>
-        <Image src={ComponentIcon} alt="component" />
-        <Flex flexDir={"column"} alignItems={"flex-start"}>
+      <Flex gap={"15px"} alignItems={"center"} width={"100%"}>
+        {iconId ? (
+          <IntegrationLogo name={iconId} width={60} height={60} />
+        ) : (
+          <Image src={ComponentIcon} alt="component" />
+        )}
+        <Flex flexDir={"column"} alignItems={"flex-start"} flex={1}>
           <Text
             fontSize={"20px"}
             fontWeight={"700"}

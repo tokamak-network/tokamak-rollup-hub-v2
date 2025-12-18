@@ -7,6 +7,8 @@ import { SocialButton } from "@/components/ui/social-button";
 import { IntegrationLogo } from "@/components/ui/integration-logo";
 import { useState } from "react";
 import { THANOS_EXPLORER_DEPLOYMENT_GUIDE_URL } from "@/consts/urls";
+
+const EXPLORER_DOCS_URL = "https://docs.tokamak.network/home/service-guide/tokamak-rollup-hub/tokamak-rollup-hub-platform/integrate-your-chain-with-modular-services/block-explorer";
 const BackButton = () => {
   const router = useRouter();
   const [isHover, setIsHover] = useState(false);
@@ -108,8 +110,8 @@ export default function ThanosExplorerPage() {
                 <Flex alignItems={"center"} gap={"15px"}>
                   <IntegrationLogo
                     name={"thanos-explorer"}
-                    width={45}
-                    height={45}
+                    width={60}
+                    height={60}
                   />
                   <Flex
                     gap={{ base: "6px", md: "12px" }}
@@ -144,12 +146,12 @@ export default function ThanosExplorerPage() {
                           Created by
                         </Text>
                         <Text fontSize={"13px"} fontWeight={700}>
-                          TRH
+                          Tokamak Rollup Hub Team
                         </Text>
                       </Flex>
                       <Flex flexDir={"column"} gap={"3px"}>
                         <Text fontSize={"12px"} fontWeight={400}>
-                          Released on
+                          Launched on
                         </Text>
                         <Text fontSize={"13px"} fontWeight={700}>
                           22 January 2025
@@ -158,9 +160,9 @@ export default function ThanosExplorerPage() {
                     </Flex>
                     <Flex gap={"12px"} flexWrap={"wrap"}>
                       <SocialButton
-                        icon={"github"}
-                        label={"Github"}
-                        link={"https://github.com/blockscout/blockscout"}
+                        icon={"document"}
+                        label={"Docs"}
+                        link={EXPLORER_DOCS_URL}
                       />
                     </Flex>
                   </Flex>
@@ -185,13 +187,13 @@ export default function ThanosExplorerPage() {
                   mind, ensuring it is approachable for both technical and
                   non-technical users. <br />
                   <br />
-                  With the Thanos Explorer, users can: <br />- Track
+                  With the Thanos Explorer, users can: <br />• Track
                   transactions and their status in real-time including
                   deposit/withdrawal status since it is especially designed for
-                  the Thanos Stack <br />- View detailed information about
+                  the Thanos Stack <br />• View detailed information about
                   blocks, including block height, timestamp, and transactions
-                  included <br />- Explore smart contracts, including their
-                  code, transactions, and interactions <br />- Analyze network
+                  included <br />• Explore smart contracts, including their
+                  code, transactions, and interactions <br />• Analyze network
                   statistics, such as block time, gas usage, and network
                   congestion <br />
                   <br />
@@ -232,7 +234,7 @@ export default function ThanosExplorerPage() {
                     href={THANOS_EXPLORER_DEPLOYMENT_GUIDE_URL}
                     target="_blank"
                   >
-                    this guide
+                    This Guide
                   </Link>
                   . It&apos;s important to note that it is only deployable after
                   the deployment of the Thanos Stack.
@@ -270,7 +272,7 @@ export default function ThanosExplorerPage() {
                     fontWeight={400}
                     lineHeight={"17px"}
                   >
-                    - The explorer is designed to be user-friendly, making it
+                    • The explorer is designed to be user-friendly, making it
                     accessible to both technical and non-technical users.
                   </Text>
                 </List.Item>
@@ -286,7 +288,7 @@ export default function ThanosExplorerPage() {
                     fontWeight={400}
                     lineHeight={"17px"}
                   >
-                    - Monitor transactions and their status, including
+                    • Monitor transactions and their status, including
                     deposit/withdrawal status, specifically tailored for the
                     Thanos Stack
                   </Text>
@@ -303,7 +305,7 @@ export default function ThanosExplorerPage() {
                     fontWeight={400}
                     lineHeight={"17px"}
                   >
-                    - View detailed information about blocks, including block
+                    • View detailed information about blocks, including block
                     height, timestamp, and transactions included
                   </Text>
                 </List.Item>
@@ -319,7 +321,7 @@ export default function ThanosExplorerPage() {
                     fontWeight={400}
                     lineHeight={"17px"}
                   >
-                    - Analyze network statistics, such as block time, gas usage,
+                    • Analyze network statistics, such as block time, gas usage,
                     and network congestion
                   </Text>
                 </List.Item>

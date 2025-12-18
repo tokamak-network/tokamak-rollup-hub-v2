@@ -4,7 +4,7 @@ import TelegramIcon from "@/assets/icon/telegram.svg";
 import DiscordIcon from "@/assets/icon/discord.svg";
 import TwitterIcon from "@/assets/icon/twitter.svg";
 import MediumIcon from "@/assets/icon/medium.svg";
-import YoutubeIcon from "@/assets/icon/youtube.svg";
+// import YoutubeIcon from "@/assets/icon/youtube.svg";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -13,7 +13,7 @@ import {
   MEDIUM_URL,
   TELEGRAM_URL,
   TWITTER_URL,
-  YOUTUBE_URL,
+  // YOUTUBE_URL,
 } from "@/consts/socials";
 
 export default function Footer() {
@@ -51,9 +51,9 @@ export default function Footer() {
           <Link href={GITHUB_URL} target="_blank" style={{ height: "14px" }}>
             <Image src={GithubIcon} alt="github" />
           </Link>
-          <Link href={YOUTUBE_URL} target="_blank" style={{ height: "14px" }}>
+          {/* <Link href={YOUTUBE_URL} target="_blank" style={{ height: "14px" }}>
             <Image src={YoutubeIcon} alt="youtube" />
-          </Link>
+          </Link> */}
           <Link href={DISCORD_URL} target="_blank" style={{ height: "14px" }}>
             <Image src={DiscordIcon} alt="discord" />
           </Link>

@@ -20,13 +20,13 @@ export const IntegrationComponent: React.FC<SubProductDetailType> = ({
       width={"100%"}
       padding={"24px 20px"}
       borderRadius={"15px"}
-      border={"1px solid #E1E8ED"}
+      border={"1px solid #C8D3DC"}
       bgColor={"#FFF"}
       height={"100%"}
       minHeight={"320px"}
     >
       <Flex flexDirection={"column"} gap={"15px"} alignItems={"center"}>
-        <IntegrationLogo name={id} />
+        <IntegrationLogo name={id} width={80} height={80} />
         <Flex flexDirection={"column"} alignItems={"center"}>
           <Text
             fontSize={"16px"}
@@ -65,7 +65,7 @@ export const IntegrationComponent: React.FC<SubProductDetailType> = ({
         width={"100%"}
         p={"9px 15px"}
         borderRadius={"17.5px"}
-        border={"1px solid #DFE4EE"}
+        border={"1px solid #C8D3DC"}
         bgColor={"rgba(255, 255, 255, 0.25)"}
         fontSize={"14px"}
         fontWeight={600}

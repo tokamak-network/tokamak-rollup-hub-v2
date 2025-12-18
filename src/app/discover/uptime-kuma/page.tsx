@@ -6,7 +6,10 @@ import Image from "next/image";
 import { SocialButton } from "@/components/ui/social-button";
 import { IntegrationLogo } from "@/components/ui/integration-logo";
 import { useState } from "react";
-import { THANOS_STACK_DEPLOYMENT_GUIDE_URL } from "@/consts/urls";
+const UPTIME_KUMA_URL = "https://github.com/louislam/uptime-kuma";
+
+const SYSTEM_PULSE_DOCS_URL = "https://docs.tokamak.network/home/service-guide/tokamak-rollup-hub/tokamak-rollup-hub-platform/integrate-your-chain-with-modular-services/system-pulse";
+
 const BackButton = () => {
   const router = useRouter();
   const [isHover, setIsHover] = useState(false);
@@ -16,7 +19,7 @@ const BackButton = () => {
       ml={"30px"}
       alignItems={"center"}
       cursor={"pointer"}
-      onClick={() => router.push("/discover?category=stack")}
+      onClick={() => router.push("/discover?category=integration")}
       zIndex={100}
       onMouseEnter={() => setIsHover(true)}
       onMouseLeave={() => setIsHover(false)}
@@ -54,17 +57,17 @@ const RouteComponent = () => {
       <Text opacity={0.25}>/</Text>
       <Text
         _hover={{ textDecoration: "underline" }}
-        onClick={() => router.push("/discover?category=stack")}
+        onClick={() => router.push("/discover?category=integration")}
       >
-        Stacks
+        Integrations
       </Text>
       <Text opacity={0.25}>/</Text>
-      <Text color={"#0070ED"}>Thanos Stack</Text>
+      <Text color={"#0070ED"}>System Pulse</Text>
     </Flex>
   );
 };
 
-export default function ThanosStackPage() {
+export default function UptimeKumaPage() {
   return (
     <Box
       pt={{ base: "108px", md: "138px", lg: "198px" }}
@@ -107,9 +110,9 @@ export default function ThanosStackPage() {
               <Flex flexDir={"column"} gap={"18px"}>
                 <Flex alignItems={"center"} gap={"15px"}>
                   <IntegrationLogo
-                    name={"thanos-stack"}
-                    width={45}
-                    height={45}
+                    name={"uptime-kuma"}
+                    width={60}
+                    height={60}
                   />
                   <Flex
                     gap={{ base: "6px", md: "12px" }}
@@ -121,14 +124,14 @@ export default function ThanosStackPage() {
                       fontWeight={700}
                       letterSpacing={"-1.08px"}
                     >
-                      Thanos Stack
+                      System Pulse
                     </Text>
                     <Text
                       fontSize={{ base: "13px", md: "14px" }}
                       fontWeight={400}
                       lineHeight={"normal"}
                     >
-                      OP
+                      Powered by Uptime Kuma
                     </Text>
                   </Flex>
                 </Flex>
@@ -152,24 +155,15 @@ export default function ThanosStackPage() {
                           Launched on
                         </Text>
                         <Text fontSize={"13px"} fontWeight={700}>
-                          6 February 2025
+                          17 December 2025
                         </Text>
                       </Flex>
                     </Flex>
                     <Flex gap={"12px"} flexWrap={"wrap"}>
                       <SocialButton
-                        icon={"github"}
-                        label={"Github"}
-                        link={
-                          "https://github.com/tokamak-network/tokamak-thanos"
-                        }
-                      />
-                      <SocialButton
                         icon={"document"}
-                        label={"Document"}
-                        link={
-                          "https://docs.tokamak.network/home/service-guide/tokamak-l2/thanos-stack"
-                        }
+                        label={"Docs"}
+                        link={SYSTEM_PULSE_DOCS_URL}
                       />
                     </Flex>
                   </Flex>
@@ -186,86 +180,79 @@ export default function ThanosStackPage() {
                   Overview
                 </Text>
                 <Text fontSize={"15px"} fontWeight={400} lineHeight={"18px"}>
-                  The Thanos Stack is built on{" "}
-                  <Link
-                    href={
-                      "https://github.com/ethereum-optimism/optimism/releases/tag/op-node%2Fv1.12.0"
-                    }
-                    color={"#0070ED"}
-                    target="_blank"
-                  >
-                    OP Stack v1.12.0
-                  </Link>
-                  , which natively supports the Ethereum Pectra upgrade, and has
-                  been further upgraded to add support for the Ethereum Fusaka
-                  upgrade. <br />
-                  To meet the needs of the ecosystem and the direction of the
-                  market, we can utilize ERC20 tokens as native tokens at layer
-                  2. The Tokamak Network aims to create a flexible ecosystem
-                  that supports on-demand Layer 2 solutions tailored to the
-                  needs of users. This flexibility allows dApp developers and
-                  operators to choose and manage the Layer 2 chain that best
-                  suits the specific needs of their application. <br />
-                  The Thanos Stack is the first Layer 2 stack in Tokamak that
-                  will serve as the cornerstone for building on-demand Layer 2
-                  chains.
+                  System Pulse (powered by Uptime Kuma) is a self-hosted uptime
+                  monitoring tool that keeps track of your services 24/7. It
+                  provides a simple dashboard to see if your rollup components
+                  are online and alerts you when something goes down.
+                  <br />
+                  <br />
+                  Key features:
+                  <br />• Monitor your services with a clean, easy-to-use
+                  dashboard
+                  <br />• Get notified instantly when services go offline
+                  <br />• Create public status pages to share with your
+                  community
+                  <br />• 90+ notification options (Telegram, Discord, Email,
+                  Slack, and more)
                 </Text>
               </Flex>
               <Box
-                px={"30px"}
-                bg={"url(/images/thanos-stack-bg.jpg) no-repeat center center"}
+                bg={"url(/images/systempulse.png) no-repeat center center"}
                 bgSize={"cover"}
                 width={"100%"}
                 borderRadius={"15px"}
                 border={"1px solid #E1E8ED"}
-                backgroundColor={"#FFF"}
-                aspectRatio={"1.1/1"}
+                backgroundColor={"#1a1a2e"}
+                aspectRatio={"3.3/1"}
               />
-              {/* <Flex flexDir={"column"} gap={"6px"}>
-                <Text
-                  fontSize={"18px"}
-                  fontWeight={700}
-                  letterSpacing={"-0.54px"}
-                >
-                  Deployment Guide
-                </Text>
-                <Text fontSize={"15px"} fontWeight={400} lineHeight={"18px"}>
-                  This stack is supported for deployment on local devnet,
-                  testnet (Sepolia), and Ethereum Mainnet by SDK following{" "}
-                  <Link
-                    _hover={{ textDecoration: "underline" }}
-                    color={"#0070ED"}
-                    href={THANOS_STACK_DEPLOYMENT_GUIDE_URL}
-                    target="_blank"
-                  >
-                    This Guide
-                  </Link>
-                  . For the infrastructure of the testnet and mainnet
-                  deployment, we currently offer support for AWS in our
-                  deployment SDK. Support for other cloud providers such as GCP
-                  and Azure is in the pipeline.
-                </Text>
-              </Flex> */}
               <Flex flexDir={"column"} gap={"6px"}>
                 <Text
                   fontSize={"18px"}
                   fontWeight={700}
                   letterSpacing={"-0.54px"}
                 >
-                  How to Contribute this Stack
+                  What You Can Monitor
                 </Text>
                 <Text fontSize={"15px"} fontWeight={400} lineHeight={"18px"}>
-                  The thanos stack is open source, and operators and developers
-                  can extend its functionalities to suit their specific needs.
-                  If you want to contribute to the thanos chain, please feel
-                  free to create a PR on{" "}
+                  Uptime Kuma supports multiple monitoring types:
+                  <br />
+                  <br />• <Text as={"span"} fontWeight={700}>
+                    HTTP/HTTPS
+                  </Text>{" "}
+                  • Check if websites and APIs are responding
+                  <br />• <Text as={"span"} fontWeight={700}>TCP Port</Text> -
+                  Monitor if specific ports are open
+                  <br />• <Text as={"span"} fontWeight={700}>Ping</Text> - Check
+                  if servers are reachable
+                  <br />• <Text as={"span"} fontWeight={700}>DNS</Text> - Verify
+                  DNS records are resolving correctly
+                  <br />• <Text as={"span"} fontWeight={700}>
+                    And more
+                  </Text>{" "}
+                  • Docker containers, databases, game servers, etc.
+                </Text>
+              </Flex>
+              <Flex flexDir={"column"} gap={"6px"}>
+                <Text
+                  fontSize={"18px"}
+                  fontWeight={700}
+                  letterSpacing={"-0.54px"}
+                >
+                  How to Install
+                </Text>
+                <Text fontSize={"15px"} fontWeight={400} lineHeight={"18px"}>
+                  Install System Pulse from the Integrations tab after deploying
+                  your Thanos Stack. Once installed, you&apos;ll receive a URL
+                  to access your monitoring dashboard. From there, you can add
+                  monitors for your services and configure notifications
+                  directly in Uptime Kuma. Learn more in the{" "}
                   <Link
                     _hover={{ textDecoration: "underline" }}
                     color={"#0070ED"}
-                    href={"https://github.com/tokamak-network/tokamak-thanos"}
+                    href={UPTIME_KUMA_URL}
                     target="_blank"
                   >
-                    GitHub
+                    Official Uptime Kuma Documentation
                   </Link>
                   .
                 </Text>
@@ -287,7 +274,7 @@ export default function ThanosStackPage() {
                 fontWeight={700}
                 letterSpacing={"-0.45px"}
               >
-                Hightlights
+                Highlights
               </Text>
               <List.Root ml={"15px"}>
                 <List.Item
@@ -295,14 +282,15 @@ export default function ThanosStackPage() {
                   fontWeight={700}
                   lineHeight={"17px"}
                 >
-                  Ease of deployment
+                  Easy Dashboard
                   <Text
                     as={"span"}
                     fontSize={"13px"}
                     fontWeight={400}
                     lineHeight={"17px"}
                   >
-                    • Simple to configure and deploy where you want
+                    {" "}
+                    • Clean interface to monitor all your services
                   </Text>
                 </List.Item>
                 <List.Item
@@ -310,15 +298,15 @@ export default function ThanosStackPage() {
                   fontWeight={700}
                   lineHeight={"17px"}
                 >
-                  Flexible Ecosystem
+                  90+ Notifications
                   <Text
                     as={"span"}
                     fontSize={"13px"}
                     fontWeight={400}
                     lineHeight={"17px"}
                   >
-                    • Supports on-demand Layer 2 solutions that fit the needs of
-                    users
+                    {" "}
+                    • Telegram, Discord, Email, Slack, and more
                   </Text>
                 </List.Item>
                 <List.Item
@@ -326,15 +314,15 @@ export default function ThanosStackPage() {
                   fontWeight={700}
                   lineHeight={"17px"}
                 >
-                  Fast and Secure
+                  Status Pages
                   <Text
                     as={"span"}
                     fontSize={"13px"}
                     fontWeight={400}
                     lineHeight={"17px"}
                   >
-                    • Delivers L2 scalability, security, and reliability while
-                    interacting seamlessly with L1 blockchain systems
+                    {" "}
+                    • Create public pages to share uptime with users
                   </Text>
                 </List.Item>
                 <List.Item
@@ -342,92 +330,15 @@ export default function ThanosStackPage() {
                   fontWeight={700}
                   lineHeight={"17px"}
                 >
-                  Seamless Development
+                  Self-hosted
                   <Text
                     as={"span"}
                     fontSize={"13px"}
                     fontWeight={400}
                     lineHeight={"17px"}
                   >
-                    • Provides a development environment that mirrors the
-                    familiar Ethereum environment
-                  </Text>
-                </List.Item>
-                <List.Item
-                  fontSize={"14px"}
-                  fontWeight={700}
-                  lineHeight={"17px"}
-                >
-                  Cost-Effective
-                  <Text
-                    as={"span"}
-                    fontSize={"13px"}
-                    fontWeight={400}
-                    lineHeight={"17px"}
-                  >
-                    • Offers faster transaction processing and lower transaction
-                    fees
-                  </Text>
-                </List.Item>
-              </List.Root>
-            </Flex>
-            <Box height={"1px"} alignSelf={"stretch"} bgColor={"#E1E8ED"} />
-            <Flex flexDir={"column"} gap={"9px"}>
-              <Text
-                fontSize={"15px"}
-                fontWeight={700}
-                letterSpacing={"-0.45px"}
-              >
-                Suggested Integrations
-              </Text>
-              <List.Root ml={"15px"}>
-                <List.Item
-                  fontSize={"14px"}
-                  fontWeight={700}
-                  lineHeight={"17px"}
-                >
-                  Thanos Explorer
-                  <Text
-                    as={"span"}
-                    fontSize={"13px"}
-                    fontWeight={400}
-                    lineHeight={"17px"}
-                  >
-                    • A tool for monitoring and analyzing the performance of the
-                    thanos chain
-                  </Text>
-                </List.Item>
-                <List.Item
-                  fontSize={"14px"}
-                  fontWeight={700}
-                  lineHeight={"17px"}
-                >
-                  Thanos Bridge
-                  <Text
-                    as={"span"}
-                    fontSize={"13px"}
-                    fontWeight={400}
-                    lineHeight={"17px"}
-                  >
-                    • A bridge for transferring ERC-20 tokens between the thanos
-                    chain and the L1 network
-                  </Text>
-                </List.Item>
-                <List.Item
-                  fontSize={"14px"}
-                  fontWeight={700}
-                  lineHeight={"17px"}
-                >
-                  Staking / DAO Candidate Registration
-                  <Text
-                    as={"span"}
-                    fontSize={"13px"}
-                    fontWeight={400}
-                    lineHeight={"17px"}
-                  >
-                    • Register your chain as a staking and DAO candidate in
-                    Tokamak Staking v2 to receive a share of the distributed
-                    seigniorage rewards.
+                    {" "}
+                    • Your data stays on your infrastructure
                   </Text>
                 </List.Item>
               </List.Root>
@@ -442,11 +353,28 @@ export default function ThanosStackPage() {
                 Deployment Cost
               </Text>
               <Text fontSize={"14px"} fontWeight={400} lineHeight={"17px"}>
-                The maximum L1 contract deployment cost on Thanos Stack is
-                estimated to be around gas price * 80,000,000 (Wei).
-                Additionally, both testnet and mainnet deployments will incur
-                AWS infrastructure costs based on usage.
+                Free and open source. Only pay for cloud hosting costs to run
+                the service.
               </Text>
+            </Flex>
+            <Box height={"1px"} alignSelf={"stretch"} bgColor={"#E1E8ED"} />
+            <Flex flexDir={"column"} gap={"9px"}>
+              <Text
+                fontSize={"15px"}
+                fontWeight={700}
+                letterSpacing={"-0.45px"}
+              >
+                Requirements
+              </Text>
+              <List.Root ml={"15px"}>
+                <List.Item
+                  fontSize={"13px"}
+                  fontWeight={400}
+                  lineHeight={"17px"}
+                >
+                  Deployed Thanos Stack
+                </List.Item>
+              </List.Root>
             </Flex>
           </Flex>
         </Flex>

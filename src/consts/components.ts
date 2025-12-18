@@ -21,7 +21,7 @@ export const PRODUCT_CATEGORIES: ProductDetailType[] = [
 export const SUB_CATEGORY_MAP: Record<string, string[]> = {
   all: [],
   stack: [],
-  integration: ["Block Explorer", "Bridge"],
+  integration: ["Block Explorer", "Bridge", "Monitoring", "Staking"],
 };
 
 export const SUB_PRODUCT_CATEGORIES: Record<string, SubProductDetailType[]> = {
@@ -64,6 +64,33 @@ export const SUB_PRODUCT_CATEGORIES: Record<string, SubProductDetailType[]> = {
       link: "/discover/thanos-bridge",
       category: "integration",
       subCategory: "Bridge",
+    },
+    {
+      id: "monitoring-tool",
+      name: "Monitoring Tool",
+      description:
+        "Comprehensive monitoring and analytics for your rollup. Track system performance, set up alerts, and gain insights into your network's health.",
+      link: "/discover/monitoring-tool",
+      category: "integration",
+      subCategory: "Monitoring",
+    },
+    {
+      id: "dao-candidate",
+      name: "Staking / DAO Candidate Registration",
+      description:
+        "Register your chain as a DAO candidate in the Tokamak Network ecosystem to earn seigniorage rewards proportional to the L2 growth.",
+      link: "/discover/dao-candidate",
+      category: "integration",
+      subCategory: "Staking",
+    },
+    {
+      id: "uptime-kuma",
+      name: "System Pulse",
+      description:
+        "System Pulse provides real-time visibility into platform health and service availability. Monitor uptime and get instant notifications.",
+      link: "/discover/uptime-kuma",
+      category: "integration",
+      subCategory: "Monitoring",
     },
     // {
     //   id: "earn-ton-as-reward",

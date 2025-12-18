@@ -23,7 +23,7 @@ export const StackComponent: React.FC<SubProductDetailType> = ({
       width={"100%"}
       p={"30px 24px"}
       borderRadius={"15px"}
-      border={"1px solid #E1E8ED"}
+      border={"1px solid #C8D3DC"}
       background={"#FFF"}
       height={"246px"}
       onMouseEnter={() => setIsHovered(true)}

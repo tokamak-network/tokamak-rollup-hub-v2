@@ -44,32 +44,64 @@ export default function MenuBarComponent({
         gap={isMenuOpen ? "39px" : "45px"}
         display={{ base: isMenuOpen ? "flex" : "none", md: "flex" }}
         position={"relative"}
+        flexWrap={"nowrap"}
+        flexShrink={0}
       >
         {MENUBAR_ITEMS.map((item) => (
-          <Text
-            display={"flex"}
+          <Flex
+            key={item.label}
             alignItems={"center"}
             justifyContent={"center"}
-            key={item.label}
-            color={"#2E2E3A"}
-            fontSize={isMenuOpen ? "30px" : "15px"}
-            fontWeight={600}
-            lineHeight={"normal"}
-            textAlign={"center"}
-            cursor={"pointer"}
-            onClick={() => {
-              if (item.href.includes("http")) {
-                window.open(item.href, "_blank");
-              } else {
-                router.push(item.href);
-              }
-              setIsMenuOpen(false);
-            }}
-            _hover={{ color: "#0070ED" }}
-            zIndex={3000}
+            position={"relative"}
+            gap={isMenuOpen ? "12px" : "8px"}
           >
-            {item.label}
-          </Text>
+          {item.isNew && (
+            <Text
+              fontSize={isMenuOpen ? "16px" : "11px"}
+              fontWeight={700}
+              color={"#FFFFFF"}
+              bg={"#FF0000"}
+              px={isMenuOpen ? "12px" : "8px"}
+              py={isMenuOpen ? "5px" : "3px"}
+              borderRadius={"16px"}
+              textTransform={"uppercase"}
+              letterSpacing={"0.5px"}
+              lineHeight={"normal"}
+            >
+              NEW
+            </Text>
+          )}
+            <Text
+              display={"flex"}
+              alignItems={"center"}
+              justifyContent={"center"}
+              key={item.label}
+              color={"#2E2E3A"}
+              bg={item.highlight ? "rgba(0, 112, 237, 0.1)" : "transparent"}
+              border={item.highlight ? "1px solid rgba(0, 112, 237, 0.3)" : "none"}
+              px={item.highlight ? "14px" : "0"}
+              py={item.highlight ? "6px" : "0"}
+              borderRadius={item.highlight ? "20px" : "0"}
+              fontSize={isMenuOpen ? "30px" : "15px"}
+              fontWeight={600}
+              lineHeight={"normal"}
+              textAlign={"center"}
+              cursor={"pointer"}
+              onClick={() => {
+                if (item.href.includes("http")) {
+                  window.open(item.href, "_blank");
+                } else {
+                  router.push(item.href);
+                }
+                setIsMenuOpen(false);
+              }}
+              _hover={item.highlight ? { bg: "rgba(0, 112, 237, 0.2)" } : { color: "#0070ED" }}
+              zIndex={3000}
+              transition="all 0.2s"
+            >
+              {item.label}
+            </Text>
+          </Flex>
         ))}
       </Flex>
     </>

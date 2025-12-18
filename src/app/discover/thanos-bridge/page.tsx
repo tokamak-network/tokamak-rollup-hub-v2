@@ -111,8 +111,8 @@ export default function ThanosBridgePage() {
                 <Flex alignItems={"center"} gap={"15px"}>
                   <IntegrationLogo
                     name={"thanos-bridge"}
-                    width={45}
-                    height={45}
+                    width={60}
+                    height={60}
                   />
                   <Flex
                     gap={{ base: "6px", md: "12px" }}
@@ -148,12 +148,12 @@ export default function ThanosBridgePage() {
                           Created by
                         </Text>
                         <Text fontSize={"13px"} fontWeight={700}>
-                          TRH
+                          Tokamak Rollup Hub Team
                         </Text>
                       </Flex>
                       <Flex flexDir={"column"} gap={"3px"}>
                         <Text fontSize={"12px"} fontWeight={400}>
-                          Released on
+                          Launched on
                         </Text>
                         <Text fontSize={"13px"} fontWeight={700}>
                           22 January 2025
@@ -229,7 +229,7 @@ export default function ThanosBridgePage() {
                     href={THANOS_BRIDGE_DEPLOYMENT_GUIDE_URL}
                     target="_blank"
                   >
-                    this guide
+                    This Guide
                   </Link>
                   .
                 </Text>
@@ -289,7 +289,7 @@ export default function ThanosBridgePage() {
                     fontWeight={400}
                     lineHeight={"17px"}
                   >
-                    - No reliance on any third-party backends
+                    • No reliance on any third-party backends
                   </Text>
                 </List.Item>
                 <List.Item
@@ -304,7 +304,7 @@ export default function ThanosBridgePage() {
                     fontWeight={400}
                     lineHeight={"17px"}
                   >
-                    - Open source code for operators and developers to extend
+                    • Open source code for operators and developers to extend
                     functionalities
                   </Text>
                 </List.Item>
@@ -320,7 +320,7 @@ export default function ThanosBridgePage() {
                     fontWeight={400}
                     lineHeight={"17px"}
                   >
-                    - Simple to configure and integrate into the Thanos stack
+                    • Simple to configure and integrate into the Thanos stack
                   </Text>
                 </List.Item>
               </List.Root>
