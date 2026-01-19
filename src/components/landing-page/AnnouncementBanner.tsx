@@ -65,7 +65,7 @@ export default function AnnouncementBanner() {
                   <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"></path>
                 </svg>
                 <span className="animated-gradient-text marquee-text-large">Rewards & Bug Bounty Program Open</span>
-                <span className="marquee-badge">Ends Jan 16</span>
+                <span className="marquee-badge">Ends Jan 30</span>
               </span>
             ))}
           </div>
