@@ -20,7 +20,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Tokamak Rollup Hub",
-  description: "L2 On-Demand Tailored Ethereum",
+  description: "L2 On-Demand Tailored for Ethereum",
 };
 
 export default function RootLayout({
