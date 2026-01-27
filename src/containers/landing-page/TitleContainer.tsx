@@ -44,8 +44,6 @@ export default function TitleContainer() {
       >
         <Flex flexDirection={"column"} gap={{ base: "12px", md: "18px" }}>
           <Text
-            display={"flex"}
-            flexDirection={"column"}
             fontSize={{ base: "30px", md: "54px" }}
             fontWeight={{ base: 700, md: 600 }}
             color={"#1C1C1C"}
@@ -59,8 +57,9 @@ export default function TitleContainer() {
               as={"span"}
               fontSize={{ base: "30px", md: "60px" }}
               letterSpacing={{ base: "-0.9px", md: "-1.8px" }}
+              whiteSpace={"nowrap"}
             >
-              Tailored Ethereum
+              Tailored for Ethereum
             </Text>
           </Text>
           <Text
