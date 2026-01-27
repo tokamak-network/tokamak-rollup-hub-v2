@@ -77,11 +77,6 @@ export default function MenuBarComponent({
               justifyContent={"center"}
               key={item.label}
               color={"#2E2E3A"}
-              bg={item.highlight ? "rgba(0, 112, 237, 0.1)" : "transparent"}
-              border={item.highlight ? "1px solid rgba(0, 112, 237, 0.3)" : "none"}
-              px={item.highlight ? "14px" : "0"}
-              py={item.highlight ? "6px" : "0"}
-              borderRadius={item.highlight ? "20px" : "0"}
               fontSize={isMenuOpen ? "30px" : "15px"}
               fontWeight={600}
               lineHeight={"normal"}
@@ -95,7 +90,7 @@ export default function MenuBarComponent({
                 }
                 setIsMenuOpen(false);
               }}
-              _hover={item.highlight ? { bg: "rgba(0, 112, 237, 0.2)" } : { color: "#0070ED" }}
+              _hover={{ color: "#0070ED" }}
               zIndex={3000}
               transition="all 0.2s"
             >

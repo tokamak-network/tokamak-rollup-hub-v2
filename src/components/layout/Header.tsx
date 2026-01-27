@@ -6,7 +6,8 @@ import { useEffect, useState } from "react";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isBannerDismissed, setIsBannerDismissed] = useState(true);
+  // Banner-related state commented out as bounty program has ended
+  // const [isBannerDismissed, setIsBannerDismissed] = useState(true);
 
   useEffect(() => {
     if (isMenuOpen) {
@@ -26,24 +27,25 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  useEffect(() => {
-    const checkBannerStatus = () => {
-      const dismissed = localStorage.getItem("banner-dismissed");
-      setIsBannerDismissed(dismissed === "true");
-    };
+  // Banner status listener commented out as bounty program has ended
+  // useEffect(() => {
+  //   const checkBannerStatus = () => {
+  //     const dismissed = localStorage.getItem("banner-dismissed");
+  //     setIsBannerDismissed(dismissed === "true");
+  //   };
 
-    checkBannerStatus();
+  //   checkBannerStatus();
 
-    // Listen for banner dismissed event
-    window.addEventListener("banner-dismissed", checkBannerStatus);
-    // Listen for storage changes (for cross-tab)
-    window.addEventListener("storage", checkBannerStatus);
+  //   // Listen for banner dismissed event
+  //   window.addEventListener("banner-dismissed", checkBannerStatus);
+  //   // Listen for storage changes (for cross-tab)
+  //   window.addEventListener("storage", checkBannerStatus);
 
-    return () => {
-      window.removeEventListener("banner-dismissed", checkBannerStatus);
-      window.removeEventListener("storage", checkBannerStatus);
-    };
-  }, []);
+  //   return () => {
+  //     window.removeEventListener("banner-dismissed", checkBannerStatus);
+  //     window.removeEventListener("storage", checkBannerStatus);
+  //   };
+  // }, []);
 
   return (
     <>
@@ -53,7 +55,7 @@ export default function Header() {
         justifyContent={"space-between"}
         alignItems={"center"}
         position={"fixed"}
-        top={isMenuOpen ? "0" : isBannerDismissed ? "0" : { base: "50px", md: "52px" }}
+        top={isMenuOpen ? "0" : "0"}
         width={"100%"}
         zIndex={1000}
         backgroundColor={
