@@ -6,7 +6,7 @@ import { Provider } from "@/components/ui/provider";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import UpArrow from "@/components/layout/UpArrow";
-import AnnouncementBanner from "@/components/landing-page/AnnouncementBanner";
+// import AnnouncementBanner from "@/components/landing-page/AnnouncementBanner";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -33,7 +33,7 @@ export default function RootLayout({
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <Provider>
           <Header />
-          <AnnouncementBanner />
+          {/* <AnnouncementBanner /> */}
           {children}
           <Footer />
           <UpArrow />
