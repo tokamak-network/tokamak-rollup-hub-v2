@@ -1,4 +1,11 @@
 export const DISCORD_URL = "https://discord.gg/J5jC9gJpYb";
+
+export const PLATFORM_VERSION = "1.1.12";
+const PLATFORM_DOWNLOAD_BASE = `https://github.com/tokamak-network/trh-platform/releases/download/v${PLATFORM_VERSION}`;
+export const PLATFORM_DOWNLOAD_MAC_INTEL = `${PLATFORM_DOWNLOAD_BASE}/TRH.Desktop-${PLATFORM_VERSION}.dmg`;
+export const PLATFORM_DOWNLOAD_MAC_ARM = `${PLATFORM_DOWNLOAD_BASE}/TRH.Desktop-${PLATFORM_VERSION}-arm64.dmg`;
+export const PLATFORM_DOWNLOAD_WINDOWS = `${PLATFORM_DOWNLOAD_BASE}/TRH.Desktop.Setup.${PLATFORM_VERSION}.exe`;
+export const PLATFORM_DOWNLOAD_LINUX = `${PLATFORM_DOWNLOAD_BASE}/TRH.Desktop-${PLATFORM_VERSION}-x86_64.AppImage`;
 export const GET_HELP_URL =
   "https://discord.com/channels/696270789472682034/1239385660893167616";
 export const TRH_V1_URL = "https://tokamak-rollup-hub.vercel.app";

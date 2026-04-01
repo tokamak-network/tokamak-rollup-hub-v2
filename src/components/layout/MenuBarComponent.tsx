@@ -55,27 +55,10 @@ export default function MenuBarComponent({
             position={"relative"}
             gap={isMenuOpen ? "12px" : "8px"}
           >
-          {item.isNew && (
-            <Text
-              fontSize={isMenuOpen ? "16px" : "11px"}
-              fontWeight={700}
-              color={"#FFFFFF"}
-              bg={"#FF0000"}
-              px={isMenuOpen ? "12px" : "8px"}
-              py={isMenuOpen ? "5px" : "3px"}
-              borderRadius={"16px"}
-              textTransform={"uppercase"}
-              letterSpacing={"0.5px"}
-              lineHeight={"normal"}
-            >
-              NEW
-            </Text>
-          )}
             <Text
               display={"flex"}
               alignItems={"center"}
               justifyContent={"center"}
-              key={item.label}
               color={"#2E2E3A"}
               fontSize={isMenuOpen ? "30px" : "15px"}
               fontWeight={600}

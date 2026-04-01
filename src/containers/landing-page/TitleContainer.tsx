@@ -6,11 +6,48 @@ import TrhCenterIcon from "@/assets/trh-center.svg";
 import { useBreakpoint } from "@/hooks/breakpoint";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import { USER_GUIDE_URL } from "@/consts/urls";
+import {
+  PLATFORM_DOWNLOAD_LINUX,
+  PLATFORM_DOWNLOAD_MAC_ARM,
+  PLATFORM_DOWNLOAD_MAC_INTEL,
+  PLATFORM_DOWNLOAD_WINDOWS,
+  PLATFORM_VERSION,
+  USER_GUIDE_URL,
+} from "@/consts/urls";
+
+interface DownloadLinkProps {
+  href: string;
+  label: string;
+}
+
+const DownloadLink = ({ href, label }: DownloadLinkProps) => (
+  <Link href={href}>
+    <Flex
+      alignItems={"center"}
+      gap={"6px"}
+      px={"18px"}
+      py={"13px"}
+      borderRadius={"10px"}
+      border={"1px solid #E1E8ED"}
+      bgColor={"rgba(255,255,255,0.6)"}
+      fontSize={"16px"}
+      fontWeight={600}
+      color={"#2E2E3A"}
+      cursor={"pointer"}
+      _hover={{ bgColor: "#1C1C1C", color: "#FFF", borderColor: "#1C1C1C" }}
+      transition={"all 0.15s ease"}
+    >
+      <Text as={"span"} fontSize={"11px"}>↓</Text>
+      {label}
+    </Flex>
+  </Link>
+);
+
 export default function TitleContainer() {
   const { isMobile, isTablet } = useBreakpoint();
   const imageWidth = isMobile ? 75 : isTablet ? 125 : 200;
   const router = useRouter();
+
   return (
     <Flex
       width={"100%"}
@@ -33,6 +70,8 @@ export default function TitleContainer() {
           height={imageWidth}
         />
       </Box>
+
+      {/* Left: title + CTA */}
       <Flex
         flexDirection={"column"}
         gap={"30px"}
@@ -117,9 +156,7 @@ export default function TitleContainer() {
             justifyContent={"center"}
             alignItems={"center"}
             _hover={{ background: "#0070ED" }}
-            onClick={() => {
-              router.push("/discover");
-            }}
+            onClick={() => router.push("/discover")}
           >
             <Flex gap={"6px"} alignItems={"center"} justifyContent={"center"}>
               <Text
@@ -138,6 +175,73 @@ export default function TitleContainer() {
               />
             </Flex>
           </Button>
+        </Flex>
+      </Flex>
+
+      {/* Right: download card — desktop only */}
+      <Flex
+        display={{ base: "none", lg: "flex" }}
+        flexDir={"column"}
+        gap={"20px"}
+        position={"absolute"}
+        bottom={{ md: "30px", lg: "60px" }}
+        right={{ md: "30px", lg: "90px" }}
+        p={"30px"}
+        borderRadius={"20px"}
+        border={"1px solid #E1E8ED"}
+        bgColor={"rgba(255,255,255,0.55)"}
+        backdropFilter={"blur(12px)"}
+        zIndex={50}
+        minW={"300px"}
+      >
+        {/* Header */}
+        <Flex flexDir={"column"} gap={"6px"}>
+          <Flex alignItems={"center"} gap={"10px"}>
+            <Text
+              as={"span"}
+              bgColor={"#FF4B4B"}
+              color={"white"}
+              fontSize={"13px"}
+              fontWeight={700}
+              px={"8px"}
+              py={"3px"}
+              borderRadius={"5px"}
+              lineHeight={"normal"}
+            >
+              NEW
+            </Text>
+          </Flex>
+          <Text fontSize={"22px"} fontWeight={700} color={"#1C1C1C"} lineHeight={"1.2"}>
+            Desktop Version
+            <Text as={"span"} color={"#0070ED"}> is here</Text>
+          </Text>
+          <Text fontSize={"13px"} color={"#9CA3AF"} fontWeight={500}>
+            TRH Desktop v{PLATFORM_VERSION}
+          </Text>
+        </Flex>
+
+        {/* Divider */}
+        <Box height={"1px"} bgColor={"#E1E8ED"} />
+
+        {/* Download links */}
+        <Flex flexDir={"column"} gap={"6px"}>
+          <Text fontSize={"13px"} fontWeight={600} color={"#9CA3AF"} letterSpacing={"0.5px"} textTransform={"uppercase"}>
+            macOS
+          </Text>
+          <DownloadLink href={PLATFORM_DOWNLOAD_MAC_ARM} label={"Apple Silicon"} />
+          <DownloadLink href={PLATFORM_DOWNLOAD_MAC_INTEL} label={"Intel (x64)"} />
+        </Flex>
+        <Flex flexDir={"column"} gap={"6px"}>
+          <Text fontSize={"13px"} fontWeight={600} color={"#9CA3AF"} letterSpacing={"0.5px"} textTransform={"uppercase"}>
+            Windows
+          </Text>
+          <DownloadLink href={PLATFORM_DOWNLOAD_WINDOWS} label={"Windows (x64)"} />
+        </Flex>
+        <Flex flexDir={"column"} gap={"6px"}>
+          <Text fontSize={"13px"} fontWeight={600} color={"#9CA3AF"} letterSpacing={"0.5px"} textTransform={"uppercase"}>
+            Linux
+          </Text>
+          <DownloadLink href={PLATFORM_DOWNLOAD_LINUX} label={"Linux AppImage"} />
         </Flex>
       </Flex>
     </Flex>
