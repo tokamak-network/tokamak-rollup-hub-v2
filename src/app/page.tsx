@@ -2,8 +2,11 @@ import TitleContainer from "@/containers/landing-page/TitleContainer";
 import { Flex } from "@chakra-ui/react";
 import SolarContainer from "@/containers/landing-page/SolarContainer";
 import DetailContainer from "@/containers/landing-page/DetailContainer";
+import { getLatestPlatformRelease } from "@/lib/platform";
 
-export default function Home() {
+export default async function Home() {
+  const release = await getLatestPlatformRelease();
+
   return (
     <Flex
       position={"relative"}
@@ -13,7 +16,7 @@ export default function Home() {
       backgroundColor={"#FAFBFC"}
     >
       <SolarContainer />
-      <TitleContainer />
+      <TitleContainer release={release} />
       <DetailContainer />
     </Flex>
   );

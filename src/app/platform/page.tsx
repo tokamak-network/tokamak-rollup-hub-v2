@@ -1,12 +1,5 @@
-"use client";
 import { Box, Flex, Link, Text } from "@chakra-ui/react";
-import {
-  PLATFORM_DOWNLOAD_LINUX,
-  PLATFORM_DOWNLOAD_MAC_ARM,
-  PLATFORM_DOWNLOAD_MAC_INTEL,
-  PLATFORM_DOWNLOAD_WINDOWS,
-  PLATFORM_VERSION,
-} from "@/consts/urls";
+import { getLatestPlatformRelease } from "@/lib/platform";
 
 interface DownloadButtonProps {
   label: string;
@@ -70,7 +63,9 @@ const OsCard = ({ osName, description, children }: OsCardProps) => (
   </Flex>
 );
 
-export default function PlatformPage() {
+export default async function PlatformPage() {
+  const release = await getLatestPlatformRelease();
+
   return (
     <Box
       pt={{ base: "108px", md: "138px", lg: "198px" }}
@@ -117,7 +112,7 @@ export default function PlatformPage() {
               fontWeight={600}
               color={"#6B7280"}
             >
-              v{PLATFORM_VERSION}
+              v{release.version}
             </Text>
           </Flex>
           <Text
@@ -144,11 +139,11 @@ export default function PlatformPage() {
           >
             <DownloadButton
               label="Download for Intel (x64)"
-              url={PLATFORM_DOWNLOAD_MAC_INTEL}
+              url={release.downloads.macIntel}
             />
             <DownloadButton
               label="Download for Apple Silicon (ARM64)"
-              url={PLATFORM_DOWNLOAD_MAC_ARM}
+              url={release.downloads.macArm}
             />
           </OsCard>
 
@@ -158,7 +153,7 @@ export default function PlatformPage() {
           >
             <DownloadButton
               label="Download for Windows (x64)"
-              url={PLATFORM_DOWNLOAD_WINDOWS}
+              url={release.downloads.windows}
             />
           </OsCard>
 
@@ -168,7 +163,7 @@ export default function PlatformPage() {
           >
             <DownloadButton
               label="Download AppImage (x64)"
-              url={PLATFORM_DOWNLOAD_LINUX}
+              url={release.downloads.linux}
             />
           </OsCard>
         </Flex>

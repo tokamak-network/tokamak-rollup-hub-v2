@@ -6,14 +6,8 @@ import TrhCenterIcon from "@/assets/trh-center.svg";
 import { useBreakpoint } from "@/hooks/breakpoint";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import {
-  PLATFORM_DOWNLOAD_LINUX,
-  PLATFORM_DOWNLOAD_MAC_ARM,
-  PLATFORM_DOWNLOAD_MAC_INTEL,
-  PLATFORM_DOWNLOAD_WINDOWS,
-  PLATFORM_VERSION,
-  USER_GUIDE_URL,
-} from "@/consts/urls";
+import { USER_GUIDE_URL } from "@/consts/urls";
+import type { PlatformRelease } from "@/lib/platform";
 
 interface DownloadLinkProps {
   href: string;
@@ -43,7 +37,11 @@ const DownloadLink = ({ href, label }: DownloadLinkProps) => (
   </Link>
 );
 
-export default function TitleContainer() {
+interface TitleContainerProps {
+  release: PlatformRelease;
+}
+
+export default function TitleContainer({ release }: TitleContainerProps) {
   const { isMobile, isTablet } = useBreakpoint();
   const imageWidth = isMobile ? 75 : isTablet ? 125 : 200;
   const router = useRouter();
@@ -216,7 +214,7 @@ export default function TitleContainer() {
             <Text as={"span"} color={"#0070ED"}> is here</Text>
           </Text>
           <Text fontSize={"13px"} color={"#9CA3AF"} fontWeight={500}>
-            TRH Desktop v{PLATFORM_VERSION}
+            TRH Desktop v{release.version}
           </Text>
         </Flex>
 
@@ -228,20 +226,20 @@ export default function TitleContainer() {
           <Text fontSize={"13px"} fontWeight={600} color={"#9CA3AF"} letterSpacing={"0.5px"} textTransform={"uppercase"}>
             macOS
           </Text>
-          <DownloadLink href={PLATFORM_DOWNLOAD_MAC_ARM} label={"Apple Silicon"} />
-          <DownloadLink href={PLATFORM_DOWNLOAD_MAC_INTEL} label={"Intel (x64)"} />
+          <DownloadLink href={release.downloads.macArm} label={"Apple Silicon"} />
+          <DownloadLink href={release.downloads.macIntel} label={"Intel (x64)"} />
         </Flex>
         <Flex flexDir={"column"} gap={"6px"}>
           <Text fontSize={"13px"} fontWeight={600} color={"#9CA3AF"} letterSpacing={"0.5px"} textTransform={"uppercase"}>
             Windows
           </Text>
-          <DownloadLink href={PLATFORM_DOWNLOAD_WINDOWS} label={"Windows (x64)"} />
+          <DownloadLink href={release.downloads.windows} label={"Windows (x64)"} />
         </Flex>
         <Flex flexDir={"column"} gap={"6px"}>
           <Text fontSize={"13px"} fontWeight={600} color={"#9CA3AF"} letterSpacing={"0.5px"} textTransform={"uppercase"}>
             Linux
           </Text>
-          <DownloadLink href={PLATFORM_DOWNLOAD_LINUX} label={"Linux AppImage"} />
+          <DownloadLink href={release.downloads.linux} label={"Linux AppImage"} />
         </Flex>
       </Flex>
     </Flex>
