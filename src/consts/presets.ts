@@ -4,6 +4,17 @@ export const PRESET_SECTION = {
     "Pick one preset and your rollup's genesis config, predeploy contracts, and modules are all set for you — deployment inputs drop from dozens to a handful.",
 };
 
+// Display names for the module icon chips (keyed by IntegrationLogo name)
+export const MODULE_LABELS: Record<string, string> = {
+  "thanos-bridge": "Thanos Bridge",
+  "thanos-explorer": "Thanos Explorer",
+  "monitoring-tool": "Monitoring Tool",
+  "uptime-kuma": "System Pulse",
+  "cross-trade": "Cross Trade",
+  rng: "Random Number Generation",
+  "account-abstraction": "Account Abstraction",
+};
+
 export interface PresetDetail {
   id: string;
   name: string;

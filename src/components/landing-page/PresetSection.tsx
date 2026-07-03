@@ -1,6 +1,7 @@
 import { Box, Flex, Link, Text } from "@chakra-ui/react";
 import { IntegrationLogo } from "@/components/ui/integration-logo";
-import { PRESET_LIST, PRESET_SECTION } from "@/consts/presets";
+import { Tooltip } from "@/components/ui/tooltip";
+import { MODULE_LABELS, PRESET_LIST, PRESET_SECTION } from "@/consts/presets";
 import { PLATFORM_GUIDE_URL } from "@/consts/urls";
 
 export default function PresetSection() {
@@ -91,20 +92,25 @@ export default function PresetSection() {
                 Includes
               </Text>
               <Flex gap={"8px"} flexWrap={"wrap"}>
-                {preset.moduleIcons.map((icon) => (
-                  <Flex
-                    key={icon}
-                    alignItems={"center"}
-                    justifyContent={"center"}
-                    w={"36px"}
-                    h={"36px"}
-                    borderRadius={"9px"}
-                    border={"1px solid #E1E8ED"}
-                    bgColor={"#FAFBFC"}
-                  >
-                    <IntegrationLogo name={icon} width={22} height={22} />
-                  </Flex>
-                ))}
+                {preset.moduleIcons.map((icon) => {
+                  const label = MODULE_LABELS[icon] ?? icon;
+                  return (
+                    <Tooltip key={icon} content={label} showArrow openDelay={100}>
+                      <Flex
+                        aria-label={label}
+                        alignItems={"center"}
+                        justifyContent={"center"}
+                        w={"36px"}
+                        h={"36px"}
+                        borderRadius={"9px"}
+                        border={"1px solid #E1E8ED"}
+                        bgColor={"#FAFBFC"}
+                      >
+                        <IntegrationLogo name={icon} width={22} height={22} />
+                      </Flex>
+                    </Tooltip>
+                  );
+                })}
               </Flex>
               <Text
                 fontSize={"12px"}
