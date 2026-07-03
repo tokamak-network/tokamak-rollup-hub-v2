@@ -21,7 +21,15 @@ export const PRODUCT_CATEGORIES: ProductDetailType[] = [
 export const SUB_CATEGORY_MAP: Record<string, string[]> = {
   all: [],
   stack: [],
-  integration: ["Block Explorer", "Bridge", "Monitoring", "Staking"],
+  integration: [
+    "Block Explorer",
+    "Bridge",
+    "Monitoring",
+    "Staking",
+    "Interoperability",
+    "Randomness",
+    "Account Abstraction",
+  ],
 };
 
 export const SUB_PRODUCT_CATEGORIES: Record<string, SubProductDetailType[]> = {
@@ -91,6 +99,33 @@ export const SUB_PRODUCT_CATEGORIES: Record<string, SubProductDetailType[]> = {
       link: "/discover/uptime-kuma",
       category: "integration",
       subCategory: "Monitoring",
+    },
+    {
+      id: "cross-trade",
+      name: "Cross Trade",
+      description:
+        "Cross Trade enables fast, decentralized withdrawals between L2 and L1 chains, as well as L2-L2 transfers. Included in the DeFi and Full presets.",
+      link: "/discover/cross-trade",
+      category: "integration",
+      subCategory: "Interoperability",
+    },
+    {
+      id: "rng",
+      name: "Random Number Generation",
+      description:
+        "Manipulation-resistant on-chain randomness via the Tokamak Distributed Random Beacon (DRB). Included in the Gaming and Full presets.",
+      link: "/discover/rng",
+      category: "integration",
+      subCategory: "Randomness",
+    },
+    {
+      id: "account-abstraction",
+      name: "Account Abstraction",
+      description:
+        "ERC-4337 Account Abstraction with a Multi-Token Paymaster lets users pay gas in tokens other than the native TON. Built into every rollup across all presets.",
+      link: "/discover/account-abstraction",
+      category: "integration",
+      subCategory: "Account Abstraction",
     },
     // {
     //   id: "earn-ton-as-reward",

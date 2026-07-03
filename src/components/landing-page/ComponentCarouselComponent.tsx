@@ -5,7 +5,6 @@ import Carousel from "react-multi-carousel";
 import CardComponent from "./CardComponent";
 import "react-multi-carousel/lib/styles.css";
 import { useRef, useEffect } from "react";
-import Link from "next/link";
 
 const responsive = {
   superLargeDesktop: {
@@ -60,7 +59,7 @@ const BlockExplorerComponent = () => {
       description={
         <>
           Easily deploy an explorer for your chain with our SDK and make it
-          accessible to your network's users.
+          accessible to your network&apos;s users.
         </>
       }
       featured={true}
@@ -73,27 +72,18 @@ const BlockExplorerComponent = () => {
 const CrossTradeComponent = () => {
   return (
     <CardComponent
-      title={"Cross Trade (Coming Soon)"}
+      title={"Cross Trade"}
       description={
         <>
           <Text as={"span"} fontWeight={700}>
             Cross Trade
           </Text>{" "}
           enables fast, decentralized withdrawals between L2 and L1 chains, as
-          well as L2-L2 transfers. Learn more{" "}
-          <Link
-            href={
-              "https://ethresear.ch/t/canonical-cross-chain-swap-fast-and-decentralized-settlement-for-cross-chain-swap-using-canonical-native-l1-l2-messaging/21638/3"
-            }
-            target="_blank"
-          >
-            <Text as={"span"} fontWeight={500} textDecoration={"underline"}>
-              here
-            </Text>
-          </Link>
+          well as L2-L2 transfers. Included in the DeFi and Full presets.
         </>
       }
-      featured={false}
+      featured={true}
+      link={"/discover/cross-trade"}
       iconId={"cross-trade"}
     />
   );
@@ -123,25 +113,19 @@ const StakingDAOComponent = () => {
 const RandomNumberGenerationComponent = () => {
   return (
     <CardComponent
-      title={"Random Number Generation (Coming Soon)"}
+      title={"Random Number Generation"}
       description={
         <>
           <Text as={"span"} fontWeight={700}>
             Random Number Generation
           </Text>{" "}
-          Integrate random number generation into your chain with our RNG
-          project. Learn more{" "}
-          <Link
-            href={"https://github.com/tokamak-network/Randomness-Beacon"}
-            target="_blank"
-          >
-            <Text as={"span"} fontWeight={500} textDecoration={"underline"}>
-              here
-            </Text>
-          </Link>
+          brings manipulation-resistant on-chain randomness to your chain via
+          the Tokamak Distributed Random Beacon (DRB). Included in the Gaming
+          and Full presets.
         </>
       }
-      featured={false}
+      featured={true}
+      link={"/discover/rng"}
       iconId={"rng"}
     />
   );
@@ -178,6 +162,27 @@ const UptimeKumaComponent = () => {
       featured={true}
       link={"/discover/uptime-kuma"}
       iconId={"uptime-kuma"}
+    />
+  );
+};
+
+const AccountAbstractionComponent = () => {
+  return (
+    <CardComponent
+      title={"Account Abstraction"}
+      description={
+        <>
+          <Text as={"span"} fontWeight={700}>
+            Account Abstraction
+          </Text>{" "}
+          (ERC-4337) with a Multi-Token Paymaster lets your users pay gas in
+          tokens other than the native TON. Built into every rollup across all
+          presets.
+        </>
+      }
+      featured={true}
+      link={"/discover/account-abstraction"}
+      iconId={"account-abstraction"}
     />
   );
 };
@@ -268,6 +273,7 @@ export default function ComponentCarouselComponent() {
         <MonitoringToolComponent />
         <UptimeKumaComponent />
         <StakingDAOComponent />
+        <AccountAbstractionComponent />
         <CrossTradeComponent />
         <RandomNumberGenerationComponent />
       </Carousel>

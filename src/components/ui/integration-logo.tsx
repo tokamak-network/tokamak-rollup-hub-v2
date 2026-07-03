@@ -17,6 +17,7 @@ const INTEGRATION_LOGO_MAP = {
   "uptime-kuma": "/icon/systempulse.svg",
   "cross-trade": "/icon/corsstrade.png",
   "rng": "/icon/rng.png",
+  "account-abstraction": "/icon/account-abstraction.svg",
 };
 
 export const IntegrationLogo: React.FC<IntegrationLogoProps> = ({
