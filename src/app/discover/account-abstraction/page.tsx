@@ -1,14 +1,13 @@
 "use client";
-import { Box, Flex, List, Text } from "@chakra-ui/react";
+import { Box, Flex, Link, List, Text } from "@chakra-ui/react";
 import { useRouter } from "next/navigation";
 import backIcon from "@/assets/icon/back.svg";
 import Image from "next/image";
 import { SocialButton } from "@/components/ui/social-button";
 import { IntegrationLogo } from "@/components/ui/integration-logo";
 import { useState } from "react";
-import { MONITORING_TOOL_GUIDE_URL } from "@/consts/urls";
 
-const MONITORING_DOCS_URL = "https://docs.tokamak.network/home/service-guide/tokamak-rollup-hub/tokamak-rollup-hub-platform/integrate-your-chain-with-modular-services/monitoring-plugin";
+const ERC_4337_SPEC_URL = "https://eips.ethereum.org/EIPS/eip-4337";
 
 const BackButton = () => {
   const router = useRouter();
@@ -62,12 +61,12 @@ const RouteComponent = () => {
         Integrations
       </Text>
       <Text opacity={0.25}>/</Text>
-      <Text color={"#0070ED"}>Monitoring Tool</Text>
+      <Text color={"#0070ED"}>Account Abstraction</Text>
     </Flex>
   );
 };
 
-export default function MonitoringToolPage() {
+export default function AccountAbstractionPage() {
   return (
     <Box
       pt={{ base: "108px", md: "138px", lg: "198px" }}
@@ -110,7 +109,7 @@ export default function MonitoringToolPage() {
               <Flex flexDir={"column"} gap={"18px"}>
                 <Flex alignItems={"center"} gap={"15px"}>
                   <IntegrationLogo
-                    name={"monitoring-tool"}
+                    name={"account-abstraction"}
                     width={60}
                     height={60}
                   />
@@ -124,14 +123,14 @@ export default function MonitoringToolPage() {
                       fontWeight={700}
                       letterSpacing={"-1.08px"}
                     >
-                      Monitoring Tool
+                      Account Abstraction
                     </Text>
                     <Text
                       fontSize={{ base: "13px", md: "14px" }}
                       fontWeight={400}
                       lineHeight={"normal"}
                     >
-                      Monitoring
+                      Multi-Token Paymaster
                     </Text>
                   </Flex>
                 </Flex>
@@ -152,23 +151,18 @@ export default function MonitoringToolPage() {
                       </Flex>
                       <Flex flexDir={"column"} gap={"3px"}>
                         <Text fontSize={"12px"} fontWeight={400}>
-                          Launched on
+                          Available in
                         </Text>
                         <Text fontSize={"13px"} fontWeight={700}>
-                          17 December 2025
+                          Every preset
                         </Text>
                       </Flex>
                     </Flex>
                     <Flex gap={"12px"} flexWrap={"wrap"}>
                       <SocialButton
-                        icon={"notion"}
-                        label={"Guide"}
-                        link={MONITORING_TOOL_GUIDE_URL}
-                      />
-                      <SocialButton
                         icon={"document"}
-                        label={"Docs"}
-                        link={MONITORING_DOCS_URL}
+                        label={"ERC-4337 Spec"}
+                        link={ERC_4337_SPEC_URL}
                       />
                     </Flex>
                   </Flex>
@@ -185,11 +179,18 @@ export default function MonitoringToolPage() {
                   Overview
                 </Text>
                 <Text fontSize={"15px"} fontWeight={400} lineHeight={"18px"}>
-                  <Text as={"span"} fontWeight={700}>24/7 System Watch</Text> - Monitors the health of the Thanos Stack around the clock.
+                  Every rollup deployed with the Rollup Hub ships with ERC-4337
+                  Account Abstraction built in. An EntryPoint and a Multi-Token
+                  Paymaster are predeployed at genesis, so your users can pay
+                  transaction fees in tokens other than the native TON &mdash;
+                  no separate installation or preset required.
                   <br />
-                  <Text as={"span"} fontWeight={700}>Visualization & Alerts</Text> - Provides real-time dashboards and instant notifications for critical issues.
                   <br />
-                  <Text as={"span"} fontWeight={700}>Log Management</Text> - Centralized log collection for efficient troubleshooting.
+                  Key benefits:
+                  <br />&bull; Pay gas in non-TON fee tokens
+                  <br />&bull; ERC-4337 standard EntryPoint and Paymaster
+                  <br />&bull; EntryPoint kept funded through automatic refills
+                  <br />&bull; Available across every preset out of the box
                 </Text>
               </Flex>
               <Flex flexDir={"column"} gap={"6px"}>
@@ -198,55 +199,17 @@ export default function MonitoringToolPage() {
                   fontWeight={700}
                   letterSpacing={"-0.54px"}
                 >
-                  Key Features
+                  How It Works
                 </Text>
                 <Text fontSize={"15px"} fontWeight={400} lineHeight={"18px"}>
-                  • <Text as={"span"} fontWeight={700}>Grafana Dashboards</Text> - Visualize real-time metrics for network health
-                  <br />• <Text as={"span"} fontWeight={700}>Multi-channel Alerts</Text> - Instant notifications via Email (Gmail SMTP) and Telegram
-                  <br />• <Text as={"span"} fontWeight={700}>Log Collection</Text> - Aggregates logs from all components for easy analysis
-                  <br />• <Text as={"span"} fontWeight={700}>Customizable Monitoring</Text> - Tracks all Thanos Stack components and system resources
+                  The EntryPoint and Multi-Token Paymaster contracts are
+                  predeployed with your chain. When your rollup uses a non-TON
+                  fee token, Account Abstraction activates: TON is pre-deposited
+                  to fund the EntryPoint on the chain&apos;s behalf, and an
+                  auto-refill keeps that balance topped up so user operations
+                  keep flowing. The chain&apos;s admin account maintains a
+                  minimum TON balance to cover these deposits.
                 </Text>
-              </Flex>
-              <Flex gap={"15px"} flexDir={"column"} alignItems={"center"}>
-                <Box
-                  borderRadius={"6px"}
-                  border={"1px solid #E1E8ED"}
-                  backgroundColor={"#0f0f0f"}
-                  overflow={"hidden"}
-                  w={"100%"}
-                >
-                  <img
-                    src="/images/mt1.png"
-                    alt="Monitoring Dashboard 1"
-                    style={{ width: "100%", height: "auto", display: "block" }}
-                  />
-                </Box>
-                <Box
-                  borderRadius={"6px"}
-                  border={"1px solid #E1E8ED"}
-                  backgroundColor={"#0f0f0f"}
-                  overflow={"hidden"}
-                  w={"100%"}
-                >
-                  <img
-                    src="/images/mt2.png"
-                    alt="Monitoring Dashboard 2"
-                    style={{ width: "100%", height: "auto", display: "block" }}
-                  />
-                </Box>
-                <Box
-                  borderRadius={"6px"}
-                  border={"1px solid #E1E8ED"}
-                  backgroundColor={"#0f0f0f"}
-                  overflow={"hidden"}
-                  w={"100%"}
-                >
-                  <img
-                    src="/images/mt3.png"
-                    alt="Monitoring Dashboard 3"
-                    style={{ width: "100%", height: "auto", display: "block" }}
-                  />
-                </Box>
               </Flex>
               <Flex flexDir={"column"} gap={"6px"}>
                 <Text
@@ -254,15 +217,22 @@ export default function MonitoringToolPage() {
                   fontWeight={700}
                   letterSpacing={"-0.54px"}
                 >
-                  What&apos;s Monitored
+                  How to Enable
                 </Text>
                 <Text fontSize={"15px"} fontWeight={400} lineHeight={"18px"}>
-                  • <Text as={"span"} fontWeight={700}>op-node</Text> - L2 node synchronization and derivation
-                  <br />• <Text as={"span"} fontWeight={700}>op-geth</Text> - EVM execution client status
-                  <br />• <Text as={"span"} fontWeight={700}>op-batcher</Text> - Batch transaction submission to L1
-                  <br />• <Text as={"span"} fontWeight={700}>op-proposer</Text> - State root proposal generation
-                  <br />• <Text as={"span"} fontWeight={700}>External Infrastructure</Text> - L1 RPC connectivity
-                  <br />• <Text as={"span"} fontWeight={700}>System Resources</Text> - CPU, Memory, and Storage usage
+                  Account Abstraction is included in every preset automatically
+                  &mdash; there is nothing to install. Choosing a non-TON fee
+                  token when you deploy activates the paymaster flow. Learn more
+                  about the underlying standard in the{" "}
+                  <Link
+                    _hover={{ textDecoration: "underline" }}
+                    color={"#0070ED"}
+                    href={ERC_4337_SPEC_URL}
+                    target="_blank"
+                  >
+                    ERC-4337 specification
+                  </Link>
+                  .
                 </Text>
               </Flex>
             </Flex>
@@ -277,20 +247,12 @@ export default function MonitoringToolPage() {
             w={{ base: "100%", lg: "25%" }}
           >
             <Flex flexDir={"column"} gap={"9px"}>
-              <Text
-                fontSize={"15px"}
-                fontWeight={700}
-                letterSpacing={"-0.45px"}
-              >
+              <Text fontSize={"15px"} fontWeight={700} letterSpacing={"-0.45px"}>
                 Highlights
               </Text>
               <List.Root ml={"15px"}>
-                <List.Item
-                  fontSize={"14px"}
-                  fontWeight={700}
-                  lineHeight={"17px"}
-                >
-                  Real-time Dashboards
+                <List.Item fontSize={"14px"} fontWeight={700} lineHeight={"17px"}>
+                  Pay Gas in Any Token
                   <Text
                     as={"span"}
                     fontSize={"13px"}
@@ -298,15 +260,11 @@ export default function MonitoringToolPage() {
                     lineHeight={"17px"}
                   >
                     {" "}
-                    • Grafana visualization of system health and metrics
+                    &bull; Users are not limited to native TON
                   </Text>
                 </List.Item>
-                <List.Item
-                  fontSize={"14px"}
-                  fontWeight={700}
-                  lineHeight={"17px"}
-                >
-                  Email Alerts
+                <List.Item fontSize={"14px"} fontWeight={700} lineHeight={"17px"}>
+                  ERC-4337 Standard
                   <Text
                     as={"span"}
                     fontSize={"13px"}
@@ -314,15 +272,11 @@ export default function MonitoringToolPage() {
                     lineHeight={"17px"}
                   >
                     {" "}
-                    • Gmail SMTP notifications for critical events
+                    &bull; EntryPoint and Paymaster predeploys
                   </Text>
                 </List.Item>
-                <List.Item
-                  fontSize={"14px"}
-                  fontWeight={700}
-                  lineHeight={"17px"}
-                >
-                  Telegram Alerts
+                <List.Item fontSize={"14px"} fontWeight={700} lineHeight={"17px"}>
+                  Auto-Refilled
                   <Text
                     as={"span"}
                     fontSize={"13px"}
@@ -330,100 +284,31 @@ export default function MonitoringToolPage() {
                     lineHeight={"17px"}
                   >
                     {" "}
-                    • Instant bot messages when issues arise
-                  </Text>
-                </List.Item>
-                <List.Item
-                  fontSize={"14px"}
-                  fontWeight={700}
-                  lineHeight={"17px"}
-                >
-                  Easy Setup
-                  <Text
-                    as={"span"}
-                    fontSize={"13px"}
-                    fontWeight={400}
-                    lineHeight={"17px"}
-                  >
-                    {" "}
-                    • Configure from the platform UI in minutes
+                    &bull; EntryPoint stays funded automatically
                   </Text>
                 </List.Item>
               </List.Root>
             </Flex>
             <Box height={"1px"} alignSelf={"stretch"} bgColor={"#E1E8ED"} />
             <Flex flexDir={"column"} gap={"9px"}>
-              <Text
-                fontSize={"15px"}
-                fontWeight={700}
-                letterSpacing={"-0.45px"}
-              >
-                Deployment Cost
+              <Text fontSize={"15px"} fontWeight={700} letterSpacing={"-0.45px"}>
+                Availability
               </Text>
               <Text fontSize={"14px"} fontWeight={400} lineHeight={"17px"}>
-                No smart contract costs. Only cloud infrastructure costs for
-                running the monitoring stack on your provider.
+                Built into every rollup, across all presets.
               </Text>
             </Flex>
             <Box height={"1px"} alignSelf={"stretch"} bgColor={"#E1E8ED"} />
             <Flex flexDir={"column"} gap={"9px"}>
-              <Text
-                fontSize={"15px"}
-                fontWeight={700}
-                letterSpacing={"-0.45px"}
-              >
-                Monitoring Stack
+              <Text fontSize={"15px"} fontWeight={700} letterSpacing={"-0.45px"}>
+                Requirements
               </Text>
               <List.Root ml={"15px"}>
-                <List.Item
-                  fontSize={"13px"}
-                  fontWeight={400}
-                  lineHeight={"17px"}
-                >
-                  <Text as={"span"} fontWeight={700}>
-                    Prometheus
-                  </Text>{" "}
-                  • Metrics collection and storage
+                <List.Item fontSize={"13px"} fontWeight={400} lineHeight={"17px"}>
+                  Deployed Thanos Stack (any preset)
                 </List.Item>
-                <List.Item
-                  fontSize={"13px"}
-                  fontWeight={400}
-                  lineHeight={"17px"}
-                >
-                  <Text as={"span"} fontWeight={700}>
-                    Grafana
-                  </Text>{" "}
-                  • Visualization dashboards with custom panels
-                </List.Item>
-                <List.Item
-                  fontSize={"13px"}
-                  fontWeight={400}
-                  lineHeight={"17px"}
-                >
-                  <Text as={"span"} fontWeight={700}>
-                    AlertManager
-                  </Text>{" "}
-                  • Alert routing and notification
-                </List.Item>
-                <List.Item
-                  fontSize={"13px"}
-                  fontWeight={400}
-                  lineHeight={"17px"}
-                >
-                  <Text as={"span"} fontWeight={700}>
-                    Blackbox Exporter
-                  </Text>{" "}
-                  • External endpoint monitoring
-                </List.Item>
-                <List.Item
-                  fontSize={"13px"}
-                  fontWeight={400}
-                  lineHeight={"17px"}
-                >
-                  <Text as={"span"} fontWeight={700}>
-                    CloudWatch Logs
-                  </Text>{" "}
-                  • Centralized log storage and retention management
+                <List.Item fontSize={"13px"} fontWeight={400} lineHeight={"17px"}>
+                  Non-TON fee token to activate the paymaster
                 </List.Item>
               </List.Root>
             </Flex>

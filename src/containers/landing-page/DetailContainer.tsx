@@ -2,6 +2,7 @@ import BlockComponent from "@/components/landing-page/BlockComponet";
 import ComponentCarouselComponent from "@/components/landing-page/ComponentCarouselComponent";
 import EndingComponent from "@/components/landing-page/EndingComponent";
 import KeyOfferingComponent from "@/components/landing-page/KeyOfferingComponent";
+import PresetSection from "@/components/landing-page/PresetSection";
 import { Flex } from "@chakra-ui/react";
 
 export default function DetailContainer() {
@@ -20,6 +21,7 @@ export default function DetailContainer() {
       >
         <BlockComponent />
         <KeyOfferingComponent />
+        <PresetSection />
         <ComponentCarouselComponent />
         <EndingComponent />
       </Flex>

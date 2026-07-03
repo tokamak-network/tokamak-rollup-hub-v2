@@ -6,7 +6,6 @@ import Image from "next/image";
 import { SocialButton } from "@/components/ui/social-button";
 import { IntegrationLogo } from "@/components/ui/integration-logo";
 import { useState } from "react";
-import { THANOS_STACK_DEPLOYMENT_GUIDE_URL } from "@/consts/urls";
 const BackButton = () => {
   const router = useRouter();
   const [isHover, setIsHover] = useState(false);

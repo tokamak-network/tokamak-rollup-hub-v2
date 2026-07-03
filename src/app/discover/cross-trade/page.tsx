@@ -1,14 +1,14 @@
 "use client";
-import { Box, Flex, List, Text } from "@chakra-ui/react";
+import { Box, Flex, Link, List, Text } from "@chakra-ui/react";
 import { useRouter } from "next/navigation";
 import backIcon from "@/assets/icon/back.svg";
 import Image from "next/image";
 import { SocialButton } from "@/components/ui/social-button";
 import { IntegrationLogo } from "@/components/ui/integration-logo";
 import { useState } from "react";
-import { MONITORING_TOOL_GUIDE_URL } from "@/consts/urls";
 
-const MONITORING_DOCS_URL = "https://docs.tokamak.network/home/service-guide/tokamak-rollup-hub/tokamak-rollup-hub-platform/integrate-your-chain-with-modular-services/monitoring-plugin";
+const CROSS_TRADE_RESEARCH_URL =
+  "https://ethresear.ch/t/canonical-cross-chain-swap-fast-and-decentralized-settlement-for-cross-chain-swap-using-canonical-native-l1-l2-messaging/21638/3";
 
 const BackButton = () => {
   const router = useRouter();
@@ -62,12 +62,12 @@ const RouteComponent = () => {
         Integrations
       </Text>
       <Text opacity={0.25}>/</Text>
-      <Text color={"#0070ED"}>Monitoring Tool</Text>
+      <Text color={"#0070ED"}>Cross Trade</Text>
     </Flex>
   );
 };
 
-export default function MonitoringToolPage() {
+export default function CrossTradePage() {
   return (
     <Box
       pt={{ base: "108px", md: "138px", lg: "198px" }}
@@ -110,7 +110,7 @@ export default function MonitoringToolPage() {
               <Flex flexDir={"column"} gap={"18px"}>
                 <Flex alignItems={"center"} gap={"15px"}>
                   <IntegrationLogo
-                    name={"monitoring-tool"}
+                    name={"cross-trade"}
                     width={60}
                     height={60}
                   />
@@ -124,14 +124,14 @@ export default function MonitoringToolPage() {
                       fontWeight={700}
                       letterSpacing={"-1.08px"}
                     >
-                      Monitoring Tool
+                      Cross Trade
                     </Text>
                     <Text
                       fontSize={{ base: "13px", md: "14px" }}
                       fontWeight={400}
                       lineHeight={"normal"}
                     >
-                      Monitoring
+                      Fast cross-chain settlement
                     </Text>
                   </Flex>
                 </Flex>
@@ -152,23 +152,18 @@ export default function MonitoringToolPage() {
                       </Flex>
                       <Flex flexDir={"column"} gap={"3px"}>
                         <Text fontSize={"12px"} fontWeight={400}>
-                          Launched on
+                          Available in
                         </Text>
                         <Text fontSize={"13px"} fontWeight={700}>
-                          17 December 2025
+                          DeFi &amp; Full presets
                         </Text>
                       </Flex>
                     </Flex>
                     <Flex gap={"12px"} flexWrap={"wrap"}>
                       <SocialButton
-                        icon={"notion"}
-                        label={"Guide"}
-                        link={MONITORING_TOOL_GUIDE_URL}
-                      />
-                      <SocialButton
                         icon={"document"}
-                        label={"Docs"}
-                        link={MONITORING_DOCS_URL}
+                        label={"Research"}
+                        link={CROSS_TRADE_RESEARCH_URL}
                       />
                     </Flex>
                   </Flex>
@@ -185,11 +180,21 @@ export default function MonitoringToolPage() {
                   Overview
                 </Text>
                 <Text fontSize={"15px"} fontWeight={400} lineHeight={"18px"}>
-                  <Text as={"span"} fontWeight={700}>24/7 System Watch</Text> - Monitors the health of the Thanos Stack around the clock.
+                  Cross Trade lets your chain&apos;s users move assets across
+                  chains without waiting out the standard 7-day withdrawal
+                  challenge period. It supports fast, decentralized withdrawals
+                  between L2 and L1 as well as direct L2-to-L2 transfers,
+                  settled through canonical native L1&harr;L2 messaging.
                   <br />
-                  <Text as={"span"} fontWeight={700}>Visualization & Alerts</Text> - Provides real-time dashboards and instant notifications for critical issues.
                   <br />
-                  <Text as={"span"} fontWeight={700}>Log Management</Text> - Centralized log collection for efficient troubleshooting.
+                  Key benefits:
+                  <br />&bull; Skip the 7-day withdrawal wait for supported
+                  assets
+                  <br />&bull; L2&harr;L1 and L2&harr;L2 transfers
+                  <br />&bull; Decentralized settlement &mdash; no trusted
+                  custodian
+                  <br />&bull; Deployed automatically with the DeFi and Full
+                  presets
                 </Text>
               </Flex>
               <Flex flexDir={"column"} gap={"6px"}>
@@ -198,55 +203,16 @@ export default function MonitoringToolPage() {
                   fontWeight={700}
                   letterSpacing={"-0.54px"}
                 >
-                  Key Features
+                  How It Works
                 </Text>
                 <Text fontSize={"15px"} fontWeight={400} lineHeight={"18px"}>
-                  • <Text as={"span"} fontWeight={700}>Grafana Dashboards</Text> - Visualize real-time metrics for network health
-                  <br />• <Text as={"span"} fontWeight={700}>Multi-channel Alerts</Text> - Instant notifications via Email (Gmail SMTP) and Telegram
-                  <br />• <Text as={"span"} fontWeight={700}>Log Collection</Text> - Aggregates logs from all components for easy analysis
-                  <br />• <Text as={"span"} fontWeight={700}>Customizable Monitoring</Text> - Tracks all Thanos Stack components and system resources
+                  A liquidity provider fronts the requested asset on the
+                  destination chain immediately, then reclaims the locked funds
+                  on the source chain once the canonical cross-chain message is
+                  finalized. Because settlement relies on native L1&harr;L2
+                  messaging rather than a third-party bridge, users receive
+                  funds quickly while the protocol remains trust-minimized.
                 </Text>
-              </Flex>
-              <Flex gap={"15px"} flexDir={"column"} alignItems={"center"}>
-                <Box
-                  borderRadius={"6px"}
-                  border={"1px solid #E1E8ED"}
-                  backgroundColor={"#0f0f0f"}
-                  overflow={"hidden"}
-                  w={"100%"}
-                >
-                  <img
-                    src="/images/mt1.png"
-                    alt="Monitoring Dashboard 1"
-                    style={{ width: "100%", height: "auto", display: "block" }}
-                  />
-                </Box>
-                <Box
-                  borderRadius={"6px"}
-                  border={"1px solid #E1E8ED"}
-                  backgroundColor={"#0f0f0f"}
-                  overflow={"hidden"}
-                  w={"100%"}
-                >
-                  <img
-                    src="/images/mt2.png"
-                    alt="Monitoring Dashboard 2"
-                    style={{ width: "100%", height: "auto", display: "block" }}
-                  />
-                </Box>
-                <Box
-                  borderRadius={"6px"}
-                  border={"1px solid #E1E8ED"}
-                  backgroundColor={"#0f0f0f"}
-                  overflow={"hidden"}
-                  w={"100%"}
-                >
-                  <img
-                    src="/images/mt3.png"
-                    alt="Monitoring Dashboard 3"
-                    style={{ width: "100%", height: "auto", display: "block" }}
-                  />
-                </Box>
               </Flex>
               <Flex flexDir={"column"} gap={"6px"}>
                 <Text
@@ -254,15 +220,21 @@ export default function MonitoringToolPage() {
                   fontWeight={700}
                   letterSpacing={"-0.54px"}
                 >
-                  What&apos;s Monitored
+                  How to Enable
                 </Text>
                 <Text fontSize={"15px"} fontWeight={400} lineHeight={"18px"}>
-                  • <Text as={"span"} fontWeight={700}>op-node</Text> - L2 node synchronization and derivation
-                  <br />• <Text as={"span"} fontWeight={700}>op-geth</Text> - EVM execution client status
-                  <br />• <Text as={"span"} fontWeight={700}>op-batcher</Text> - Batch transaction submission to L1
-                  <br />• <Text as={"span"} fontWeight={700}>op-proposer</Text> - State root proposal generation
-                  <br />• <Text as={"span"} fontWeight={700}>External Infrastructure</Text> - L1 RPC connectivity
-                  <br />• <Text as={"span"} fontWeight={700}>System Resources</Text> - CPU, Memory, and Storage usage
+                  Cross Trade is included out of the box when you deploy your
+                  Thanos Stack with the DeFi or Full preset &mdash; no manual
+                  setup required. Read the design rationale in the{" "}
+                  <Link
+                    _hover={{ textDecoration: "underline" }}
+                    color={"#0070ED"}
+                    href={CROSS_TRADE_RESEARCH_URL}
+                    target="_blank"
+                  >
+                    canonical cross-chain swap research
+                  </Link>
+                  .
                 </Text>
               </Flex>
             </Flex>
@@ -277,20 +249,12 @@ export default function MonitoringToolPage() {
             w={{ base: "100%", lg: "25%" }}
           >
             <Flex flexDir={"column"} gap={"9px"}>
-              <Text
-                fontSize={"15px"}
-                fontWeight={700}
-                letterSpacing={"-0.45px"}
-              >
+              <Text fontSize={"15px"} fontWeight={700} letterSpacing={"-0.45px"}>
                 Highlights
               </Text>
               <List.Root ml={"15px"}>
-                <List.Item
-                  fontSize={"14px"}
-                  fontWeight={700}
-                  lineHeight={"17px"}
-                >
-                  Real-time Dashboards
+                <List.Item fontSize={"14px"} fontWeight={700} lineHeight={"17px"}>
+                  No 7-Day Wait
                   <Text
                     as={"span"}
                     fontSize={"13px"}
@@ -298,15 +262,11 @@ export default function MonitoringToolPage() {
                     lineHeight={"17px"}
                   >
                     {" "}
-                    • Grafana visualization of system health and metrics
+                    &bull; Fast withdrawals for supported assets
                   </Text>
                 </List.Item>
-                <List.Item
-                  fontSize={"14px"}
-                  fontWeight={700}
-                  lineHeight={"17px"}
-                >
-                  Email Alerts
+                <List.Item fontSize={"14px"} fontWeight={700} lineHeight={"17px"}>
+                  L2&harr;L1 &amp; L2&harr;L2
                   <Text
                     as={"span"}
                     fontSize={"13px"}
@@ -314,15 +274,11 @@ export default function MonitoringToolPage() {
                     lineHeight={"17px"}
                   >
                     {" "}
-                    • Gmail SMTP notifications for critical events
+                    &bull; Move assets in both directions
                   </Text>
                 </List.Item>
-                <List.Item
-                  fontSize={"14px"}
-                  fontWeight={700}
-                  lineHeight={"17px"}
-                >
-                  Telegram Alerts
+                <List.Item fontSize={"14px"} fontWeight={700} lineHeight={"17px"}>
+                  Decentralized
                   <Text
                     as={"span"}
                     fontSize={"13px"}
@@ -330,100 +286,28 @@ export default function MonitoringToolPage() {
                     lineHeight={"17px"}
                   >
                     {" "}
-                    • Instant bot messages when issues arise
-                  </Text>
-                </List.Item>
-                <List.Item
-                  fontSize={"14px"}
-                  fontWeight={700}
-                  lineHeight={"17px"}
-                >
-                  Easy Setup
-                  <Text
-                    as={"span"}
-                    fontSize={"13px"}
-                    fontWeight={400}
-                    lineHeight={"17px"}
-                  >
-                    {" "}
-                    • Configure from the platform UI in minutes
+                    &bull; Settlement via canonical messaging
                   </Text>
                 </List.Item>
               </List.Root>
             </Flex>
             <Box height={"1px"} alignSelf={"stretch"} bgColor={"#E1E8ED"} />
             <Flex flexDir={"column"} gap={"9px"}>
-              <Text
-                fontSize={"15px"}
-                fontWeight={700}
-                letterSpacing={"-0.45px"}
-              >
-                Deployment Cost
+              <Text fontSize={"15px"} fontWeight={700} letterSpacing={"-0.45px"}>
+                Availability
               </Text>
               <Text fontSize={"14px"} fontWeight={400} lineHeight={"17px"}>
-                No smart contract costs. Only cloud infrastructure costs for
-                running the monitoring stack on your provider.
+                Deployed automatically with the DeFi and Full presets.
               </Text>
             </Flex>
             <Box height={"1px"} alignSelf={"stretch"} bgColor={"#E1E8ED"} />
             <Flex flexDir={"column"} gap={"9px"}>
-              <Text
-                fontSize={"15px"}
-                fontWeight={700}
-                letterSpacing={"-0.45px"}
-              >
-                Monitoring Stack
+              <Text fontSize={"15px"} fontWeight={700} letterSpacing={"-0.45px"}>
+                Requirements
               </Text>
               <List.Root ml={"15px"}>
-                <List.Item
-                  fontSize={"13px"}
-                  fontWeight={400}
-                  lineHeight={"17px"}
-                >
-                  <Text as={"span"} fontWeight={700}>
-                    Prometheus
-                  </Text>{" "}
-                  • Metrics collection and storage
-                </List.Item>
-                <List.Item
-                  fontSize={"13px"}
-                  fontWeight={400}
-                  lineHeight={"17px"}
-                >
-                  <Text as={"span"} fontWeight={700}>
-                    Grafana
-                  </Text>{" "}
-                  • Visualization dashboards with custom panels
-                </List.Item>
-                <List.Item
-                  fontSize={"13px"}
-                  fontWeight={400}
-                  lineHeight={"17px"}
-                >
-                  <Text as={"span"} fontWeight={700}>
-                    AlertManager
-                  </Text>{" "}
-                  • Alert routing and notification
-                </List.Item>
-                <List.Item
-                  fontSize={"13px"}
-                  fontWeight={400}
-                  lineHeight={"17px"}
-                >
-                  <Text as={"span"} fontWeight={700}>
-                    Blackbox Exporter
-                  </Text>{" "}
-                  • External endpoint monitoring
-                </List.Item>
-                <List.Item
-                  fontSize={"13px"}
-                  fontWeight={400}
-                  lineHeight={"17px"}
-                >
-                  <Text as={"span"} fontWeight={700}>
-                    CloudWatch Logs
-                  </Text>{" "}
-                  • Centralized log storage and retention management
+                <List.Item fontSize={"13px"} fontWeight={400} lineHeight={"17px"}>
+                  Deployed Thanos Stack (DeFi or Full preset)
                 </List.Item>
               </List.Root>
             </Flex>
