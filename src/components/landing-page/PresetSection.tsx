@@ -95,7 +95,23 @@ export default function PresetSection() {
                 {preset.moduleIcons.map((icon) => {
                   const label = MODULE_LABELS[icon] ?? icon;
                   return (
-                    <Tooltip key={icon} content={label} showArrow openDelay={100}>
+                    <Tooltip
+                      key={icon}
+                      content={label}
+                      openDelay={100}
+                      positioning={{ placement: "top", gutter: 8 }}
+                      contentProps={{
+                        bg: "#1C1C1C",
+                        color: "white",
+                        px: "10px",
+                        py: "6px",
+                        borderRadius: "6px",
+                        fontSize: "12px",
+                        fontWeight: 600,
+                        boxShadow: "0 4px 12px rgba(0,0,0,0.18)",
+                        whiteSpace: "nowrap",
+                      }}
+                    >
                       <Flex
                         aria-label={label}
                         alignItems={"center"}
