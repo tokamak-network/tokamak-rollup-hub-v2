@@ -1,5 +1,5 @@
 "use client";
-import { Box, Flex, Link, List, Text } from "@chakra-ui/react";
+import { Box, Flex, List, Text } from "@chakra-ui/react";
 import { useRouter } from "next/navigation";
 import backIcon from "@/assets/icon/back.svg";
 import Image from "next/image";

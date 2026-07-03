@@ -1,8 +1,7 @@
 "use client";
-import { Flex, Box, Text, VStack, HStack, Link } from "@chakra-ui/react";
+import { Flex, Box, Text, Link } from "@chakra-ui/react";
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import CloseIcon from "@/assets/icon/close.svg";
 import Logo from "@/assets/logo/logo.svg";
 import { PLATFORM_GUIDE_URL } from "@/consts/urls";
 import "./banner.css";
@@ -17,13 +16,6 @@ export default function AnnouncementBanner() {
       setIsVisible(true);
     }
   }, []);
-
-  const handleClose = (e: React.MouseEvent) => {
-    e.stopPropagation();
-    setIsVisible(false);
-    localStorage.setItem("banner-dismissed", "true");
-    window.dispatchEvent(new Event("banner-dismissed"));
-  };
 
   const handleBannerClick = () => {
     setIsModalOpen(true);
